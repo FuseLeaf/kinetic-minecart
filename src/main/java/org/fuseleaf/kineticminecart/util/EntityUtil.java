@@ -19,7 +19,9 @@ public final class EntityUtil {
      * @param strength  强度系数
      */
     public static void knockBack(Entity entity, Vec3 direction, double strength) {
-        if (entity == null) return;
+        if (entity == null) {
+            return;
+        }
 
         Vec3 add = direction.scale(strength);   // 计算附加速度（direction 乘以强度）
 

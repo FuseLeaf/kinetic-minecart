@@ -14,7 +14,9 @@ import net.minecraft.world.InteractionResult;
 public class ClientHolderManager {
 
     public static void init() {
-        if (LoadManager.getHolder() == null) return;
+        if (LoadManager.getHolder() == null) {
+            return;
+        }
 
         // 监听器，保存配置后触发
         LoadManager.getHolder().registerSaveListener((configHolder, config) -> {

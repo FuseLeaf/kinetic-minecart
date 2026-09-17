@@ -5,7 +5,7 @@ import java.util.List;
 import org.fuseleaf.kineticminecart.extension.config.ConfigValue;
 
 public class ConfigManager {
-    
+
     public static ConfigValue config = LoadManager.isAPIFound() ? me.shedaniel.autoconfig.AutoConfig.getConfigHolder(ConfigValue.class).getConfig() : null;
 
     /* */
@@ -29,10 +29,10 @@ public class ConfigManager {
     public static String getSelectedApplicaionMode() {
         if (LoadManager.isAPIFound()) {
             switch (config.selectedApplicaionMode) {
-                case ConfigValue.applicaionMode.Collide:
+                case ConfigValue.ApplicaionMode.Collide:
                     return "Collide";
-            
-                case ConfigValue.applicaionMode.Radius:
+
+                case ConfigValue.ApplicaionMode.Radius:
                     return "Radius";
 
                 default:
@@ -56,10 +56,10 @@ public class ConfigManager {
     public static String getSelectedDamageMode() {
         if (LoadManager.isAPIFound()) {
             switch (config.selectedDamageMode) {
-                case ConfigValue.damageMode.TieredDamage:
+                case ConfigValue.DamageMode.TieredDamage:
                     return "TieredDamage";
-            
-                case ConfigValue.damageMode.DirectlyKill:
+
+                case ConfigValue.DamageMode.DirectlyKill:
                     return "DirectlyKill";
 
                 default:

@@ -10,7 +10,9 @@ public class ToastUtil {
     private ToastUtil() {}
 
     public static void toast(Component title, Component description) {
-        if (title == null) return;
+        if (title == null) {
+            return;
+        }
 
         ToastManager toastManager = Minecraft.getInstance().gui.toastManager();
         SystemToast.addOrUpdate(

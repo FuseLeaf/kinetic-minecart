@@ -11,7 +11,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 
 public class ConfigEntry implements ModMenuApi {
-    
+
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
         return parent -> {
@@ -19,8 +19,10 @@ public class ConfigEntry implements ModMenuApi {
 
             boolean inWorld = mc.level != null && mc.player != null;
             boolean isMultiplayerWorld = inWorld && mc.getCurrentServer() != null;
-            
-            if (isMultiplayerWorld) return IllegalOperationScreenUtil.get(parent);  // 多人模式拦截
+
+            if (isMultiplayerWorld) {
+                return IllegalOperationScreenUtil.get(parent);  // 多人模式拦截
+            }
 
             if (!ClientLoadManager.isAPIFound()) {
                 Component title = Component.translatable("toast.kinetic-minecart.apinotfound.title");

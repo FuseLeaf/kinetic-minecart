@@ -21,7 +21,9 @@ public class CartKnockUtil {
             knockDir = dir.scale(1.0 / len);
         }
 
-        if (speed <= 2) return;    // 速度过低不击退
+        if (speed <= 2) {
+            return;    // 速度过低不击退
+        }
 
         EntityUtil.knockBack(target, knockDir, (double)speed);  // 撞飞
     }

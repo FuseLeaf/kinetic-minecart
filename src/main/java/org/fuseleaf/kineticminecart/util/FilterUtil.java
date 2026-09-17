@@ -32,7 +32,7 @@ public class FilterUtil {
 
     // 排除列表
     private static boolean isInExclusionList(Entity entity) {
-        
+
         String id = BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString();  // 获取实体的注册名
 
         return ConfigManager.getExclusionList().contains(id);

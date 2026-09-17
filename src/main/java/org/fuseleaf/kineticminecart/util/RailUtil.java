@@ -12,7 +12,7 @@ public class RailUtil {
 
     public static boolean isCurved(AbstractMinecart minecart) {
         BlockState state = minecart.level().getBlockState(minecart.blockPosition());
-        
+
         if (state.getBlock() instanceof RailBlock) {
 
             RailShape shape = state.getValue(BlockStateProperties.RAIL_SHAPE);

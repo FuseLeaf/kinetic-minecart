@@ -5,6 +5,7 @@ public class DelayUtil {
     private DelayUtil() {}
 
     private static int delayTicks = -1;
+
     private static Runnable task = null;
 
     // 在 ServerTickEvents.END_CLIENT_TICK 注册调用

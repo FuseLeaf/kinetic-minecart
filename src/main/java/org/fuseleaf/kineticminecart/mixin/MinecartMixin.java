@@ -16,6 +16,8 @@ public class MinecartMixin {
     private void injectIsRideable(CallbackInfoReturnable<Boolean> cir) {
         Minecart self = (Minecart)(Object)this;
 
-        if (ConfigManager.isOverrideRiding() && SpeedUtil.getSpeed(self) > 2) cir.setReturnValue(false);
+        if (ConfigManager.isOverrideRiding() && SpeedUtil.getSpeed(self) > 2) {
+            cir.setReturnValue(false);
+        }
     }
 }

@@ -12,7 +12,9 @@ public class SpeedUtil {
     public static float getSpeed(AbstractMinecart minecart) {
         double speedSqr = minecart.getDeltaMovement().lengthSqr();
 
-        if (speedSqr < Math.pow(MIN_SPEED_THRESHOLD, 2.0)) return 0;    // 速度阈值判断（使用平方以避免开方）
+        if (speedSqr < Math.pow(MIN_SPEED_THRESHOLD, 2.0)) {
+            return 0;    // 速度阈值判断（使用平方以避免开方）
+        }
 
         float speed = (float)Math.sqrt(speedSqr) * 4;   // 速度转换（每秒）
 
@@ -28,7 +30,9 @@ public class SpeedUtil {
     }
 
     public static void setVelocity(AbstractMinecart minecart, Vec3 mv) {
-        if (mv == null) return;
+        if (mv == null) {
+            return;
+        }
 
         minecart.setDeltaMovement(mv);
     }

@@ -13,12 +13,15 @@ import net.minecraft.network.chat.Component;
 @Config(name = "kinetic-minecart")
 public class ConfigValue implements ConfigData {
 
-    public static enum applicaionMode {
+    public static enum ApplicaionMode {
         Radius("option.kinetic-minecart.radius"),
         Collide("option.kinetic-minecart.collide");
 
         private final @NonNull String key;
-        applicaionMode(@NonNull String key) { this.key = key;}
+
+        ApplicaionMode(@NonNull String key) {
+            this.key = key;
+        }
 
         @Override
         public String toString() {
@@ -26,12 +29,15 @@ public class ConfigValue implements ConfigData {
         }
     }
 
-    public static enum damageMode {
+    public static enum DamageMode {
         TieredDamage("option.kinetic-minecart.tiereddamage"),
         DirectlyKill("option.kinetic-minecart.directlykill");
 
         private final @NonNull String key;
-        damageMode(@NonNull String key) { this.key = key;}
+
+        DamageMode(@NonNull String key) {
+            this.key = key;
+        }
 
         @Override
         public String toString() {
@@ -63,7 +69,7 @@ public class ConfigValue implements ConfigData {
     @ConfigEntry.Category("general")
     @ConfigEntry.Gui.PrefixText
     @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-    public applicaionMode selectedApplicaionMode = applicaionMode.Collide;
+    public ApplicaionMode selectedApplicaionMode = ApplicaionMode.Collide;
 
     // 半径（仅半径模式有效）
     @ConfigEntry.Category("general")
@@ -81,7 +87,7 @@ public class ConfigValue implements ConfigData {
     // 伤害模式
     @ConfigEntry.Category("general")
     @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-    public damageMode selectedDamageMode = damageMode.TieredDamage;
+    public DamageMode selectedDamageMode = DamageMode.TieredDamage;
 
     /* */
 
@@ -94,7 +100,7 @@ public class ConfigValue implements ConfigData {
 
     // 排除玩家
     @ConfigEntry.Category("types")
-    public boolean excludePlayer = false;  
+    public boolean excludePlayer = false;
 
     // 排除宠物
     @ConfigEntry.Category("types")

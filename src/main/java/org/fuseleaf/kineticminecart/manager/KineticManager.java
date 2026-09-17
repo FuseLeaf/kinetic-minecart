@@ -18,15 +18,22 @@ import net.minecraft.world.phys.Vec3;
 public class KineticManager {
 
     private static void damage(Entity target, float speed) {
-        if (target == null || target.level().isClientSide()) return;
+        if (target == null || target.level().isClientSide()) {
+            return;
+        }
 
         String mode = ConfigManager.getSelectedDamageMode();
-        if (Objects.equals(mode, "TieredDamage")) CartImpactUtil.tryApplyTieredDamage(target, speed);
-        else if (Objects.equals(mode, "DirectlyKill")) CartImpactUtil.tryKill(target, speed);
+        if (Objects.equals(mode, "TieredDamage")) {
+            CartImpactUtil.tryApplyTieredDamage(target, speed);
+        } else if (Objects.equals(mode, "DirectlyKill")) {
+            CartImpactUtil.tryKill(target, speed);
+        }
     }
-    
+
     public static void handler(AbstractMinecart self) {
-        if (self == null) return;
+        if (self == null) {
+            return;
+        }
 
         Level world = self.level();
         float speed = SpeedUtil.getSpeed(self);
@@ -35,7 +42,9 @@ public class KineticManager {
         if (world == null
             || world.isClientSide() // 仅服务端处理
             || !ConfigManager.isEnabled()   // 开关拦截
-        ) return;
+        ) {
+            return;
+        }
 
         // 若矿车速度不足则跳过
         if (speed > 2) {
@@ -59,8 +68,12 @@ public class KineticManager {
                 for (Entity target : list) {
 
                     // 对每个目标调用方法
-                    if (ConfigManager.isEnabledKnock()) CartKnockUtil.tryApplyKnock(self, target, mv, speed);
-                    if (ConfigManager.isEnabledDamage()) DelayUtil.schedule(1, () -> damage(target, speed));
+                    if (ConfigManager.isEnabledKnock()) {
+                        CartKnockUtil.tryApplyKnock(self, target, mv, speed);
+                    }
+                    if (ConfigManager.isEnabledDamage()) {
+                        DelayUtil.schedule(1, () -> damage(target, speed));
+                    }
                 }
             } else if (Objects.equals(mode, "Radius")) {
                 AABB box = self.getBoundingBox().inflate(ConfigManager.getRadius());  // 检测范围
@@ -80,8 +93,12 @@ public class KineticManager {
                 for (Entity target : list) {
 
                     // 对每个目标调用方法
-                    if (ConfigManager.isEnabledKnock()) CartKnockUtil.tryApplyKnock(self, target, mv, speed);
-                    if (ConfigManager.isEnabledDamage()) DelayUtil.schedule(1, () -> damage(target, speed));
+                    if (ConfigManager.isEnabledKnock()) {
+                        CartKnockUtil.tryApplyKnock(self, target, mv, speed);
+                    }
+                    if (ConfigManager.isEnabledDamage()) {
+                        DelayUtil.schedule(1, () -> damage(target, speed));
+                    }
                 }
             }
         }
@@ -94,8 +111,10 @@ public class KineticManager {
             || !ConfigManager.isOverrideCollision()
             || minecart == null
             || target instanceof AbstractMinecart
-        ) return -1;
-        
+        ) {
+            return -1;
+        }
+
         if (SpeedUtil.getSpeed(minecart) > 2) {
             return 0;
         } else {

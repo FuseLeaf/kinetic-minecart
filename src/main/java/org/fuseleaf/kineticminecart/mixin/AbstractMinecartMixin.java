@@ -27,5 +27,5 @@ public class AbstractMinecartMixin {
         if (status == 0) {
             cir.setReturnValue(false);
         }
-	}
+    }
 }
