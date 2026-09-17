@@ -1,6 +1,8 @@
 # Kinetic Minecart
 
-This mod increases damage to moving minecarts; the faster they move, the higher the damage, with virtually no damage limit!
+Impact damage from high-speed minecarts!
+
+This mod increases damage to moving minecarts; the faster they move, the higher the damage!
 
 ## Loaders
 
@@ -21,44 +23,42 @@ This mod increases damage to moving minecarts; the faster they move, the higher 
 
 ## Compatibility
 
+| Symbol    | Relation      |
+| :-: | :-: |
+| v         | Required      |
+| o         | Optional      |
+| x         | Incompatible  |
+
 ### Fabric
 
-[Fabric API](https://github.com/FabricMC/fabric-api)
+| Server Side       | Relation  | Description |
+| :-- | :-: | :-- |
+| Fabric API        | v         | - |
+| Cloth Config API  | o         | Custom Configuration |
 
-[Cloth Config API](https://github.com/shedaniel/cloth-config)
-
-[Mod Menu](https://github.com/TerraformersMC/ModMenu)
-
-| Server Mod        | Relation      | Description |
-| :---------------- | :------------ | :--- |
-| Fabric API        | **Required**  | - |
-| Cloth Config API  | Optional      | Custom Configuration Features |
-
-| Client Mod        | Relation      | Description |
-| :---------------- | :------------ | :--- |
-| Fabric API        | **Required**  | - |
-| Cloth Config API  | Optional      | Configuration Controller |
-| Mod Menu          | Optional      | Configuration Entry |
+| Client Side       | Relation  | Description |
+| :-- | :-: | :-- |
+| Fabric API        | v         | - |
+| Cloth Config API  | o         | Custom Configuration |
+| Mod Menu          | o         | Client Configuration Entry |
 
 ### NeoForge / Forge
 
-[Cloth Config API](https://github.com/shedaniel/cloth-config)
+| Server Side       | Relation  | Description |
+| :-- | :-: | :-- |
+| Cloth Config API  | o         | Custom Configuration |
 
-| Server Mod        | Relation      | Description |
-| :---------------- | :------------ | :--- |
-| Cloth Config API  | Optional      | Custom Configuration Features |
-
-| Client Mod        | Relation      | Description |
-| :---------------- | :------------ | :--- |
-| Cloth Config API  | Optional      | Configuration Controller |
+| Client Side       | Relation  | Description |
+| :-- | :-: | :-- |
+| Cloth Config API  | o         | Custom Configuration |
 
 ## Progress
 
-Check out the latest development progress here. [Development Progress](https://www.windysky.top/docs/minecraft-java-edition/kinetic-minecart/version)
+Check out the latest development progress here. [Development Progress](https://fuseleaf.org/windysky/docs/minecraft-java-edition/kinetic-minecart/version)
 
 ## Gallery
 
-![A Creeper that was hit](/images/Big.png)
+![A Creeper that was hit](/assets/Big.png)
 
 ## Features
 
@@ -86,15 +86,15 @@ Configuration files that will be generated after installing `Cloth Config API`:
 
 ### Singleplayer Mode
 
-![Configuration1](/images/Configuration1.png)
+![Configuration1](/assets/Configuration1.png)
 
-![Configuration2](/images/Configuration2.png)
+![Configuration2](/assets/Configuration2.png)
 
-![Configuration3](/images/Configuration3.png)
+![Configuration3](/assets/Configuration3.png)
 
 - You can edit the exclusion list, click on an item to name or delete it, and the inspection tool will attempt to proofread your input. (Sometimes, when you create a new item, the new text box may not appear; you may see an empty one, but this does not affect selection or input.)
 
-![Exclusion List](/images/ExclusionList.png)
+![Exclusion List](/assets/ExclusionList.png)
 
 ### Multiplayer Mode
 
