@@ -3,47 +3,14 @@ package org.fuseleaf.kineticminecart.extension.config;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jspecify.annotations.NonNull;
+import org.fuseleaf.kineticminecart.extension.config.ConfigEnum.ApplicationMode;
+import org.fuseleaf.kineticminecart.extension.config.ConfigEnum.DamageMode;
 
-import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
-import net.minecraft.network.chat.Component;
 
 @Config(name = "kinetic-minecart")
-public class ConfigValue implements ConfigData {
-
-    public static enum ApplicaionMode {
-        Radius("option.kinetic-minecart.radius"),
-        Collide("option.kinetic-minecart.collide");
-
-        private final @NonNull String key;
-
-        ApplicaionMode(@NonNull String key) {
-            this.key = key;
-        }
-
-        @Override
-        public String toString() {
-            return Component.translatable(key).getString();
-        }
-    }
-
-    public static enum DamageMode {
-        TieredDamage("option.kinetic-minecart.tiereddamage"),
-        DirectlyKill("option.kinetic-minecart.directlykill");
-
-        private final @NonNull String key;
-
-        DamageMode(@NonNull String key) {
-            this.key = key;
-        }
-
-        @Override
-        public String toString() {
-            return Component.translatable(key).getString();
-        }
-    }
+public class ConfigData implements me.shedaniel.autoconfig.ConfigData {
 
     /* */
 
@@ -69,7 +36,7 @@ public class ConfigValue implements ConfigData {
     @ConfigEntry.Category("general")
     @ConfigEntry.Gui.PrefixText
     @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-    public ApplicaionMode selectedApplicaionMode = ApplicaionMode.Collide;
+    public ApplicationMode selectedApplicationMode = ApplicationMode.Collide;
 
     // 半径（仅半径模式有效）
     @ConfigEntry.Category("general")
