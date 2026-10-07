@@ -65,13 +65,13 @@ Check out the latest development progress here. [Development Progress](https://f
 
 Normal damage algorithm :
 $$
-D(s) = 0.6\,(s - 3) + 63\left[\tanh\left(\frac{s - 42}{20}\right) + \tanh\left(\frac{3 - 42}{20}\right)\right]
+D(s) = 0.6 \cdot (s - 3) + 63\left[\tanh\left(\frac{s - 42}{20}\right) + \tanh\left(\frac{3 - 42}{20}\right)\right]
 $$
 where s is speed .
 
 Passenger damage algorithm :
 $$
-Dp(s) = D(s)·(1 - E(s)) 
+D_p(s) = D(s)\cdot(1 - E(s))
 $$
 where the E(s) is protection factor.
 $$
