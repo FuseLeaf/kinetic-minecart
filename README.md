@@ -63,18 +63,21 @@ Check out the latest development progress here. [Development Progress](https://f
 ## Features
 #### - The damage dealt by minecarts is related to their **Speed**:
 
-
-```math
+```
 Normal damage algorithm:
-
+```
+```math
 D(s) = 0.6 \cdot (s - 3) + 63\left[\tanh\left(\frac{s - 42}{20}\right) + \tanh\left(\frac{3 - 42}{20}\right)\right]
-
-where **s** is speed.
+```
+```
+where s is speed.
 
 Passenger damage algorithm:
-
+```
+```math
 D_p(s) = D(s)\cdot(1 - E(s))
-
+```
+```math
 where protection factor E(s) = \frac{0.65}{1 + e^{(s - 85)/15}} .
 ```
 #### - After being hit by a minecart, the entity is propelled approximately the same distance as its speed.
