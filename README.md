@@ -71,7 +71,7 @@ where s is speed.
 
 Passenger damage algorithm:
 ```math
-D_p(s) = D(s)\cdot(1 - \frac{0.65}{1 + e^{(s - 85)/15}})
+D_p(s) = D(s)\cdot\left(1 - \frac{0.65}{1 + e^{(s - 85)/15}})\right
 ```
 
 #### - After being hit by a minecart, the entity is propelled approximately the same distance as its speed.
