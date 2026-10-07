@@ -5,11 +5,11 @@
 	"name": "Kinetic Minecart",
 	"description": "Impact damage from high-speed minecarts!",
 	"authors": [
-		"DarkgreenWorld",
-		"Claude Opus 5.5",
 		"FuseLeaf Studio"
 	],
 	"contributors": [
+		"DarkgreenWorld",
+		"Claude Opus 5.5",
 		"UtmostStar"
 	],
 	"contact": {
