@@ -61,22 +61,25 @@ Check out the latest development progress here. [Development Progress](https://f
 ![A Creeper that was hit](/assets/Big.png)
 
 ## Features
+#### - The damage dealt by minecarts is related to their **Speed**:
 
-- The damage dealt by minecarts is related to their **Speed**:
+Normal damage algorithm :
+$$
+D(s) = 0.6\,(s - 3) + 63\left[\tanh\left(\frac{s - 42}{20}\right) + \tanh\left(\frac{3 - 42}{20}\right)\right]
+$$
+where s is speed .
 
-```
-Speed >= 6			-> Damage = Speed cubed;
+Passenger damage algorithm :
+$$
+Dp(s) = D(s)·(1 - E(s)) 
+$$
+where the E(s) is protection factor.
+$$
+E(s) = \frac{0.65}{1 + e^{(s - 85)/15}}
+$$
 
-Speed > 2 and < 6 	-> Damage = Speed squared;
-
-Target has Vehicle  -> Damage = Speed;
-
-Speed <= 2			-> Damage = 0;
-```
-
-- After being hit by a minecart, the entity is propelled approximately the same distance as its speed.
-
-- It offers custom configuration options, including customizing the collision effects of the minecart.
+#### - After being hit by a minecart, the entity is propelled approximately the same distance as its speed.
+#### - It offers custom configuration options, including customizing the collision effects of the minecart.
 
 ## Configuration
 

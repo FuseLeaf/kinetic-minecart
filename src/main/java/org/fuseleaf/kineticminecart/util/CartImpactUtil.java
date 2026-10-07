@@ -27,45 +27,28 @@ public class CartImpactUtil {
 
         float damage;
 
-		
-		
-        if (target.isPassenger()) {
-            if (speed > 80) {
-				damage = (float)(Math.pow(5, 0.5) + 2 * Math.pow(8, 0.7) + 2 * Math.pow(16, 0.9) + Math.pow(24, 1.1) + Math.pow(speed - 80, 0.5));
-			} else if (speed <= 80 && speed > 72) {
-				damage = (float)(Math.pow(5, 0.5) + Math.pow(8, 0.7) + 2 * Math.pow(16, 0.9) + Math.pow(24, 1.1) + Math.pow(speed - 72, 0.7));
-			} else if (speed <= 72 && speed > 56) {
-				damage = (float)(Math.pow(5, 0.5) + Math.pow(8, 0.7) + Math.pow(16, 0.9) + Math.pow(24, 1.1) + Math.pow(speed - 56, 0.9));
-			} else if (speed <= 56 && speed > 32) {
-				damage = (float)(Math.pow(5, 0.5) + Math.pow(8, 0.7) + Math.pow(16, 0.9) + Math.pow(speed - 32, 1.1));
-			} else if (speed <= 32 && speed > 16) {
-				damage = (float)(Math.pow(5, 0.5) + Math.pow(8, 0.7) + Math.pow(speed - 16, 0.9));
-			} else if (speed <= 16 && speed > 8) {
-				damage = (float)(Math.pow(5, 0.5) + Math.pow(speed - 8, 0.7));
-			} else if (speed <= 8 && speed >= 3) {
-				damage = (float)Math.pow(speed - 3, 0.5);
-			} else {
-				return;
-			}   // 目标为乘客时计算伤害（模拟载具抵挡了部分伤害）
+        if (speed < 3) {
+            return;
         }
 
-        // 正常情况计算伤害
-        if (speed > 72) {
-			damage = (float)(Math.pow(5, 0.9) + 2 * Math.pow(8, 1.1) + 2 * Math.pow(16, 1.3) + Math.pow(16, 1.5) + Math.pow(speed - 72, 0.9));
-		} else if (speed <= 72 && speed > 64) {
-			damage = (float)(Math.pow(5, 0.9) + Math.pow(8, 1.1) + 2 * Math.pow(16, 1.3) + Math.pow(16, 1.5) + Math.pow(speed - 64, 1.1));
-		} else if (speed <= 64 && speed > 48) {
-			damage = (float)(Math.pow(5, 0.9) + Math.pow(8, 1.1) + Math.pow(16, 1.3) + Math.pow(16, 1.5) + Math.pow(speed - 48, 1.3));
-		} else if (speed <= 48 && speed > 32) {
-            damage = (float)(Math.pow(5, 0.9) + Math.pow(8, 1.1) + Math.pow(16, 1.3) + Math.pow(speed - 32, 1.5));
-        } else if (speed <= 32 && speed > 16) {
-			damage = (float)(Math.pow(5, 0.9) + Math.pow(8, 1.1) + Math.pow(speed - 16, 1.3));
-        } else if (speed <= 16 && speed > 8) {
-			damage = (float)(Math.pow(5, 0.9) + Math.pow(speed - 8, 1.1));
-        } else if (speed <= 8 && speed >= 3) {
-            damage = (float)Math.pow(speed - 3, 0.9);
+        // 普通伤害算法 D(s) = a·(s - s₀) + H·[tanh((s - m)/w) - tanh((s₀ - m)/w)]，其中 s 为速度。。
+        // 在本模组参数下，该函数的图像为无上界 S 形曲线。
+        // s₀ = 3：伤害起算速度，D(s₀) = 0。
+        // a = 0.6： D(s) 的渐近斜率。a 增大则全速度域伤害上移，决定 S 形段之后伤害的增长率；a > 0 保证 D(s) 无上界。
+        // H = 63：决定 S 形段的总增幅。H 增大则拐点附近斜率增大，中高速伤害整体上移；H → 0 时 D(s) 退化为线性函数。H 不影响渐近斜率。
+        // m = 42： D(s) 的拐点。m 增大则陡增区间向高速平移，低中速伤害降低；m 减小则相反。
+        // w = 20：决定S形区间的跨度。w 增大则过渡平缓，峰值斜率降低； w 减小则伤害增长集中于 m 附近的较窄区间。
+        double normalDamage = 0.6 * (speed - 3) + 63 * (Math.tanh((speed - 42) / 20.0) - Math.tanh((3 - 42) / 20.0));
+
+        if (target.isPassenger()) {
+            // 乘客伤害算法 Dp(s) = D(s)·(1 - E(s))。其中防护系数 E(s) = e₀ / (1 + exp((s - m_f)/w_f))。
+            // e₀ = 0.65：防护系数上限，低速段 Dp(s) ≈ D(s)·(1 - e₀)。e₀ 增大则低中速乘客伤害降低；须满足 0 ≤ e₀ ≤ 1，否则 Dp(s) < 0。
+            // m_f = 85：防护失效中心，E(m_f) = e₀/2。m_f 增大则防护有效区间向高速延伸，Dp(s) 收敛至 D(s) 的速度相应推后。
+            // w_f = 15：防护失效宽度，决定 E(s) 的衰减速率。w_f 增大则衰减更平缓，Dp(s) 收敛至 D(s) 的速度推后。反之则 E(s) 在 m_f 附近骤降，Dp(s) 陡增。
+            double shield = 0.65 / (1 + Math.exp((speed - 85) / 15.0));
+            damage = (float)(normalDamage * (1 - shield));
         } else {
-            return;
+            damage = (float)normalDamage;
         }
 
         target.hurtServer((ServerLevel)world, world.damageSources().flyIntoWall(), damage);  // 处刑
