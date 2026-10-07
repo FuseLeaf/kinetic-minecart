@@ -7,8 +7,8 @@ This mod increases damage to moving minecarts; the faster they move, the higher 
 ## Loaders
 
 [![Fabric](https://img.shields.io/badge/Available%20for-Fabric-dbd0b4)](https://fabricmc.net)
-[![NeoForge](https://img.shields.io/badge/Available%20for-NeoForge-e68c37)](https://neoforged.net)
-[![Forge](https://img.shields.io/badge/Available%20for-Forge-2e435f)](https://files.minecraftforge.net/)
+[![NeoForge](https://img.shields.io/badge/Temporarily%20unavailable%20for-NeoForge-e68c37)](https://neoforged.net)
+[![Forge](https://img.shields.io/badge/Temporarily%20unavailable%20for-Forge-2e435f)](https://files.minecraftforge.net/)
 
 ## Environments
 
