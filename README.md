@@ -65,7 +65,7 @@ Check out the latest development progress here. [Development Progress](https://f
 
 Normal damage algorithm:
 ```math
-D(s) = 0.6 \cdot (s - 3) + 63\left[\tanh\left(\frac{s - 42}{20}\right) + \tanh\left(\frac{3 - 42}{20}\right)\right]
+D(s) = 0.6 \cdot (s - 3) + 63\left[\tanh\left(\frac{s - 42}{20}\right) - \tanh\left(\frac{3 - 42}{20}\right)\right]
 ```
 where s is speed.
 
