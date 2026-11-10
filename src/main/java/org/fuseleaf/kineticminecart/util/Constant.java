@@ -28,6 +28,6 @@ public class Constant {
         public static final String EXCLUSION_LIST_TITLE = "toast.kinetic-minecart.ExclusionList.title";
         public static final String EXCLUSION_LIST_DESC_EMPTY = "toast.kinetic-minecart.ExclusionList.desc.empty";
         public static final String EXCLUSION_LIST_DESC_DETECTED = "toast.kinetic-minecart.ExclusionList.desc.detected";
-        public static final String EXCLUSION_LIST_DESC_UNKNOWN = "toast.kinetic-minecart.ExclusionList.desc.unkonwn";
+        public static final String EXCLUSION_LIST_DESC_UNKNOWN = "toast.kinetic-minecart.ExclusionList.desc.unknown";
     }
 }

@@ -105,7 +105,7 @@ kinetic-minecart.json
   [overrideCollision] Value: true/false, Default: true
   [overrideRiding] Value: true/false, Default: true
 
-  [selectedApplicaionMode] Value: "Collide"/"Radius", Default: "Collide"
+  [selectedApplicationMode] Value: "Collide"/"Radius", Default: "Collide"
   [intRadius] Range: 3 - 10, Default: 5
 
   [enabledDamage] Value: true/false, Default: true

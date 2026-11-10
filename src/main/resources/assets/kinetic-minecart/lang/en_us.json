@@ -13,8 +13,8 @@
     "text.autoconfig.kinetic-minecart.option.overrideCollision": "    Override Collision",
     "text.autoconfig.kinetic-minecart.option.overrideRiding": "    Override Riding",
 
-    "text.autoconfig.kinetic-minecart.option.selectedApplicaionMode.@PrefixText": "Application",
-    "text.autoconfig.kinetic-minecart.option.selectedApplicaionMode": "    Application Mode",
+    "text.autoconfig.kinetic-minecart.option.selectedApplicationMode.@PrefixText": "Application",
+    "text.autoconfig.kinetic-minecart.option.selectedApplicationMode": "    Application Mode",
     "option.kinetic-minecart.radius": "Radius",
     "option.kinetic-minecart.collide": "Collide",
     "text.autoconfig.kinetic-minecart.option.intRadius": "    Radius",
@@ -70,5 +70,5 @@
     "toast.kinetic-minecart.ExclusionList.title": "Exclusion List",
     "toast.kinetic-minecart.ExclusionList.desc.empty": "Exclusion List is empty.",
     "toast.kinetic-minecart.ExclusionList.desc.detected": "Exclusion List content detected. ",
-    "toast.kinetic-minecart.ExclusionList.desc.unkonwn": "§cError: §fUnknown ID in "
+    "toast.kinetic-minecart.ExclusionList.desc.unknown": "§cError: §fUnknown ID in "
 }

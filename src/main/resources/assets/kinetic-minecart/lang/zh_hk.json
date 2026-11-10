@@ -13,8 +13,8 @@
     "text.autoconfig.kinetic-minecart.option.overrideCollision": "    覆蓋碰撞",
     "text.autoconfig.kinetic-minecart.option.overrideRiding": "    覆蓋騎乘",
 
-    "text.autoconfig.kinetic-minecart.option.selectedApplicaionMode.@PrefixText": "應用",
-    "text.autoconfig.kinetic-minecart.option.selectedApplicaionMode": "    應用模式",
+    "text.autoconfig.kinetic-minecart.option.selectedApplicationMode.@PrefixText": "應用",
+    "text.autoconfig.kinetic-minecart.option.selectedApplicationMode": "    應用模式",
     "option.kinetic-minecart.radius": "半徑",
     "option.kinetic-minecart.collide": "相撞",
     "text.autoconfig.kinetic-minecart.option.intRadius": "    半徑",
@@ -70,5 +70,5 @@
     "toast.kinetic-minecart.ExclusionList.title": "排除清單",
     "toast.kinetic-minecart.ExclusionList.desc.empty": "排除清單係空。",
     "toast.kinetic-minecart.ExclusionList.desc.detected": "檢測到排除清單內容。",
-    "toast.kinetic-minecart.ExclusionList.desc.unkonwn": "§c錯誤: §f未知的 ID "
+    "toast.kinetic-minecart.ExclusionList.desc.unknown": "§c錯誤: §f未知的 ID "
 }
