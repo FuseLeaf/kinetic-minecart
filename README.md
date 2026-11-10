@@ -33,12 +33,10 @@ This mod increases damage to moving minecarts; the faster they move, the higher 
 
 | Server Side       | Relation  | Description |
 | :-- | :-: | :-- |
-| Fabric API        | v         | - |
 | Cloth Config API  | o         | Custom Configuration |
 
 | Client Side       | Relation  | Description |
 | :-- | :-: | :-- |
-| Fabric API        | v         | - |
 | Cloth Config API  | o         | Custom Configuration |
 | Mod Menu          | o         | Client Configuration Entry |
 
