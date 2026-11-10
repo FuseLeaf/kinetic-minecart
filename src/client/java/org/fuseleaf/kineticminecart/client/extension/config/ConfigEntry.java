@@ -1,12 +1,15 @@
 package org.fuseleaf.kineticminecart.client.extension.config;
 
-import org.fuseleaf.kineticminecart.client.manager.ClientLoadManager;
-import org.fuseleaf.kineticminecart.client.util.IllegalOperationScreenUtil;
+import org.fuseleaf.kineticminecart.client.config.ClientConfigManager;
+import org.fuseleaf.kineticminecart.client.gui.IllegalOperationScreen;
 import org.fuseleaf.kineticminecart.client.util.ToastUtil;
-import org.fuseleaf.kineticminecart.extension.config.ConfigValue;
+import org.fuseleaf.kineticminecart.extension.config.ConfigData;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
+
+import me.shedaniel.autoconfig.AutoConfigClient;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
 
@@ -21,16 +24,16 @@ public class ConfigEntry implements ModMenuApi {
             boolean isMultiplayerWorld = inWorld && mc.getCurrentServer() != null;
 
             if (isMultiplayerWorld) {
-                return IllegalOperationScreenUtil.get(parent);  // 多人模式拦截
+                return IllegalOperationScreen.get(parent);
             }
 
-            if (!ClientLoadManager.isAPIFound()) {
+            if (!ClientConfigManager.isConfigAvailable()) {
                 Component title = Component.translatable("toast.kinetic-minecart.apinotfound.title");
                 Component desc = Component.translatable("toast.kinetic-minecart.apinotfound.desc");
                 ToastUtil.toast(title, desc);
                 return null;
             } else {
-                return me.shedaniel.autoconfig.AutoConfigClient.getConfigScreen(ConfigValue.class, parent).get();
+                return AutoConfigClient.getConfigScreen(ConfigData.class, parent).get();
             }
         };
     }
