@@ -1,6 +1,9 @@
 package org.fuseleaf.kineticminecart.entity;
 
 import java.util.List;
+
+import org.fuseleaf.kineticminecart.util.Constant;
+
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -34,7 +37,7 @@ public class ExclusionList {
     public static Component buildMessage(List<String> inputList) {
 
         if (inputList.isEmpty()) {
-            return Component.translatable("toast.kinetic-minecart.ExclusionList.desc.empty");
+            return Component.translatable(Constant.I18n.EXCLUSION_LIST_DESC_EMPTY);
         }
 
         MutableComponent sb = Component.empty();
@@ -55,11 +58,11 @@ public class ExclusionList {
 
             if (type != null) {
                 if (!detected) {
-                    sb.append(Component.translatable("toast.kinetic-minecart.ExclusionList.desc.detected"));
+                    sb.append(Component.translatable(Constant.I18n.EXCLUSION_LIST_DESC_DETECTED));
                     detected = true;
                 }
             } else {
-                sb.append(Component.translatable("toast.kinetic-minecart.ExclusionList.desc.unkonwn")).append("'").append(id).append("'");
+                sb.append(Component.translatable(Constant.I18n.EXCLUSION_LIST_DESC_UNKNOWN)).append("'").append(id).append("'");
             }
         }
 

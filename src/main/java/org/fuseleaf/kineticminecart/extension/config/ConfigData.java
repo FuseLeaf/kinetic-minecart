@@ -5,11 +5,12 @@ import java.util.List;
 
 import org.fuseleaf.kineticminecart.extension.config.ConfigEnum.ApplicationMode;
 import org.fuseleaf.kineticminecart.extension.config.ConfigEnum.DamageMode;
+import org.fuseleaf.kineticminecart.util.Constant;
 
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
-@Config(name = "kinetic-minecart")
+@Config(name = Constant.Core.MOD_ID)
 public class ConfigData implements me.shedaniel.autoconfig.ConfigData {
 
     /* */

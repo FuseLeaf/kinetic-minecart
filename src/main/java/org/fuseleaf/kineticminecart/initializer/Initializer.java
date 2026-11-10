@@ -3,6 +3,7 @@ package org.fuseleaf.kineticminecart.initializer;
 import org.fuseleaf.kineticminecart.config.ConfigManager;
 import org.fuseleaf.kineticminecart.extension.config.ConfigData;
 import org.fuseleaf.kineticminecart.util.Delay;
+import org.fuseleaf.kineticminecart.util.Constant;
 
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
@@ -20,7 +21,7 @@ public class Initializer {
 
         private static void init() {
             try {
-                Class.forName("me.shedaniel.autoconfig.AutoConfig");
+                Class.forName(Constant.Extension.AUTO_CONFIG_CLASS_NAME);
 
                 AutoConfig.register(ConfigData.class, GsonConfigSerializer::new);
                 ConfigManager.setConfig(AutoConfig.getConfigHolder(ConfigData.class));
@@ -31,11 +32,7 @@ public class Initializer {
     private static class Events {
 
         private static void init() {
-            ServerTickEvents.END_SERVER_TICK.register(
-                (server) -> {
-                    Delay.register();
-                }
-            );
+            ServerTickEvents.END_SERVER_TICK.register(server -> Delay.register());
         }
     }
 }

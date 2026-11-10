@@ -1,5 +1,7 @@
 package org.fuseleaf.kineticminecart.client.gui;
 
+import org.fuseleaf.kineticminecart.util.Constant;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.ConfirmScreen;
 import net.minecraft.client.gui.screens.Screen;
@@ -9,11 +11,11 @@ public class IllegalOperationScreen {
 
     public static ConfirmScreen get(Screen parent) {
         return new ConfirmScreen(
-            (result) -> Minecraft.getInstance().gui.setScreen(parent),  // Return to the previous menu.
-            Component.translatable("screen.kinetic-minecart.IllegalOperationScreen.title"),
-            Component.translatable("screen.kinetic-minecart.IllegalOperationScreen.desc"),
-            Component.translatable("screen.kinetic-minecart.IllegalOperationScreen.yes"),
-            Component.translatable("screen.kinetic-minecart.IllegalOperationScreen.no")
+            result -> Minecraft.getInstance().gui.setScreen(parent),  // Return to the previous menu.
+            Component.translatable(Constant.I18n.ILLEGAL_OPERATION_TITLE),
+            Component.translatable(Constant.I18n.ILLEGAL_OPERATION_DESC),
+            Component.translatable(Constant.I18n.OPTION_CONFIRM),
+            Component.translatable(Constant.I18n.OPTION_CONFIRM)
         );
     }
 }
