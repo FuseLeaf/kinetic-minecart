@@ -14,23 +14,23 @@ public class Constant {
 
     public static final class I18n {
 
-        public static final String OPTION_CONFIRM = "screen.kinetic-minecart.IllegalOperationScreen.yes";
+        public static final String OPTION_CONFIRM = "kinetic-minecart.option.confirm";
 
-        public static final String OPTION_RADIUS = "option.kinetic-minecart.radius";
-        public static final String OPTION_COLLIDE = "option.kinetic-minecart.collide";
+        public static final String OPTION_RADIUS = "kinetic-minecart.option.radius";
+        public static final String OPTION_COLLIDE = "kinetic-minecart.option.collide";
 
-        public static final String OPTION_TIERED_DAMAGE = "option.kinetic-minecart.tiereddamage";
-        public static final String OPTION_TIERED_DIRECTLY_KILL = "option.kinetic-minecart.directlykill";
+        public static final String OPTION_TIERED_DAMAGE = "kinetic-minecart.option.tiered_damage";
+        public static final String OPTION_TIERED_DIRECTLY_KILL = "kinetic-minecart.option.directly_kill";
 
-        public static final String API_NOT_FOUND_TITLE = "toast.kinetic-minecart.apinotfound.title";
-        public static final String API_NOT_FOUND_DESC = "toast.kinetic-minecart.apinotfound.desc";
+        public static final String API_NOT_FOUND_TITLE = "kinetic-minecart.toast.api_not_found.title";
+        public static final String API_NOT_FOUND_DESC = "kinetic-minecart.toast.api_not_found.desc";
 
-        public static final String ILLEGAL_OPERATION_TITLE = "screen.kinetic-minecart.IllegalOperationScreen.title";
-        public static final String ILLEGAL_OPERATION_DESC = "screen.kinetic-minecart.IllegalOperationScreen.desc";
+        public static final String ILLEGAL_OPERATION_TITLE = "kinetic-minecart.screen.illegal_operation.title";
+        public static final String ILLEGAL_OPERATION_DESC = "kinetic-minecart.screen.illegal_operation.desc";
 
-        public static final String EXCLUSION_LIST_TITLE = "toast.kinetic-minecart.ExclusionList.title";
-        public static final String EXCLUSION_LIST_DESC_EMPTY = "toast.kinetic-minecart.ExclusionList.desc.empty";
-        public static final String EXCLUSION_LIST_DESC_DETECTED = "toast.kinetic-minecart.ExclusionList.desc.detected";
-        public static final String EXCLUSION_LIST_DESC_UNKNOWN = "toast.kinetic-minecart.ExclusionList.desc.unknown";
+        public static final String EXCLUSION_LIST_TITLE = "kinetic-minecart.toast.exclusion_list.title";
+        public static final String EXCLUSION_LIST_DESC_EMPTY = "kinetic-minecart.toast.exclusion_list.desc.empty";
+        public static final String EXCLUSION_LIST_DESC_DETECTED = "kinetic-minecart.toast.exclusion_list.desc.detected";
+        public static final String EXCLUSION_LIST_DESC_UNKNOWN = "kinetic-minecart.toast.exclusion_list.desc.unknown";
     }
 }
