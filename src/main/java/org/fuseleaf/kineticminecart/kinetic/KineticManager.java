@@ -20,10 +20,10 @@ public class KineticManager {
         }
 
         Level world = cart.level();
-        double speed = CartSpeed.getDeltaSpeedPerSecond(cart);
+        double speed = CartSpeed.getSpeed(cart);
         Vec3 mv = cart.getDeltaMovement();
 
-        if (world.isClientSide() || !CartSpeed.isSpeedThresholdReached(cart)) {
+        if (world.isClientSide() || !CartSpeed.hasReachedSpeedThreshold(cart)) {
             return;
         }
 
