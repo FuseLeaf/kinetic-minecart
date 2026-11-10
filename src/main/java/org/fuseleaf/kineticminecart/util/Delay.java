@@ -1,8 +1,8 @@
 package org.fuseleaf.kineticminecart.util;
 
-public class DelayUtil {
+public class Delay {
 
-    private DelayUtil() {}
+    private Delay() {}
 
     private static int delayTicks = -1;
 

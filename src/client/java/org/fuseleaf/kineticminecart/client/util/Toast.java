@@ -5,9 +5,9 @@ import net.minecraft.client.gui.components.toasts.SystemToast;
 import net.minecraft.client.gui.components.toasts.ToastManager;
 import net.minecraft.network.chat.Component;
 
-public class ToastUtil {
+public class Toast {
 
-    private ToastUtil() {}
+    private Toast() {}
 
     public static void toast(Component title, Component description) {
         if (title == null) {

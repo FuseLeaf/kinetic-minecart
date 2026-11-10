@@ -5,7 +5,7 @@ import java.util.List;
 import org.fuseleaf.kineticminecart.config.ConfigManager;
 import org.fuseleaf.kineticminecart.entity.TargetFilter;
 import org.fuseleaf.kineticminecart.extension.config.ConfigEnum;
-import org.fuseleaf.kineticminecart.util.DelayUtil;
+import org.fuseleaf.kineticminecart.util.Delay;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
@@ -47,7 +47,7 @@ public class KineticManager {
                         CartKnock.knock(cart, target, mv, speed);
                     }
                     if (ConfigManager.isEnabledDamage()) {
-                        DelayUtil.schedule(1, () -> CartImpact.damage(target, speed));
+                        Delay.schedule(1, () -> CartImpact.damage(target, speed));
                     }
                 }
                 break;
@@ -70,7 +70,7 @@ public class KineticManager {
                         CartKnock.knock(cart, target, mv, speed);
                     }
                     if (ConfigManager.isEnabledDamage()) {
-                        DelayUtil.schedule(1, () -> CartImpact.damage(target, speed));
+                        Delay.schedule(1, () -> CartImpact.damage(target, speed));
                     }
                 }
                 break;

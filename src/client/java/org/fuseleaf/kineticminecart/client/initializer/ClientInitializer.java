@@ -2,7 +2,7 @@ package org.fuseleaf.kineticminecart.client.initializer;
 
 import java.util.stream.Collectors;
 
-import org.fuseleaf.kineticminecart.client.util.ToastUtil;
+import org.fuseleaf.kineticminecart.client.util.Toast;
 import org.fuseleaf.kineticminecart.config.ConfigManager;
 import org.fuseleaf.kineticminecart.entity.ExclusionList;
 
@@ -30,7 +30,7 @@ public class ClientInitializer {
 
                         Component title = Component.translatable("toast.kinetic-minecart.ExclusionList.title");
                         Component desc = ExclusionList.buildMessage(ConfigManager.getExclusionList());
-                        ToastUtil.toast(title, desc);
+                        Toast.toast(title, desc);
                     }
 
                     return InteractionResult.SUCCESS;

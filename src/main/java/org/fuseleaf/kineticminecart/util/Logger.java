@@ -1,8 +1,8 @@
 package org.fuseleaf.kineticminecart.util;
 
-public class LogUtil {
+public class Logger {
 
-    private LogUtil() {}
+    private Logger() {}
 
     private static final String HEAD = "[Kinetic Minecart] ";
 

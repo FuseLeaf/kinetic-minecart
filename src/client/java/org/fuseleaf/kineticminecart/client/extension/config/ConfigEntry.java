@@ -2,7 +2,7 @@ package org.fuseleaf.kineticminecart.client.extension.config;
 
 import org.fuseleaf.kineticminecart.client.config.ClientConfigManager;
 import org.fuseleaf.kineticminecart.client.gui.IllegalOperationScreen;
-import org.fuseleaf.kineticminecart.client.util.ToastUtil;
+import org.fuseleaf.kineticminecart.client.util.Toast;
 import org.fuseleaf.kineticminecart.extension.config.ConfigData;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
@@ -30,7 +30,7 @@ public class ConfigEntry implements ModMenuApi {
             if (!ClientConfigManager.isConfigAvailable()) {
                 Component title = Component.translatable("toast.kinetic-minecart.apinotfound.title");
                 Component desc = Component.translatable("toast.kinetic-minecart.apinotfound.desc");
-                ToastUtil.toast(title, desc);
+                Toast.toast(title, desc);
                 return null;
             } else {
                 return AutoConfigClient.getConfigScreen(ConfigData.class, parent).get();

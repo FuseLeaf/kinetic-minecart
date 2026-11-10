@@ -2,7 +2,7 @@ package org.fuseleaf.kineticminecart.initializer;
 
 import org.fuseleaf.kineticminecart.config.ConfigManager;
 import org.fuseleaf.kineticminecart.extension.config.ConfigData;
-import org.fuseleaf.kineticminecart.util.DelayUtil;
+import org.fuseleaf.kineticminecart.util.Delay;
 
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
@@ -33,7 +33,7 @@ public class Initializer {
         private static void init() {
             ServerTickEvents.END_SERVER_TICK.register(
                 (server) -> {
-                    DelayUtil.register();
+                    Delay.register();
                 }
             );
         }
