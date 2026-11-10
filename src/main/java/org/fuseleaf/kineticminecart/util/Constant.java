@@ -3,14 +3,17 @@ package org.fuseleaf.kineticminecart.util;
 public class Constant {
 
     public static final class Core {
+
         public static final String MOD_ID = "kinetic-minecart";
     }
 
     public static final class Extension {
+
         public static final String AUTO_CONFIG_CLASS_NAME = "me.shedaniel.autoconfig.AutoConfig";
     }
 
     public static final class I18n {
+
         public static final String OPTION_CONFIRM = "screen.kinetic-minecart.IllegalOperationScreen.yes";
 
         public static final String OPTION_RADIUS = "option.kinetic-minecart.radius";

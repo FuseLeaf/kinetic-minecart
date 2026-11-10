@@ -33,7 +33,5 @@
 
     <module name="EqualsHashCode"/>
     <module name="MissingSwitchDefault"/>
-
-    <module name="EmptyLineSeparator"/>
   </module>
 </module>
