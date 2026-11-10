@@ -14,18 +14,16 @@ import net.minecraft.world.phys.Vec3;
 
 public class KineticManager {
 
-    private static final double DELTA_SPEED_THRESHOLD = 10.0;   // The maximum delta speed is about 40.
-
     public static void tick(AbstractMinecart cart) {
         if (cart == null || !ConfigManager.isEnabled()) {
             return;
         }
 
         Level world = cart.level();
-        double speed = getDeltaSpeedPerSecond(cart);
+        double speed = CartSpeed.getDeltaSpeedPerSecond(cart);
         Vec3 mv = cart.getDeltaMovement();
 
-        if (world.isClientSide() || !isSpeedThresholdReached(cart)) {
+        if (world.isClientSide() || !CartSpeed.isSpeedThresholdReached(cart)) {
             return;
         }
 
@@ -82,13 +80,5 @@ public class KineticManager {
         }
 
         cart.setDeltaMovement(mv);
-    }
-
-    public static double getDeltaSpeedPerSecond(AbstractMinecart cart) {
-        return cart.getDeltaMovement().length() * 20.0;
-    }
-
-    public static boolean isSpeedThresholdReached(AbstractMinecart cart) {
-        return getDeltaSpeedPerSecond(cart) >= DELTA_SPEED_THRESHOLD;
     }
 }
