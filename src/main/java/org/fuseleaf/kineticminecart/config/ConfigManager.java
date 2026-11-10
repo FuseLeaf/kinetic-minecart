@@ -35,15 +35,15 @@ public class ConfigManager {
     /* ## General */
 
     public static boolean isEnabled() {
-        return !ConfigManager.isConfigAvailable() || config.enabled;
+        return !isConfigAvailable() || config.enabled;
     }
 
     public static boolean isOverrideCollision() {
-        return !ConfigManager.isConfigAvailable() || config.overrideCollision;
+        return !isConfigAvailable() || config.overrideCollision;
     }
 
     public static boolean isOverrideRiding() {
-        return !ConfigManager.isConfigAvailable() || config.overrideRiding;
+        return !isConfigAvailable() || config.overrideRiding;
     }
 
     public static ConfigEnum.ApplicationMode getSelectedApplicationMode() {
@@ -55,7 +55,7 @@ public class ConfigManager {
     }
 
     public static boolean isEnabledDamage() {
-        return !ConfigManager.isConfigAvailable() || config.enabledDamage;
+        return !isConfigAvailable() || config.enabledDamage;
     }
 
     public static ConfigEnum.DamageMode getSelectedDamageMode() {
@@ -63,35 +63,35 @@ public class ConfigManager {
     }
 
     public static boolean isEnabledKnock() {
-        return !ConfigManager.isConfigAvailable() || config.enabledKnock;
+        return !isConfigAvailable() || config.enabledKnock;
     }
 
     /* ## Types */
 
     public static boolean isExcludePlayer() {
-        return ConfigManager.isConfigAvailable() && config.excludePlayer;
+        return isConfigAvailable() && config.excludePlayer;
     }
 
     public static boolean isExcluePet() {
-        return ConfigManager.isConfigAvailable() && config.excludePet;
+        return isConfigAvailable() && config.excludePet;
     }
 
     public static boolean isExcludePassenger() {
-        return !ConfigManager.isConfigAvailable() || config.excludePassenger;
+        return !isConfigAvailable() || config.excludePassenger;
     }
 
     public static boolean isExcludeNamedEntity() {
-        return ConfigManager.isConfigAvailable() && config.excludeNamedEntity;
+        return isConfigAvailable() && config.excludeNamedEntity;
     }
 
     public static boolean isExcludItemEntity() {
-        return ConfigManager.isConfigAvailable() && config.excludeItemEntity;
+        return isConfigAvailable() && config.excludeItemEntity;
     }
 
     /* ## Advanced */
 
     public static boolean isEnabledExclusionList() {
-        return ConfigManager.isConfigAvailable() && config.enabledExclusionList;
+        return isConfigAvailable() && config.enabledExclusionList;
     }
 
     public static List<String> getExclusionList() {
