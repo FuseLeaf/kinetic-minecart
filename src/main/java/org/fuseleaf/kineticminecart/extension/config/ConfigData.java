@@ -64,6 +64,9 @@ public class ConfigData implements me.shedaniel.autoconfig.ConfigData {
     @ConfigEntry.Gui.PrefixText
     public boolean enabledKnock = true;
 
+    @ConfigEntry.Category("general")
+    public boolean oldPage = false;
+
     /* ------ */
 
     // 排除玩家

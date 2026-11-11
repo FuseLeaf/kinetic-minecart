@@ -3,6 +3,7 @@ package org.fuseleaf.kineticminecart.client.extension.config;
 import org.fuseleaf.kineticminecart.client.config.ClientConfigManager;
 import org.fuseleaf.kineticminecart.client.gui.IllegalOperationScreen;
 import org.fuseleaf.kineticminecart.client.util.Toast;
+import org.fuseleaf.kineticminecart.config.ConfigManager;
 import org.fuseleaf.kineticminecart.extension.config.ConfigData;
 import org.fuseleaf.kineticminecart.util.Constant;
 
@@ -33,8 +34,10 @@ public class ConfigEntry implements ModMenuApi {
                 Component desc = Component.translatable(Constant.I18n.API_NOT_FOUND_DESC);
                 Toast.toast(title, desc);
                 return null;
-            } else {
+            } else if (ConfigManager.isEnabledOldPage()) {
                 return AutoConfigClient.getConfigScreen(ConfigData.class, parent).get();
+            } else {
+                return ConfigGuiBuilder.get().setParentScreen(parent).build();
             }
         };
     }

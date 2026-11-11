@@ -22,6 +22,10 @@ public class ConfigManager {
         }
     }
 
+    public static ConfigData getConfig() {
+        return config;
+    }
+
     public static boolean isConfigAvailable() {
         return config != null;
     }
@@ -64,6 +68,10 @@ public class ConfigManager {
 
     public static boolean isEnabledKnock() {
         return !isConfigAvailable() || config.enabledKnock;
+    }
+
+    public static boolean isEnabledOldPage() {
+        return isConfigAvailable() ? config.oldPage : false;
     }
 
     /* ## Types */
