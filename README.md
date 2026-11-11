@@ -52,7 +52,7 @@ This mod increases damage to moving minecarts; the faster they move, the higher 
 
 ## Progress
 
-Check out the latest development progress here. [Development Progress](https://fuseleaf.org/windysky/docs/minecraft-java-edition/kinetic-minecart/version)
+Check out the latest development progress here: [Development Progress](https://fuseleaf.org/windysky/docs/minecraft-java-edition/kinetic-minecart/version)
 
 ## Gallery
 
