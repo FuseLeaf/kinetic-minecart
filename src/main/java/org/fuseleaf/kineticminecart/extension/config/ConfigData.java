@@ -6,6 +6,7 @@ import java.util.List;
 import org.fuseleaf.kineticminecart.extension.config.ConfigEnum.ApplicationMode;
 import org.fuseleaf.kineticminecart.extension.config.ConfigEnum.DamageMode;
 import org.fuseleaf.kineticminecart.util.Constant;
+import org.jspecify.annotations.NonNull;
 
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
@@ -37,7 +38,7 @@ public class ConfigData implements me.shedaniel.autoconfig.ConfigData {
     @ConfigEntry.Category("general")
     @ConfigEntry.Gui.PrefixText
     @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-    public ApplicationMode selectedApplicationMode = ApplicationMode.Collide;
+    public @NonNull ApplicationMode selectedApplicationMode = ApplicationMode.Collide;
 
     // 半径（仅半径模式有效）
     @ConfigEntry.Category("general")
@@ -55,7 +56,7 @@ public class ConfigData implements me.shedaniel.autoconfig.ConfigData {
     // 伤害模式
     @ConfigEntry.Category("general")
     @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
-    public DamageMode selectedDamageMode = DamageMode.TieredDamage;
+    public @NonNull DamageMode selectedDamageMode = DamageMode.TieredDamage;
 
     /* */
 

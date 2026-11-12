@@ -6,6 +6,8 @@ import org.fuseleaf.kineticminecart.config.ConfigManager;
 import org.fuseleaf.kineticminecart.extension.config.ConfigData;
 import org.fuseleaf.kineticminecart.extension.config.ConfigEnum;
 
+import org.jspecify.annotations.NonNull;
+
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
@@ -66,7 +68,7 @@ public class ConfigGuiBuilder {
                     .setExpanded(true)
                     .setRequirement(Requirement.isTrue(enabledListEntry));
 
-                EnumListEntry<ConfigEnum.ApplicationMode> modeListEntry = entryBuilder.startEnumSelector(Component.literal("kinetic-minecart.config.mode"), ConfigEnum.ApplicationMode.class, config.selectedApplicationMode)
+                EnumListEntry<ConfigEnum.@NonNull ApplicationMode> modeListEntry = entryBuilder.startEnumSelector(Component.literal("kinetic-minecart.config.mode"), ConfigEnum.ApplicationMode.class, config.selectedApplicationMode)
                     .setDefaultValue(ConfigEnum.ApplicationMode.Collide)
                     .setSaveConsumer(v -> config.selectedApplicationMode = v)
                     .build();
