@@ -20,7 +20,7 @@ public class CartKnock {
             knockDir = dir.scale(1.0 / len);
         }
 
-        Vec3 add = knockDir.scale(speed / 5.0);
+        Vec3 add = knockDir.scale(speed);
         Vec3 current = target.getDeltaMovement();
         Vec3 next = current.add(add);
 
