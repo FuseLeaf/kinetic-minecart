@@ -13,10 +13,10 @@
     "text.autoconfig.kinetic-minecart.option.overrideCollision": "    覆蓋碰撞",
     "text.autoconfig.kinetic-minecart.option.overrideRiding": "    覆蓋騎乘",
 
-    "text.autoconfig.kinetic-minecart.option.selectedApplicaionMode.@PrefixText": "應用",
-    "text.autoconfig.kinetic-minecart.option.selectedApplicaionMode": "    應用模式",
-    "option.kinetic-minecart.radius": "半徑",
-    "option.kinetic-minecart.collide": "相撞",
+    "text.autoconfig.kinetic-minecart.option.selectedApplicationMode.@PrefixText": "應用",
+    "text.autoconfig.kinetic-minecart.option.selectedApplicationMode": "    應用模式",
+    "kinetic-minecart.option.radius": "半徑",
+    "kinetic-minecart.option.collide": "相撞",
     "text.autoconfig.kinetic-minecart.option.intRadius": "    半徑",
     "text.autoconfig.kinetic-minecart.option.intRadius.@Tooltip[0]": "只在應用模式設為半徑時生效",
     "text.autoconfig.kinetic-minecart.option.intRadius.@Tooltip[1]": "\n",
@@ -27,8 +27,8 @@
     "text.autoconfig.kinetic-minecart.option.enabledDamage.@PrefixText": "傷害",
     "text.autoconfig.kinetic-minecart.option.enabledDamage": "    啟用傷害",
     "text.autoconfig.kinetic-minecart.option.selectedDamageMode": "    傷害模式",
-    "option.kinetic-minecart.tiereddamage": "分級傷害",
-    "option.kinetic-minecart.directlykill": "直接擊殺",
+    "kinetic-minecart.option.tiered_damage": "分級傷害",
+    "kinetic-minecart.option.directly_kill": "直接擊殺",
 
     "text.autoconfig.kinetic-minecart.option.enabledKnock.@PrefixText": "擊退",
     "text.autoconfig.kinetic-minecart.option.enabledKnock": "    啟用擊退",
@@ -59,16 +59,16 @@
     "text.autoconfig.kinetic-minecart.option.exclusionList.@Tooltip[5]": "例如：§aminecraft:creeper",
     "text.autoconfig.kinetic-minecart.option.exclusionList.@Tooltip[6]": "",
 
-    "screen.kinetic-minecart.IllegalOperationScreen.title": "§c不允許的操作",
-    "screen.kinetic-minecart.IllegalOperationScreen.desc": ":( 唔好灰心，呢個唔係 Bug。\n\n睇嚟您而家喺玩多人遊戲。\n您唔可以透過呢個設定更改伺服器配置。\n\n如果需要更改，請聯絡伺服器管理員修改配置檔案。\n§6... > config > kinetic-minecart.json",
-    "screen.kinetic-minecart.IllegalOperationScreen.yes": "好",
-    "screen.kinetic-minecart.IllegalOperationScreen.no": "好",
+    "kinetic-minecart.screen.illegal_operation.title": "§c不允許的操作",
+    "kinetic-minecart.screen.illegal_operation.desc": ":( 唔好灰心，呢個唔係 Bug。\n\n睇嚟您而家喺玩多人遊戲。\n您唔可以透過呢個設定更改伺服器配置。\n\n如果需要更改，請聯絡伺服器管理員修改配置檔案。\n§6... > config > kinetic-minecart.json",
+    "kinetic-minecart.option.confirm": "好",
+    "kinetic-minecart.screen.illegal_operation.no": "好",
 
-    "toast.kinetic-minecart.apinotfound.title": "Cloth Config API 未被找到",
-    "toast.kinetic-minecart.apinotfound.desc": "您需要安裝 §6Cloth Config API。",
+    "kinetic-minecart.toast.api_not_found.title": "Cloth Config API 未被找到",
+    "kinetic-minecart.toast.api_not_found.desc": "您需要安裝 §6Cloth Config API。",
 
-    "toast.kinetic-minecart.ExclusionList.title": "排除清單",
-    "toast.kinetic-minecart.ExclusionList.desc.empty": "排除清單係空。",
-    "toast.kinetic-minecart.ExclusionList.desc.detected": "檢測到排除清單內容。",
-    "toast.kinetic-minecart.ExclusionList.desc.unkonwn": "§c錯誤: §f未知的 ID "
+    "kinetic-minecart.toast.exclusion_list.title": "排除清單",
+    "kinetic-minecart.toast.exclusion_list.desc.empty": "排除清單係空。",
+    "kinetic-minecart.toast.exclusion_list.desc.detected": "檢測到排除清單內容。",
+    "kinetic-minecart.toast.exclusion_list.desc.unknown": "§c錯誤: §f未知的 ID "
 }

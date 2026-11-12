@@ -12,7 +12,7 @@ public class CartBehavior {
         return (
             ConfigManager.isEnabled()
             && ConfigManager.isOverrideCollision()
-            && KineticManager.isSpeedThresholdReached(cart)
+            && CartSpeed.hasReachedSpeedThreshold(cart)
             && !(target instanceof AbstractMinecart)
         );
     }
@@ -21,7 +21,7 @@ public class CartBehavior {
         return (
             ConfigManager.isEnabled()
             && ConfigManager.isOverrideRiding()
-            && KineticManager.isSpeedThresholdReached(cart)
+            && CartSpeed.hasReachedSpeedThreshold(cart)
         );
     }
 }

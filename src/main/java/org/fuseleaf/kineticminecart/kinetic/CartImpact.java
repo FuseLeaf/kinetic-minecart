@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.fuseleaf.kineticminecart.config.ConfigManager;
-import org.fuseleaf.kineticminecart.extension.config.ConfigEnum;
+import org.fuseleaf.kineticminecart.extension.config.ConfigData;
 
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Entity;
@@ -24,11 +24,11 @@ public class CartImpact {
 
         switch (ConfigManager.getSelectedDamageMode()) {
             case null:
-            case ConfigEnum.DamageMode.TieredDamage:
+            case ConfigData.Enum.DamageMode.TieredDamage:
                 tieredDamage(target, speed);
                 break;
 
-            case ConfigEnum.DamageMode.DirectlyKill:
+            case ConfigData.Enum.DamageMode.DirectlyKill:
                 kill(target, speed);
                 break;
 
@@ -54,12 +54,10 @@ public class CartImpact {
 
         if (target.isPassenger()) {
             damage = (float)speed;
-        }
-
-        if (speed >= 30.0) {
-            damage = (float)Math.pow(speed, 3);
-        } else if (speed < 30.0 && speed > 10.0) {
-            damage = (float)Math.pow(speed, 2);
+        } else if (speed >= 6.0) {
+            damage = (float)Math.pow(speed, 3.0);
+        } else if (speed < 6.0 && speed > 2.0) {
+            damage = (float)Math.pow(speed, 2.0);
         } else {
             return;
         }

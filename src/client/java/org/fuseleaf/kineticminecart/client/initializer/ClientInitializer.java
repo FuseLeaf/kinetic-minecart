@@ -2,9 +2,10 @@ package org.fuseleaf.kineticminecart.client.initializer;
 
 import java.util.stream.Collectors;
 
-import org.fuseleaf.kineticminecart.client.util.ToastUtil;
+import org.fuseleaf.kineticminecart.client.util.Toast;
 import org.fuseleaf.kineticminecart.config.ConfigManager;
 import org.fuseleaf.kineticminecart.entity.ExclusionList;
+import org.fuseleaf.kineticminecart.util.Constant;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
@@ -19,8 +20,9 @@ public class ClientInitializer {
 
         private static void init() {
             try {
-                Class.forName("me.shedaniel.autoconfig.AutoConfig");
+                Class.forName(Constant.Extension.AUTO_CONFIG_CLASS_NAME);
 
+                // TODO: Could there be a security issue?
                 ConfigManager.getConfigHolder().registerSaveListener((configHolder, config) -> {
                     if (ConfigManager.isEnabledExclusionList()) {
 
@@ -28,9 +30,9 @@ public class ClientInitializer {
                             .map(ExclusionList::normalizeId)
                             .collect(Collectors.toList());
 
-                        Component title = Component.translatable("toast.kinetic-minecart.ExclusionList.title");
+                        Component title = Component.translatable(Constant.I18n.TOAST_EXCLUSION_LIST_TITLE);
                         Component desc = ExclusionList.buildMessage(ConfigManager.getExclusionList());
-                        ToastUtil.toast(title, desc);
+                        Toast.toast(title, desc);
                     }
 
                     return InteractionResult.SUCCESS;

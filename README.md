@@ -33,12 +33,10 @@ This mod increases damage to moving minecarts; the faster they move, the higher 
 
 | Server Side       | Relation  | Description |
 | :-- | :-: | :-- |
-| Fabric API        | v         | - |
 | Cloth Config API  | o         | Custom Configuration |
 
 | Client Side       | Relation  | Description |
 | :-- | :-: | :-- |
-| Fabric API        | v         | - |
 | Cloth Config API  | o         | Custom Configuration |
 | Mod Menu          | o         | Client Configuration Entry |
 
@@ -54,7 +52,7 @@ This mod increases damage to moving minecarts; the faster they move, the higher 
 
 ## Progress
 
-Check out the latest development progress here. [Development Progress](https://fuseleaf.org/windysky/docs/minecraft-java-edition/kinetic-minecart/version)
+Check out the latest development progress here: [Development Progress](https://fuseleaf.org/windysky/docs/minecraft-java-edition/kinetic-minecart/version)
 
 ## Gallery
 
@@ -107,7 +105,7 @@ kinetic-minecart.json
   [overrideCollision] Value: true/false, Default: true
   [overrideRiding] Value: true/false, Default: true
 
-  [selectedApplicaionMode] Value: "Collide"/"Radius", Default: "Collide"
+  [selectedApplicationMode] Value: "Collide"/"Radius", Default: "Collide"
   [intRadius] Range: 3 - 10, Default: 5
 
   [enabledDamage] Value: true/false, Default: true
