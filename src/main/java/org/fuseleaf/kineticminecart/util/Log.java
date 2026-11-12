@@ -7,21 +7,5 @@ public class Log {
 
     private Log() {}
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(Constant.Core.MOD_ID);
-
-    public static void info(Object object) {
-        LOGGER.info(object.toString());
-    }
-
-    public static void debug(Object object) {
-        LOGGER.debug(object.toString());
-    }
-
-    public static void warn(Object object) {
-        LOGGER.warn(object.toString());
-    }
-
-    public static void error(Object object) {
-        LOGGER.error(object.toString());
-    }
+    public static final Logger LOGGER = LoggerFactory.getLogger(Constant.Core.MOD_ID);
 }
