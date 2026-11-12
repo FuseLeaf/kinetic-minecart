@@ -30,7 +30,7 @@ public class ClientInitializer {
                             .map(ExclusionList::normalizeId)
                             .collect(Collectors.toList());
 
-                        Component title = Component.translatable(Constant.I18n.EXCLUSION_LIST_TITLE);
+                        Component title = Component.translatable(Constant.I18n.TOAST_EXCLUSION_LIST_TITLE);
                         Component desc = ExclusionList.buildMessage(ConfigManager.getExclusionList());
                         Toast.toast(title, desc);
                     }

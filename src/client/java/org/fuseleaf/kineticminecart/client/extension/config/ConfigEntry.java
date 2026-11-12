@@ -26,8 +26,8 @@ public class ConfigEntry implements ModMenuApi {
             }
 
             if (!ClientConfigManager.isConfigAvailable()) {
-                Component title = Component.translatable(Constant.I18n.API_NOT_FOUND_TITLE);
-                Component desc = Component.translatable(Constant.I18n.API_NOT_FOUND_DESC);
+                Component title = Component.translatable(Constant.I18n.TOAST_API_NOT_FOUND_TITLE);
+                Component desc = Component.translatable(Constant.I18n.TOAST_API_NOT_FOUND_DESC);
                 Toast.toast(title, desc);
                 return null;
             } else {

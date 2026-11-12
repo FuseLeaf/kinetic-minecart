@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.fuseleaf.kineticminecart.config.ConfigManager;
 import org.fuseleaf.kineticminecart.extension.config.ConfigData;
+import org.fuseleaf.kineticminecart.util.Constant;
 
 import org.jspecify.annotations.NonNull;
 
@@ -22,7 +23,7 @@ public class ConfigGuiBuilder {
     public static ConfigBuilder get() {
         ConfigData config = ConfigManager.getConfig();  // TODO: Could there be a security issue?
 
-        ConfigBuilder builder = ConfigBuilder.create().setTitle(Component.translatable("kinetic-minecart.config.title"));
+        ConfigBuilder builder = ConfigBuilder.create().setTitle(Component.translatable(Constant.I18n.CONFIG_TITLE));
         builder.setGlobalized(true);
         builder.setGlobalizedExpanded(false);
         builder.transparentBackground();
@@ -32,9 +33,10 @@ public class ConfigGuiBuilder {
         BooleanListEntry enabledListEntry;
 
         {
-            ConfigCategory generalCategory = builder.getOrCreateCategory(Component.translatable("kinetic-minecart.config.category.general"));
+            ConfigCategory generalCategory = builder.getOrCreateCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_GENERAL));
 
-            enabledListEntry = entryBuilder.startBooleanToggle(Component.translatable("kinetic-minecart.config.enabled"), config.enabled)
+            enabledListEntry = entryBuilder
+                .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_ENABLE), config.enabled)
                 .setDefaultValue(true)
                 .setSaveConsumer(v -> config.enabled = v)
                 .build();
@@ -42,18 +44,21 @@ public class ConfigGuiBuilder {
             generalCategory.addEntry(enabledListEntry);
 
             {
-                SubCategoryBuilder overrideSubCategory = entryBuilder.startSubCategory(Component.literal("kinetic-minecart.config.category.override"))
+                SubCategoryBuilder overrideSubCategory = entryBuilder
+                    .startSubCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_OVERRIDE))
                     .setExpanded(true)
                     .setRequirement(Requirement.isTrue(enabledListEntry));
 
                 overrideSubCategory.add(
-                    entryBuilder.startBooleanToggle(Component.translatable("kinetic-minecart.config.override_collision"), config.overrideCollision)
+                    entryBuilder
+                        .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_OVERRIDE_COLLISION), config.overrideCollision)
                         .setDefaultValue(true)
                         .setSaveConsumer(v -> config.overrideCollision = v)
                         .build()
                 );
                 overrideSubCategory.add(
-                    entryBuilder.startBooleanToggle(Component.translatable("kinetic-minecart.config.override_riding"), config.overrideRiding)
+                    entryBuilder
+                        .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_OVERRIDE_RIDING), config.overrideRiding)
                         .setDefaultValue(true)
                         .setSaveConsumer(v -> config.overrideRiding = v)
                         .build()
@@ -63,19 +68,25 @@ public class ConfigGuiBuilder {
             }
 
             {
-                SubCategoryBuilder modeSubCategory = entryBuilder.startSubCategory(Component.literal("kinetic-minecart.config.category.mode"))
+                SubCategoryBuilder modeSubCategory = entryBuilder
+                    .startSubCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_MODE))
                     .setExpanded(true)
                     .setRequirement(Requirement.isTrue(enabledListEntry));
 
-                EnumListEntry<ConfigData.Enum.@NonNull ApplicationMode> modeListEntry = entryBuilder.startEnumSelector(Component.literal("kinetic-minecart.config.mode"), ConfigData.Enum.ApplicationMode.class, config.selectedApplicationMode)
+                EnumListEntry<ConfigData.Enum.@NonNull ApplicationMode> modeListEntry = entryBuilder
+                    .startEnumSelector(Component.translatable(Constant.I18n.CONFIG_MODE), ConfigData.Enum.ApplicationMode.class, config.selectedApplicationMode)
                     .setDefaultValue(ConfigData.Enum.ApplicationMode.Collide)
                     .setSaveConsumer(v -> config.selectedApplicationMode = v)
                     .build();
 
                 modeSubCategory.add(modeListEntry);
                 modeSubCategory.add(
-                    entryBuilder.startIntSlider(Component.literal("kinetic-minecart.config.radius"), 5, 3, 10)
+                    entryBuilder
+                        .startIntSlider(Component.translatable(Constant.I18n.CONFIG_RADIUS), 5, 3, 10)
                         .setDefaultValue(5)
+                        .setTooltip(new Component[] {
+                            Component.translatable(Constant.I18n.CONFIG_RADIUS_TOOLTIP)
+                        })
                         .setSaveConsumer(v -> config.intRadius = v)
                         .setRequirement(() -> modeListEntry.getValue() == ConfigData.Enum.ApplicationMode.Radius)
                         .build()
@@ -85,18 +96,21 @@ public class ConfigGuiBuilder {
             }
 
             {
-                SubCategoryBuilder damageSubCategory = entryBuilder.startSubCategory(Component.literal("kinetic-minecart.config.category.damage"))
+                SubCategoryBuilder damageSubCategory = entryBuilder
+                    .startSubCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_DAMAGE))
                     .setExpanded(true)
                     .setRequirement(Requirement.isTrue(enabledListEntry));
 
-                BooleanListEntry enabledDamageListEntry = entryBuilder.startBooleanToggle(Component.literal("kinetic-minecart.config.damage"), config.enabledDamage)
+                BooleanListEntry enabledDamageListEntry = entryBuilder
+                    .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_DAMAGE), config.enabledDamage)
                     .setDefaultValue(true)
                     .setSaveConsumer(v -> config.enabledDamage = v)
                     .build();
 
                 damageSubCategory.add(enabledDamageListEntry);
                 damageSubCategory.add(
-                    entryBuilder.startEnumSelector(Component.literal("kinetic-minecart.config.damage_mode"), ConfigData.Enum.DamageMode.class, config.selectedDamageMode)
+                    entryBuilder
+                        .startEnumSelector(Component.translatable(Constant.I18n.CONFIG_DAMAGE_MODE), ConfigData.Enum.DamageMode.class, config.selectedDamageMode)
                         .setDefaultValue(ConfigData.Enum.DamageMode.TieredDamage)
                         .setSaveConsumer(v -> config.selectedDamageMode = v)
                         .setRequirement(Requirement.isTrue(enabledDamageListEntry))
@@ -107,50 +121,63 @@ public class ConfigGuiBuilder {
             }
 
             {
-                SubCategoryBuilder knockSubCategory = entryBuilder.startSubCategory(Component.literal("kinetic-minecart.config.category.knock"))
+                SubCategoryBuilder knockSubCategory = entryBuilder
+                    .startSubCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_KNOCK))
                     .setExpanded(true)
                     .setRequirement(Requirement.isTrue(enabledListEntry));
 
                 knockSubCategory.add(
-                    entryBuilder.startBooleanToggle(Component.translatable("kinetic-minecart.config.knock"), config.enabledKnock)
+                    entryBuilder
+                        .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_KNOCK), config.enabledKnock)
                         .setDefaultValue(true)
                         .setSaveConsumer(v -> config.enabledKnock = v)
                         .setRequirement(Requirement.isTrue(enabledListEntry))
                         .build()
                 );
+
+                generalCategory.addEntry(knockSubCategory.build());
             }
 
             {
-                SubCategoryBuilder typeSubCategory = entryBuilder.startSubCategory(Component.translatable("kinetic-minecart.config.category.type"))
+                SubCategoryBuilder typeSubCategory = entryBuilder
+                    .startSubCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_TYPE))
                     .setExpanded(true)
                     .setRequirement(Requirement.isTrue(enabledListEntry));
 
                 typeSubCategory.add(
-                    entryBuilder.startBooleanToggle(Component.translatable("kinetic-minecart.config.exclude_player"), config.excludePlayer)
+                    entryBuilder
+                        .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_EXCLUDE_PLAYER), config.excludePlayer)
                         .setDefaultValue(false)
                         .setSaveConsumer(v -> config.excludePlayer = v)
                         .build()
                 );
                 typeSubCategory.add(
-                    entryBuilder.startBooleanToggle(Component.translatable("kinetic-minecart.config.exclude_pet"), config.excludePet)
+                    entryBuilder
+                        .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_EXCLUDE_PET), config.excludePet)
                         .setDefaultValue(false)
+                        .setTooltip(new Component[] {
+                            Component.translatable(Constant.I18n.CONFIG_EXCLUDE_PET_TOOLTIP)
+                        })
                         .setSaveConsumer(v -> config.excludePet = v)
                         .build()
                 );
                 typeSubCategory.add(
-                    entryBuilder.startBooleanToggle(Component.translatable("kinetic-minecart.config.exclude_passenger"), config.excludePassenger)
+                    entryBuilder
+                        .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_EXCLUDE_PASSENGER), config.excludePassenger)
                         .setDefaultValue(true)
                         .setSaveConsumer(v -> config.excludePassenger = v)
                         .build()
                 );
                 typeSubCategory.add(
-                    entryBuilder.startBooleanToggle(Component.translatable("kinetic-minecart.config.exclude_named_entity"), config.excludeNamedEntity)
+                    entryBuilder
+                        .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_EXCLUDE_NAMED_ENTITY), config.excludeNamedEntity)
                         .setDefaultValue(false)
                         .setSaveConsumer(v -> config.excludeNamedEntity = v)
                         .build()
                 );
                 typeSubCategory.add(
-                    entryBuilder.startBooleanToggle(Component.translatable("kinetic-minecart.config.exclude_item_entity"), config.excludeItemEntity)
+                    entryBuilder
+                        .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_EXCLUDE_ITEM_ENTITY), config.excludeItemEntity)
                         .setDefaultValue(false)
                         .setSaveConsumer(v -> config.excludeItemEntity = v)
                         .build()
@@ -161,9 +188,10 @@ public class ConfigGuiBuilder {
         }
 
         {
-            ConfigCategory advancedCategory = builder.getOrCreateCategory(Component.translatable("kinetic-minecart.config.category.advanced"));
+            ConfigCategory advancedCategory = builder.getOrCreateCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_ADVANCED));
 
-            BooleanListEntry enabledExclusionListListEntry = entryBuilder.startBooleanToggle(Component.translatable("kinetic-minecart.config.enabled_exclusion_list"), config.enabledExclusionList)
+            BooleanListEntry enabledExclusionListListEntry = entryBuilder
+                .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_ENABLE_EXCLUSION_LIST), config.enabledExclusionList)
                 .setDefaultValue(false)
                 .setSaveConsumer(v -> config.enabledExclusionList = v)
                 .build();
@@ -171,8 +199,12 @@ public class ConfigGuiBuilder {
             // TODO: They need to be put into SubCategory after solving https://github.com/shedaniel/cloth-config/issues/365
             advancedCategory.addEntry(enabledExclusionListListEntry);
             advancedCategory.addEntry(
-                entryBuilder.startStrList(Component.translatable("kinetic-minecart.config.exclusion_list"), config.exclusionList)
+                entryBuilder
+                    .startStrList(Component.translatable(Constant.I18n.CONFIG_EXCLUSION_LIST), config.exclusionList)
                     .setDefaultValue(new ArrayList<>())
+                    .setTooltip(new Component[] {
+                        Component.translatable(Constant.I18n.CONFIG_EXCLUSION_LIST_TOOLTIP)
+                    })
                     .setSaveConsumer(v -> config.exclusionList = v)
                     .setRequirement(Requirement.isTrue(enabledExclusionListListEntry))
                     .build()
