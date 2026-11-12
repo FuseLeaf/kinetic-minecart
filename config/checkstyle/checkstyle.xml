@@ -33,5 +33,9 @@
 
     <module name="EqualsHashCode"/>
     <module name="MissingSwitchDefault"/>
+
+    <module name="EmptyLineSeparator">
+      <property name="allowNoEmptyLineBetweenFields" value="true"/>
+    </module>
   </module>
 </module>
