@@ -23,7 +23,9 @@ public class ConfigGuiBuilder {
     public static ConfigBuilder get() {
         ConfigData config = ConfigManager.getConfig();  // TODO: Could there be a security issue?
 
-        ConfigBuilder builder = ConfigBuilder.create().setTitle(Component.translatable(Constant.I18n.CONFIG_TITLE));
+        ConfigBuilder builder = ConfigBuilder.create()
+            .setTitle(Component.translatable(Constant.I18n.CONFIG_TITLE))
+            .setSavingRunnable(() -> ConfigManager.getConfigHolder().save());   // TODO: Could there be a security issue?
         builder.setGlobalized(true);
         builder.setGlobalizedExpanded(false);
         builder.transparentBackground();
