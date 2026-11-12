@@ -16,7 +16,7 @@ public class Initializer {
     }
 
     public static void onServerTick() {
-        Delay.register();
+        Delay.tick();
     }
 
     private static void initConfig() {
