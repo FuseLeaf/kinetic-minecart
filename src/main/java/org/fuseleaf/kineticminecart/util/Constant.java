@@ -14,6 +14,7 @@ public class Constant {
         public static final String AUTO_CONFIG_CLASS_NAME = "me.shedaniel.autoconfig.AutoConfig";
     }
 
+    // TODO: zh_cn, zh_hk, zh_tw
     public static final class I18n {
 
         public static final String OPTION_CONFIRM = "kinetic-minecart.option.confirm";
