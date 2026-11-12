@@ -2,6 +2,8 @@ package org.fuseleaf.kineticminecart.util;
 
 public class Constant {
 
+    private Constant() {}
+
     public static final class Core {
 
         public static final String MOD_ID = "kinetic-minecart";
