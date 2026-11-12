@@ -22,6 +22,7 @@ public class ClientInitializer {
             try {
                 Class.forName(Constant.Extension.AUTO_CONFIG_CLASS_NAME);
 
+                // TODO: Could there be a security issue?
                 ConfigManager.getConfigHolder().registerSaveListener((configHolder, config) -> {
                     if (ConfigManager.isEnabledExclusionList()) {
 

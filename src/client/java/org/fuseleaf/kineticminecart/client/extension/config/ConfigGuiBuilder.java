@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import org.fuseleaf.kineticminecart.config.ConfigManager;
 import org.fuseleaf.kineticminecart.extension.config.ConfigData;
-import org.fuseleaf.kineticminecart.extension.config.ConfigEnum;
 
 import org.jspecify.annotations.NonNull;
 
@@ -68,8 +67,8 @@ public class ConfigGuiBuilder {
                     .setExpanded(true)
                     .setRequirement(Requirement.isTrue(enabledListEntry));
 
-                EnumListEntry<ConfigEnum.@NonNull ApplicationMode> modeListEntry = entryBuilder.startEnumSelector(Component.literal("kinetic-minecart.config.mode"), ConfigEnum.ApplicationMode.class, config.selectedApplicationMode)
-                    .setDefaultValue(ConfigEnum.ApplicationMode.Collide)
+                EnumListEntry<ConfigData.Enum.@NonNull ApplicationMode> modeListEntry = entryBuilder.startEnumSelector(Component.literal("kinetic-minecart.config.mode"), ConfigData.Enum.ApplicationMode.class, config.selectedApplicationMode)
+                    .setDefaultValue(ConfigData.Enum.ApplicationMode.Collide)
                     .setSaveConsumer(v -> config.selectedApplicationMode = v)
                     .build();
 
@@ -78,7 +77,7 @@ public class ConfigGuiBuilder {
                     entryBuilder.startIntSlider(Component.literal("kinetic-minecart.config.radius"), 5, 3, 10)
                         .setDefaultValue(5)
                         .setSaveConsumer(v -> config.intRadius = v)
-                        .setRequirement(() -> modeListEntry.getValue() == ConfigEnum.ApplicationMode.Radius)
+                        .setRequirement(() -> modeListEntry.getValue() == ConfigData.Enum.ApplicationMode.Radius)
                         .build()
                 );
 
@@ -97,8 +96,8 @@ public class ConfigGuiBuilder {
 
                 damageSubCategory.add(enabledDamageListEntry);
                 damageSubCategory.add(
-                    entryBuilder.startEnumSelector(Component.literal("kinetic-minecart.config.damage_mode"), ConfigEnum.DamageMode.class, config.selectedDamageMode)
-                        .setDefaultValue(ConfigEnum.DamageMode.TieredDamage)
+                    entryBuilder.startEnumSelector(Component.literal("kinetic-minecart.config.damage_mode"), ConfigData.Enum.DamageMode.class, config.selectedDamageMode)
+                        .setDefaultValue(ConfigData.Enum.DamageMode.TieredDamage)
                         .setSaveConsumer(v -> config.selectedDamageMode = v)
                         .setRequirement(Requirement.isTrue(enabledDamageListEntry))
                         .build()
@@ -119,20 +118,6 @@ public class ConfigGuiBuilder {
                         .setRequirement(Requirement.isTrue(enabledListEntry))
                         .build()
                 );
-            }
-
-            {
-                SubCategoryBuilder compatibilitySubCategory = entryBuilder.startSubCategory(Component.literal("kinetic-minecart.config.category.compatibility"))
-                    .setExpanded(true);
-
-                compatibilitySubCategory.add(
-                    entryBuilder.startBooleanToggle(Component.literal("kinetic-minecart.config.old_page"), config.oldPage)
-                        .setDefaultValue(false)
-                        .setSaveConsumer(v -> config.oldPage = v)
-                        .build()
-                );
-
-                generalCategory.addEntry(compatibilitySubCategory.build());
             }
 
             {

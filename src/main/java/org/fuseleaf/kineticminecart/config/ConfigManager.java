@@ -3,7 +3,6 @@ package org.fuseleaf.kineticminecart.config;
 import java.util.List;
 
 import org.fuseleaf.kineticminecart.extension.config.ConfigData;
-import org.fuseleaf.kineticminecart.extension.config.ConfigEnum;
 
 import org.jspecify.annotations.NonNull;
 
@@ -50,7 +49,7 @@ public class ConfigManager {
         return !isConfigAvailable() || config.overrideRiding;
     }
 
-    public static ConfigEnum.ApplicationMode getSelectedApplicationMode() {
+    public static ConfigData.Enum.ApplicationMode getSelectedApplicationMode() {
         return isConfigAvailable() ? config.selectedApplicationMode : null;
     }
 
@@ -62,16 +61,12 @@ public class ConfigManager {
         return !isConfigAvailable() || config.enabledDamage;
     }
 
-    public static ConfigEnum.DamageMode getSelectedDamageMode() {
+    public static ConfigData.Enum.DamageMode getSelectedDamageMode() {
         return isConfigAvailable() ? config.selectedDamageMode : null;
     }
 
     public static boolean isEnabledKnock() {
         return !isConfigAvailable() || config.enabledKnock;
-    }
-
-    public static boolean isEnabledOldPage() {
-        return isConfigAvailable() ? config.oldPage : false;
     }
 
     /* ## Types */

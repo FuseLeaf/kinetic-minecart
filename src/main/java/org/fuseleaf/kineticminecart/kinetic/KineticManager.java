@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.fuseleaf.kineticminecart.config.ConfigManager;
 import org.fuseleaf.kineticminecart.entity.TargetFilter;
-import org.fuseleaf.kineticminecart.extension.config.ConfigEnum;
+import org.fuseleaf.kineticminecart.extension.config.ConfigData;
 import org.fuseleaf.kineticminecart.util.Delay;
 
 import net.minecraft.world.entity.Entity;
@@ -29,7 +29,7 @@ public class KineticManager {
 
         switch (ConfigManager.getSelectedApplicationMode()) {
             case null:
-            case ConfigEnum.ApplicationMode.Collide:
+            case ConfigData.Enum.ApplicationMode.Collide:
                 List<Entity> list1 = world.getEntities(
                     cart,
                     cart.getBoundingBox(),
@@ -52,7 +52,7 @@ public class KineticManager {
                 }
                 break;
 
-            case ConfigEnum.ApplicationMode.Radius:
+            case ConfigData.Enum.ApplicationMode.Radius:
                 List<Entity> list2 = world.getEntities(
                     cart,
                     cart.getBoundingBox().inflate(ConfigManager.getRadius()),
