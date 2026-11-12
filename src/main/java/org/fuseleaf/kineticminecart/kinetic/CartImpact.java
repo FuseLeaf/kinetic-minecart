@@ -54,12 +54,10 @@ public class CartImpact {
 
         if (target.isPassenger()) {
             damage = (float)speed;
-        }
-
-        if (speed >= 30.0) {
-            damage = (float)Math.pow(speed, 3);
-        } else if (speed < 30.0 && speed > 10.0) {
-            damage = (float)Math.pow(speed, 2);
+        } else if (speed >= 6.0) {
+            damage = (float)Math.pow(speed, 3.0);
+        } else if (speed < 6.0 && speed > 2.0) {
+            damage = (float)Math.pow(speed, 2.0);
         } else {
             return;
         }
