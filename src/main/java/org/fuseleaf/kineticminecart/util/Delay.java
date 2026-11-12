@@ -35,8 +35,8 @@ public final class Delay {
     public static void schedule(int ticks, Runnable task) {
         Objects.requireNonNull(task, "task");
 
-        if (ticks < 0) {
-            throw new IllegalArgumentException("ticks must not be negative");
+        if (ticks <= 0) {
+            throw new IllegalArgumentException("ticks must be greater than zero");
         }
 
         TASKS.offer(new ScheduledTask(currentTick + ticks, task));
