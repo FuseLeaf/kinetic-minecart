@@ -84,7 +84,7 @@ public class ConfigGuiBuilder {
                 modeSubCategory.add(modeListEntry);
                 modeSubCategory.add(
                     entryBuilder
-                        .startIntSlider(Component.translatable(Constant.I18n.CONFIG_RADIUS), 5, 3, 10)
+                        .startIntSlider(Component.translatable(Constant.I18n.CONFIG_RADIUS), config.intRadius, 3, 10)
                         .setDefaultValue(5)
                         .setTooltip(new Component[] {
                             Component.translatable(Constant.I18n.CONFIG_RADIUS_TOOLTIP)
