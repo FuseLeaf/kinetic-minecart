@@ -76,7 +76,7 @@ public class ConfigGuiBuilder {
                     .setRequirement(Requirement.isTrue(enabledListEntry));
 
                 EnumListEntry<ConfigData.Enum.@NonNull ApplicationMode> modeListEntry = entryBuilder
-                    .startEnumSelector(Component.translatable(Constant.I18n.CONFIG_APPLICATION_MODE), ConfigData.Enum.ApplicationMode.class, config.applicationMode)
+                    .startEnumSelector(Component.translatable(Constant.I18n.CONFIG_APPLICATION_MODE), ConfigData.Enum.ApplicationMode.class, ClientConfigManager.getApplicationMode())
                     .setDefaultValue(ConfigData.Enum.ApplicationMode.COLLIDE)
                     .setSaveConsumer(v -> config.applicationMode = v)
                     .build();
@@ -112,7 +112,7 @@ public class ConfigGuiBuilder {
                 damageSubCategory.add(enabledDamageListEntry);
                 damageSubCategory.add(
                     entryBuilder
-                        .startEnumSelector(Component.translatable(Constant.I18n.CONFIG_DAMAGE_MODE), ConfigData.Enum.DamageMode.class, config.damageMode)
+                        .startEnumSelector(Component.translatable(Constant.I18n.CONFIG_DAMAGE_MODE), ConfigData.Enum.DamageMode.class, ClientConfigManager.getDamageMode())
                         .setDefaultValue(ConfigData.Enum.DamageMode.TIERED)
                         .setSaveConsumer(v -> config.damageMode = v)
                         .setRequirement(Requirement.isTrue(enabledDamageListEntry))
@@ -202,7 +202,7 @@ public class ConfigGuiBuilder {
             advancedCategory.addEntry(enabledExclusionListListEntry);
             advancedCategory.addEntry(
                 entryBuilder
-                    .startStrList(Component.translatable(Constant.I18n.CONFIG_EXCLUSION_LIST), config.exclusionList)
+                    .startStrList(Component.translatable(Constant.I18n.CONFIG_EXCLUSION_LIST), ClientConfigManager.getExclusionList())
                     .setDefaultValue(new ArrayList<>())
                     .setTooltip(new Component[] {
                         Component.translatable(Constant.I18n.CONFIG_EXCLUSION_LIST_TOOLTIP)

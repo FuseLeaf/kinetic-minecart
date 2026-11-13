@@ -45,7 +45,7 @@ public class ConfigManager {
         return isConfigAvailable() ? config.overrideRiding : true;
     }
 
-    public static ConfigData.Enum.ApplicationMode getApplicationMode() {
+    public static ConfigData.Enum.@NonNull ApplicationMode getApplicationMode() {
         return isConfigAvailable() && config.applicationMode != null
             ? config.applicationMode
             : ConfigData.Enum.ApplicationMode.COLLIDE;
@@ -63,7 +63,7 @@ public class ConfigManager {
         return isConfigAvailable() ? config.enableDamage : true;
     }
 
-    public static ConfigData.Enum.DamageMode getDamageMode() {
+    public static ConfigData.Enum.@NonNull DamageMode getDamageMode() {
         return isConfigAvailable() && config.damageMode != null
             ? config.damageMode
             : ConfigData.Enum.DamageMode.TIERED;
@@ -98,6 +98,8 @@ public class ConfigManager {
     }
 
     public static List<String> getExclusionList() {
-        return isConfigAvailable() ? config.exclusionList : List.of();
+        return isConfigAvailable() && config.exclusionList != null
+            ? config.exclusionList
+            : List.of();
     }
 }

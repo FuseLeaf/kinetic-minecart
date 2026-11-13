@@ -1,5 +1,7 @@
 package org.fuseleaf.kineticminecart.client.config;
 
+import java.util.List;
+
 import org.fuseleaf.kineticminecart.config.ConfigManager;
 import org.fuseleaf.kineticminecart.extension.config.ConfigData;
 import org.fuseleaf.kineticminecart.util.Constant;
@@ -26,5 +28,17 @@ public class ClientConfigManager {
 
     public static ConfigHolder<@NonNull ConfigData> getConfigHolder() {
         return ConfigManager.getConfigHolder();
+    }
+
+    public static ConfigData.Enum.@NonNull ApplicationMode getApplicationMode() {
+        return ConfigManager.getApplicationMode();
+    }
+
+    public static ConfigData.Enum.@NonNull DamageMode getDamageMode() {
+        return ConfigManager.getDamageMode();
+    }
+
+    public static List<String> getExclusionList() {
+        return ConfigManager.getExclusionList();
     }
 }

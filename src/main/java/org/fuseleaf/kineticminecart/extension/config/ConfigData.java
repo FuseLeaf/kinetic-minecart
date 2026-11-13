@@ -19,11 +19,11 @@ public class ConfigData implements me.shedaniel.autoconfig.ConfigData {
     public boolean overrideCollision = true;
     public boolean overrideRiding = true;
 
-    public Enum.@NonNull ApplicationMode applicationMode = Enum.ApplicationMode.COLLIDE;
+    public Enum.ApplicationMode applicationMode = Enum.ApplicationMode.COLLIDE;
     public int radius = 5;
 
     public boolean enableDamage = true;
-    public Enum.@NonNull DamageMode damageMode = Enum.DamageMode.TIERED;
+    public Enum.DamageMode damageMode = Enum.DamageMode.TIERED;
 
     public boolean enableKnockback = true;
 
@@ -68,6 +68,25 @@ public class ConfigData implements me.shedaniel.autoconfig.ConfigData {
             public String toString() {
                 return Component.translatable(key).getString();
             }
+        }
+    }
+
+    @Override
+    public void validatePostLoad() {
+        if (applicationMode == null) {
+            applicationMode = Enum.ApplicationMode.COLLIDE;
+        }
+
+        if (radius < 3 || radius > 10) {
+            radius = 5;
+        }
+
+        if (damageMode == null) {
+            damageMode = Enum.DamageMode.TIERED;
+        }
+
+        if (exclusionList == null) {
+            exclusionList = new ArrayList<>();
         }
     }
 }
