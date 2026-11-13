@@ -62,15 +62,12 @@ Check out the latest development progress here: [Development Progress](https://f
 
 - The damage dealt by minecarts is related to their **Speed**:
 
-```
-Speed >= 6			-> Damage = Speed cubed;
-
-Speed > 2 and < 6 	-> Damage = Speed squared;
-
-Target has Vehicle  -> Damage = Speed;
-
-Speed <= 2			-> Damage = 0;
-```
+| Condition | Damage |
+| --- | --- |
+| Speed >= 6 | Damage = Speed cubed |
+| Speed > 2 and < 6 | Damage = Speed squared |
+| Target has Vehicle | Damage = Speed |
+| Speed <= 2 | Damage = 0 |
 
 - After being hit by a minecart, the entity is propelled approximately the same distance as its speed.
 
