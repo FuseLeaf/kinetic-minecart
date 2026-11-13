@@ -28,7 +28,6 @@ public class KineticManager {
         }
 
         switch (ConfigManager.getApplicationMode()) {
-            case null:
             case ConfigData.Enum.ApplicationMode.COLLIDE:
                 List<Entity> list1 = world.getEntities(
                     cart,

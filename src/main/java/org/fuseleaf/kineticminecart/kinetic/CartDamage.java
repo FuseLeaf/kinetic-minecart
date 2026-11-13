@@ -23,7 +23,6 @@ public class CartDamage {
         }
 
         switch (ConfigManager.getDamageMode()) {
-            case null:
             case ConfigData.Enum.DamageMode.TIERED:
                 tieredDamage(target, speed);
                 break;
