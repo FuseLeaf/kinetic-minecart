@@ -46,11 +46,17 @@ public class ConfigManager {
     }
 
     public static ConfigData.Enum.ApplicationMode getApplicationMode() {
-        return isConfigAvailable() ? config.applicationMode : ConfigData.Enum.ApplicationMode.COLLIDE;
+        return isConfigAvailable() && config.applicationMode != null
+            ? config.applicationMode 
+            : ConfigData.Enum.ApplicationMode.COLLIDE;
     }
 
     public static double getRadius() {
-        return isConfigAvailable() ? (double)config.radius / 10.0 : 0.5;
+        return isConfigAvailable()
+            && config.radius >= 3
+            && config.radius <= 10
+                ? (double)config.radius / 10.0
+                : 0.5;
     }
 
     public static boolean isDamageEnabled() {
@@ -58,7 +64,9 @@ public class ConfigManager {
     }
 
     public static ConfigData.Enum.DamageMode getDamageMode() {
-        return isConfigAvailable() ? config.damageMode : ConfigData.Enum.DamageMode.TIERED;
+        return isConfigAvailable() && config.damageMode != null
+            ? config.damageMode
+            : ConfigData.Enum.DamageMode.TIERED;
     }
 
     public static boolean isKnockbackEnabled() {
@@ -86,7 +94,7 @@ public class ConfigManager {
     }
 
     public static boolean isExclusionListEnabled() {
-        return isConfigAvailable() ? config.enableExclusionList: false;
+        return isConfigAvailable() ? config.enableExclusionList : false;
     }
 
     public static List<String> getExclusionList() {
