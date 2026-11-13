@@ -47,7 +47,7 @@ public class ConfigManager {
 
     public static ConfigData.Enum.ApplicationMode getApplicationMode() {
         return isConfigAvailable() && config.applicationMode != null
-            ? config.applicationMode 
+            ? config.applicationMode
             : ConfigData.Enum.ApplicationMode.COLLIDE;
     }
 
