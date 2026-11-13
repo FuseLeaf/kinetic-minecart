@@ -23,7 +23,7 @@
 			}
 		}
 	},
-	"license": "GPL-3.0",
+	"license": "GPL-3.0-or-later",
 	"icon": "assets/kinetic-minecart/logo/icon.png",
 	"environment": "*",
 	"entrypoints": {
