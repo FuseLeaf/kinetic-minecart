@@ -2,8 +2,8 @@ package org.fuseleaf.kineticminecart.client.initializer;
 
 import java.util.stream.Collectors;
 
+import org.fuseleaf.kineticminecart.client.config.ClientConfigManager;
 import org.fuseleaf.kineticminecart.client.util.Toast;
-import org.fuseleaf.kineticminecart.config.ConfigManager;
 import org.fuseleaf.kineticminecart.entity.ExclusionList;
 import org.fuseleaf.kineticminecart.util.Constant;
 
@@ -13,31 +13,27 @@ import net.minecraft.world.InteractionResult;
 public class ClientInitializer {
 
     public static void init() {
-        Config.init();
+        initConfig();
     }
 
-    private static class Config {
+    private static void initConfig() {
+        try {
+            Class.forName(Constant.Extension.AUTO_CONFIG_CLASS_NAME);
 
-        private static void init() {
-            try {
-                Class.forName(Constant.Extension.AUTO_CONFIG_CLASS_NAME);
+            ClientConfigManager.getConfigHolder().registerSaveListener((configHolder, config) -> {
+                if (config.enabledExclusionList) {
 
-                // TODO: Could there be a security issue?
-                ConfigManager.getConfigHolder().registerSaveListener((configHolder, config) -> {
-                    if (ConfigManager.isEnabledExclusionList()) {
+                    config.exclusionList = config.exclusionList.stream()
+                        .map(ExclusionList::normalizeId)
+                        .collect(Collectors.toList());
 
-                        config.exclusionList = config.exclusionList.stream()
-                            .map(ExclusionList::normalizeId)
-                            .collect(Collectors.toList());
+                    Component title = Component.translatable(Constant.I18n.TOAST_EXCLUSION_LIST_TITLE);
+                    Component desc = ExclusionList.buildMessage(config.exclusionList);
+                    Toast.toast(title, desc);
+                }
 
-                        Component title = Component.translatable(Constant.I18n.TOAST_EXCLUSION_LIST_TITLE);
-                        Component desc = ExclusionList.buildMessage(ConfigManager.getExclusionList());
-                        Toast.toast(title, desc);
-                    }
-
-                    return InteractionResult.SUCCESS;
-                });
-            } catch (ClassNotFoundException e) {}
-        }
+                return InteractionResult.SUCCESS;
+            });
+        } catch (ClassNotFoundException e) {}
     }
 }

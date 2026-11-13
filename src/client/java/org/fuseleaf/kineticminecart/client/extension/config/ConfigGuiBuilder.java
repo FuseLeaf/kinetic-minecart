@@ -2,7 +2,7 @@ package org.fuseleaf.kineticminecart.client.extension.config;
 
 import java.util.ArrayList;
 
-import org.fuseleaf.kineticminecart.config.ConfigManager;
+import org.fuseleaf.kineticminecart.client.config.ClientConfigManager;
 import org.fuseleaf.kineticminecart.extension.config.ConfigData;
 import org.fuseleaf.kineticminecart.util.Constant;
 
@@ -21,11 +21,11 @@ import net.minecraft.network.chat.Component;
 public class ConfigGuiBuilder {
 
     public static ConfigBuilder get() {
-        ConfigData config = ConfigManager.getConfig();  // TODO: Could there be a security issue?
+        ConfigData config = ClientConfigManager.getConfig();
 
         ConfigBuilder builder = ConfigBuilder.create()
             .setTitle(Component.translatable(Constant.I18n.CONFIG_TITLE))
-            .setSavingRunnable(() -> ConfigManager.getConfigHolder().save());   // TODO: Could there be a security issue?
+            .setSavingRunnable(() -> ClientConfigManager.getConfigHolder().save());
         builder.setGlobalized(true);
         builder.setGlobalizedExpanded(false);
         builder.transparentBackground();
