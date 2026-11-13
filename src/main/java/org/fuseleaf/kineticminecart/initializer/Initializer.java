@@ -30,7 +30,7 @@ public class Initializer {
             AutoConfig.register(ConfigData.class, GsonConfigSerializer::new);
             ConfigManager.setConfig(AutoConfig.getConfigHolder(ConfigData.class));
         } catch (ClassNotFoundException e) {
-            Log.LOGGER.debug("AutoConfig not found.");
+            Log.LOGGER.debug("AutoConfig not found; falling back to default configuration.");
         }
     }
 }

@@ -6,6 +6,7 @@ import org.fuseleaf.kineticminecart.client.config.ClientConfigManager;
 import org.fuseleaf.kineticminecart.client.util.Toast;
 import org.fuseleaf.kineticminecart.entity.ExclusionList;
 import org.fuseleaf.kineticminecart.util.Constant;
+import org.fuseleaf.kineticminecart.util.Log;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
@@ -18,7 +19,11 @@ public class ClientInitializer {
 
     private static void initConfig() {
         try {
-            Class.forName(Constant.Extension.AUTO_CONFIG_CLASS_NAME);
+            Class.forName(
+                Constant.Extension.AUTO_CONFIG_CLASS_NAME,
+                false,
+                ClientInitializer.class.getClassLoader()
+            );
 
             ClientConfigManager.getConfigHolder().registerSaveListener((configHolder, config) -> {
                 if (config.enabledExclusionList) {
@@ -34,6 +39,8 @@ public class ClientInitializer {
 
                 return InteractionResult.SUCCESS;
             });
-        } catch (ClassNotFoundException e) {}
+        } catch (ClassNotFoundException e) {
+            Log.LOGGER.debug("AutoConfig not found on the client; config entry will be disabled.");
+        }
     }
 }
