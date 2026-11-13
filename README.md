@@ -128,27 +128,53 @@ Configuration files that will be generated after installing `Cloth Config API`:
 <details>
   <summary>Configuration Details (Click to expand)</summary>
 
+#### General
+
 | Key | Value | Default Value | Note |
 | --- | --- | --- | --- |
 | enable | `true`/`false` | `true` | - |
-|||||
+
+##### Override
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
 | overrideCollision | `true`/`false` | `true` | - |
 | overrideRiding | `true`/`false` | `true` | - |
-|||||
+
+##### Application Mode
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
 | applicationMode| `"COLLIDE"`/`"RADIUS"` | `"COLLIDE"` | - |
 | radius | `<integer>` | `5` | Range: 3 to 10<br>Example: 5 -> 0.5 Blocks |
-|||||
+
+##### Damage
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
 | enableDamage | `true`/`false` | `true` | - |
 | damageMode | `"TIERED"`/`"KILL"` | `"TIERED"` | - |
-|||||
+
+##### Knockback
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
 | enableKnockback | `true`/`false` | `true` | - |
-|||||
+
+##### Type
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
 | excludePlayer | `true`/`false` | `false` | - |
-| excludePet | `true`/`false` | `false` | Some special organisms cannot be excluded. |
+| excludePet | `true`/`false` | `false` | Certain special entities cannot be excluded. |
 | excludePassenger | `true`/`false` | `true` | - |
 | excludeNamedEntity | `true`/`false` | `false` | - |
 | excludeItemEntity | `true`/`false` | `false` | - |
-|||||
+
+#### Advanced
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
 | enableExclusionList | `true`/`false` | `false` | - |
 | exclusionList | `["<namespace>:<id>"]` | `[]` | Example 1: `["minecraft:creeper"]`<br>Example 2: `["minecraft:creeper", "minecraft:cat", "minecraft:fox"]` |
 
