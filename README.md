@@ -136,7 +136,7 @@ Configuration files that will be generated after installing `Cloth Config API`:
 | overrideRiding | `true`/`false` | `true` | - |
 |||||
 | applicationMode| `"COLLIDE"`/`"RADIUS"` | `"COLLIDE"` | - |
-| radius | `<integer>` | `5` | Range: 3 to 5<br>Example: 5 -> 0.5 Blocks |
+| radius | `<integer>` | `5` | Range: 3 to 10<br>Example: 5 -> 0.5 Blocks |
 |||||
 | enableDamage | `true`/`false` | `true` | - |
 | damageMode | `"TIERED"`/`"KILL"` | `"TIERED"` | - |
