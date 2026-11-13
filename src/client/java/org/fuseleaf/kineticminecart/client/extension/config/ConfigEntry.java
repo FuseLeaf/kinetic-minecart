@@ -5,6 +5,8 @@ import org.fuseleaf.kineticminecart.client.gui.IllegalOperationScreen;
 import org.fuseleaf.kineticminecart.client.util.Toast;
 import org.fuseleaf.kineticminecart.util.Constant;
 
+import org.jspecify.annotations.NonNull;
+
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
 
@@ -14,7 +16,7 @@ import net.minecraft.network.chat.Component;
 public class ConfigEntry implements ModMenuApi {
 
     @Override
-    public ConfigScreenFactory<?> getModConfigScreenFactory() {
+    public @NonNull ConfigScreenFactory<?> getModConfigScreenFactory() {
         return parent -> {
             Minecraft mc = Minecraft.getInstance();
 
