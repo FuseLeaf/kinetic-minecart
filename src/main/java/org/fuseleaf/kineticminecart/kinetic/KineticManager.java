@@ -27,9 +27,9 @@ public class KineticManager {
             return;
         }
 
-        switch (ConfigManager.getSelectedApplicationMode()) {
+        switch (ConfigManager.getApplicationMode()) {
             case null:
-            case ConfigData.Enum.ApplicationMode.Collide:
+            case ConfigData.Enum.ApplicationMode.COLLIDE:
                 List<Entity> list1 = world.getEntities(
                     cart,
                     cart.getBoundingBox(),
@@ -43,16 +43,16 @@ public class KineticManager {
 
                 for (Entity target : list1) {
 
-                    if (ConfigManager.isEnabledKnock()) {
+                    if (ConfigManager.isKnockbackEnabled()) {
                         CartKnock.knock(cart, target, mv, speed);
                     }
-                    if (ConfigManager.isEnabledDamage()) {
+                    if (ConfigManager.isDamageEnabled()) {
                         Delay.schedule(1, () -> CartImpact.damage(target, speed));
                     }
                 }
                 break;
 
-            case ConfigData.Enum.ApplicationMode.Radius:
+            case ConfigData.Enum.ApplicationMode.RADIUS:
                 List<Entity> list2 = world.getEntities(
                     cart,
                     cart.getBoundingBox().inflate(ConfigManager.getRadius()),
@@ -66,10 +66,10 @@ public class KineticManager {
 
                 for (Entity target : list2) {
 
-                    if (ConfigManager.isEnabledKnock()) {
+                    if (ConfigManager.isKnockbackEnabled()) {
                         CartKnock.knock(cart, target, mv, speed);
                     }
-                    if (ConfigManager.isEnabledDamage()) {
+                    if (ConfigManager.isDamageEnabled()) {
                         Delay.schedule(1, () -> CartImpact.damage(target, speed));
                     }
                 }

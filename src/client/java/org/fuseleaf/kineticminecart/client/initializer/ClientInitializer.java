@@ -26,7 +26,7 @@ public class ClientInitializer {
             );
 
             ClientConfigManager.getConfigHolder().registerSaveListener((configHolder, config) -> {
-                if (config.enabledExclusionList) {
+                if (config.enableExclusionList) {
 
                     config.exclusionList = config.exclusionList.stream()
                         .map(ExclusionList::normalizeId)

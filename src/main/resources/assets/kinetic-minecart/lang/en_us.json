@@ -1,4 +1,12 @@
 {
+    "kinetic-minecart.option.confirm": "OK",
+
+    "kinetic-minecart.option.radius": "Radius",
+    "kinetic-minecart.option.collide": "Collide",
+
+    "kinetic-minecart.option.tiered": "Tiered",
+    "kinetic-minecart.option.kill": "Kill",
+
     "kinetic-minecart.toast.api_not_found.title": "Cloth Config API not found",
     "kinetic-minecart.toast.api_not_found.desc": "You need to install the §eCloth Config API.",
 
@@ -7,14 +15,6 @@
     "kinetic-minecart.toast.exclusion_list.desc.detected": "Exclusion List content detected. ",
     "kinetic-minecart.toast.exclusion_list.desc.unknown": "§cError: §rUnknown ID in ",
 
-    "kinetic-minecart.option.confirm": "OK",
-
-    "kinetic-minecart.option.radius": "Radius",
-    "kinetic-minecart.option.collide": "Collide",
-
-    "kinetic-minecart.option.tiered_damage": "Tiered Damage",
-    "kinetic-minecart.option.directly_kill": "Directly Kill",
-
     "kinetic-minecart.screen.illegal_operation.title": "§cIllegal Operation",
     "kinetic-minecart.screen.illegal_operation.desc": ":( Don't be discouraged, this is not a bug.\n\nIt looks like you're playing a multiplayer game.\nYou cannot change the server configuration through this setting.\n\nIf you need to make changes, please contact the server administrator\nto modify the configuration file.\n§e... > config > kinetic-minecart.json",
 
@@ -22,9 +22,9 @@
     "kinetic-minecart.config.category.general": "General",
     "kinetic-minecart.config.category.advanced": "Advanced",
     "kinetic-minecart.config.category.override": "Override",
-    "kinetic-minecart.config.category.mode": "Mode",
+    "kinetic-minecart.config.category.application_mode": "Application Mode",
     "kinetic-minecart.config.category.damage": "Damage",
-    "kinetic-minecart.config.category.knock": "Knock",
+    "kinetic-minecart.config.category.knockback": "Knockback",
     "kinetic-minecart.config.category.type": "Type",
 
     "kinetic-minecart.config.enable": "Enable",
@@ -32,14 +32,14 @@
     "kinetic-minecart.config.override_collision": "Override Collision",
     "kinetic-minecart.config.override_riding": "Override Riding",
 
-    "kinetic-minecart.config.mode": "Mode",
+    "kinetic-minecart.config.application_mode": "Application Mode",
     "kinetic-minecart.config.radius": "Radius",
     "kinetic-minecart.config.radius.tooltip": "Example: 5 -> 0.5 blocks",
 
     "kinetic-minecart.config.damage": "Damage",
     "kinetic-minecart.config.damage_mode": "Damage Mode",
 
-    "kinetic-minecart.config.knock": "Knock",
+    "kinetic-minecart.config.knockback": "Knockback",
 
     "kinetic-minecart.config.exclude_player": "Exclude Player",
     "kinetic-minecart.config.exclude_pet": "Exclude Pet",

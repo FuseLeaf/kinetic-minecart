@@ -33,68 +33,60 @@ public class ConfigManager {
         return holder;
     }
 
-    /* # Get Configuration */
-
-    /* ## General */
-
     public static boolean isEnabled() {
-        return !isConfigAvailable() || config.enabled;
+        return !isConfigAvailable() || config.enable;
     }
 
-    public static boolean isOverrideCollision() {
+    public static boolean isCollisionOverrideEnabled() {
         return !isConfigAvailable() || config.overrideCollision;
     }
 
-    public static boolean isOverrideRiding() {
+    public static boolean isRidingOverrideEnabled() {
         return !isConfigAvailable() || config.overrideRiding;
     }
 
-    public static ConfigData.Enum.ApplicationMode getSelectedApplicationMode() {
-        return isConfigAvailable() ? config.selectedApplicationMode : null;
+    public static ConfigData.Enum.ApplicationMode getApplicationMode() {
+        return isConfigAvailable() ? config.applicationMode : null;
     }
 
     public static double getRadius() {
-        return (double)config.intRadius / 10.0;
+        return (double)config.radius / 10.0;
     }
 
-    public static boolean isEnabledDamage() {
-        return !isConfigAvailable() || config.enabledDamage;
+    public static boolean isDamageEnabled() {
+        return !isConfigAvailable() || config.enableDamage;
     }
 
-    public static ConfigData.Enum.DamageMode getSelectedDamageMode() {
-        return isConfigAvailable() ? config.selectedDamageMode : null;
+    public static ConfigData.Enum.DamageMode getDamageMode() {
+        return isConfigAvailable() ? config.damageMode : null;
     }
 
-    public static boolean isEnabledKnock() {
-        return !isConfigAvailable() || config.enabledKnock;
+    public static boolean isKnockbackEnabled() {
+        return !isConfigAvailable() || config.enableKnockback;
     }
 
-    /* ## Types */
-
-    public static boolean isExcludePlayer() {
+    public static boolean isPlayerExcluded() {
         return isConfigAvailable() && config.excludePlayer;
     }
 
-    public static boolean isExcluePet() {
+    public static boolean isPetExcluded() {
         return isConfigAvailable() && config.excludePet;
     }
 
-    public static boolean isExcludePassenger() {
+    public static boolean isPassengerExcluded() {
         return !isConfigAvailable() || config.excludePassenger;
     }
 
-    public static boolean isExcludeNamedEntity() {
+    public static boolean isNamedEntityExcluded() {
         return isConfigAvailable() && config.excludeNamedEntity;
     }
 
-    public static boolean isExcludItemEntity() {
+    public static boolean isItemEntityExcluded() {
         return isConfigAvailable() && config.excludeItemEntity;
     }
 
-    /* ## Advanced */
-
-    public static boolean isEnabledExclusionList() {
-        return isConfigAvailable() && config.enabledExclusionList;
+    public static boolean isExclusionListEnabled() {
+        return isConfigAvailable() && config.enableExclusionList;
     }
 
     public static List<String> getExclusionList() {

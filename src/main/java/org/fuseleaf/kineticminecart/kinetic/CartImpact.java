@@ -22,13 +22,13 @@ public class CartImpact {
             return;
         }
 
-        switch (ConfigManager.getSelectedDamageMode()) {
+        switch (ConfigManager.getDamageMode()) {
             case null:
-            case ConfigData.Enum.DamageMode.TieredDamage:
+            case ConfigData.Enum.DamageMode.TIERED:
                 tieredDamage(target, speed);
                 break;
 
-            case ConfigData.Enum.DamageMode.DirectlyKill:
+            case ConfigData.Enum.DamageMode.KILL:
                 kill(target, speed);
                 break;
 

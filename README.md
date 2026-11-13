@@ -98,45 +98,61 @@ Configuration files that will be generated after installing `Cloth Config API`:
 
 - In **Multiplayer Mode**, you **Cannot** change the configuration via the menu; instead, the server administrator needs to modify the 'kinetic-minecart.json' file. Below is an example:
 
+<details>
+  <summary>Example Configuration (Click to expand)</summary>
+
 ```
-kinetic-minecart.json
-  [enabled] Value: true/false, Default: true
+> kinetic-minecart.json
 
-  [overrideCollision] Value: true/false, Default: true
-  [overrideRiding] Value: true/false, Default: true
-
-  [selectedApplicationMode] Value: "Collide"/"Radius", Default: "Collide"
-  [intRadius] Range: 3 - 10, Default: 5
-
-  [enabledDamage] Value: true/false, Default: true
-  [selectedDamageMode] Value: "TieredDamage"/"DirectlyKill", Default: "TieredDamage"
-
-  [enabledKnock] Value: true/false, Default: true
-
-  [excludePlayer] Value: true/false, Default: false
-  [excludePet] Value: true/false, Default: false
-  [excludePassenger] Value: true/false, Default: true
-  [excludeNamedEntity] Value: true/false, Default: false
-  [excludeItemEntity] Value: true/false, Default: false
-
-  [enabledExclusionList] Value: true/false, Default: false
-  [exclusionList]
-    Value: [
-      "<Namespace>:<Path>",
-      "<Namespace>:<Path>",
-      ...
-      "<Namespace>:<Path>"
-    ]
-    Example: [
-      "minecraft:creeper",
-      "minecraft:cat",
-      "minecraft:fox",
-      "minecraft:pig",
-      "minecraft:wolf",
-      "minecraft:zombie"
-    ]
-    Default: []
+{
+  "enable": true,
+  "overrideCollision": true,
+  "overrideRiding": true,
+  "applicationMode": "COLLIDE",
+  "radius": 5,
+  "enableDamage": true,
+  "damageMode": "TIERED",
+  "enableKnockback": true,
+  "excludePlayer": false,
+  "excludePet": false,
+  "excludePassenger": true,
+  "excludeNamedEntity": false,
+  "excludeItemEntity": false,
+  "enableExclusionList": false,
+  "exclusionList": []
+}
 ```
+
+</details>
+
+<details>
+  <summary>Configuration Details (Click to expand)</summary>
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| enable | `true`/`false` | `true` | - |
+|||||
+| overrideCollision | `true`/`false` | `true` | - |
+| overrideRiding | `true`/`false` | `true` | - |
+|||||
+| applicationMode| `"COLLIDE"`/`"RADIUS"` | `"COLLIDE"` | - |
+| radius | `<integer>` | `5` | Range: 3 to 5<br>Example: 5 -> 0.5 blocks |
+|||||
+| enableDamage | `true`/`false` | `true` | - |
+| damageMode | `"TIERED"`/`"KILL"` | `"TIERED"` | - |
+|||||
+| enableKnockback | `true`/`false` | `true` | - |
+|||||
+| excludePlayer | `true`/`false` | `false` | - |
+| excludePet | `true`/`false` | `false` | Some special organisms cannot be excluded. |
+| excludePassenger | `true`/`false` | `true` | - |
+| excludeNamedEntity | `true`/`false` | `false` | - |
+| excludeItemEntity | `true`/`false` | `false` | - |
+|||||
+| enableExclusionList | `true`/`false` | `false` | - |
+| exclusionList | `["<namespace>:<id>"]` | `[]` | Example 1: `["minecraft:creeper"]`<br>Example 2: `["minecraft:creeper", "minecraft:cat", "minecraft:fox"]` |
+
+</details>
 
 ## License
 
