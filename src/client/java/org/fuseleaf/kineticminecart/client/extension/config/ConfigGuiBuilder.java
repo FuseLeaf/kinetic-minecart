@@ -196,6 +196,7 @@ public class ConfigGuiBuilder {
                 .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_ENABLE_EXCLUSION_LIST), config.enableExclusionList)
                 .setDefaultValue(false)
                 .setSaveConsumer(v -> config.enableExclusionList = v)
+                .setRequirement(Requirement.isTrue(enabledListEntry))
                 .build();
 
             // TODO: They need to be put into SubCategory after solving https://github.com/shedaniel/cloth-config/issues/365
@@ -208,7 +209,10 @@ public class ConfigGuiBuilder {
                         Component.translatable(Constant.I18n.CONFIG_EXCLUSION_LIST_TOOLTIP)
                     })
                     .setSaveConsumer(v -> config.exclusionList = v)
-                    .setRequirement(Requirement.isTrue(enabledExclusionListListEntry))
+                    .setRequirement(Requirement.all(
+                        Requirement.isTrue(enabledListEntry),
+                        Requirement.isTrue(enabledExclusionListListEntry))
+                    )
                     .build()
             );
         }
