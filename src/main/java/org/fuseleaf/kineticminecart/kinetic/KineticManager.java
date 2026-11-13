@@ -44,10 +44,10 @@ public class KineticManager {
                 for (Entity target : list1) {
 
                     if (ConfigManager.isKnockbackEnabled()) {
-                        CartKnock.knock(cart, target, mv, speed);
+                        CartKnockback.knock(cart, target, mv, speed);
                     }
                     if (ConfigManager.isDamageEnabled()) {
-                        Delay.schedule(1, () -> CartImpact.damage(target, speed));
+                        Delay.schedule(1, () -> CartDamage.damage(target, speed));
                     }
                 }
                 break;
@@ -67,10 +67,10 @@ public class KineticManager {
                 for (Entity target : list2) {
 
                     if (ConfigManager.isKnockbackEnabled()) {
-                        CartKnock.knock(cart, target, mv, speed);
+                        CartKnockback.knock(cart, target, mv, speed);
                     }
                     if (ConfigManager.isDamageEnabled()) {
-                        Delay.schedule(1, () -> CartImpact.damage(target, speed));
+                        Delay.schedule(1, () -> CartDamage.damage(target, speed));
                     }
                 }
                 break;

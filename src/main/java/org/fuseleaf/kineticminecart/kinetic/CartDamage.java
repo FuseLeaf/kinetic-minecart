@@ -11,9 +11,9 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 
-public class CartImpact {
+public class CartDamage {
 
-    private CartImpact() {}
+    private CartDamage() {}
 
     private static final Map<Integer, Long> LAST_HIT_TICKS = new ConcurrentHashMap<>();
 
