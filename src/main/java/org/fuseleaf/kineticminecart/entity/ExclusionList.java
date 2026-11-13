@@ -62,7 +62,7 @@ public class ExclusionList {
                     detected = true;
                 }
             } else {
-                sb.append(Component.translatable(Constant.I18n.TOAST_EXCLUSION_LIST_DESC_UNKNOWN)).append("'").append(id).append("'");
+                sb.append(Component.translatable(Constant.I18n.TOAST_EXCLUSION_LIST_DESC_UNKNOWN, id));
             }
         }
 

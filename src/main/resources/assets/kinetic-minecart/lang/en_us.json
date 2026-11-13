@@ -8,15 +8,15 @@
     "kinetic-minecart.option.kill": "Kill",
 
     "kinetic-minecart.toast.api_not_found.title": "Cloth Config API not found",
-    "kinetic-minecart.toast.api_not_found.desc": "You need to install the §eCloth Config API.",
+    "kinetic-minecart.toast.api_not_found.desc": "You need to install §eCloth Config API§r.",
 
     "kinetic-minecart.toast.exclusion_list.title": "Exclusion List",
     "kinetic-minecart.toast.exclusion_list.desc.empty": "Exclusion List is empty.",
     "kinetic-minecart.toast.exclusion_list.desc.detected": "Exclusion List content detected. ",
-    "kinetic-minecart.toast.exclusion_list.desc.unknown": "§cError: §rUnknown ID in ",
+    "kinetic-minecart.toast.exclusion_list.desc.unknown": "§cError:§r Unknown ID in %s",
 
     "kinetic-minecart.screen.illegal_operation.title": "§cIllegal Operation",
-    "kinetic-minecart.screen.illegal_operation.desc": ":( Don't be discouraged, this is not a bug.\n\nIt looks like you're playing a multiplayer game.\nYou cannot change the server configuration through this setting.\n\nIf you need to make changes, please contact the server administrator\nto modify the configuration file.\n§e... > config > kinetic-minecart.json",
+    "kinetic-minecart.screen.illegal_operation.desc": ":( Don't worry, this is not a bug.\n\nIt looks like you're playing in multiplayer.\nYou cannot change the server configuration from this menu.\n\nIf you need to make changes, please contact the server administrator\nto modify the configuration file.\n§e... > config > kinetic-minecart.json",
 
     "kinetic-minecart.config.title": "Kinetic Minecart Configuration",
     "kinetic-minecart.config.category.general": "General",
@@ -34,7 +34,7 @@
 
     "kinetic-minecart.config.application_mode": "Application Mode",
     "kinetic-minecart.config.radius": "Radius",
-    "kinetic-minecart.config.radius.tooltip": "Example: 5 -> 0.5 blocks",
+    "kinetic-minecart.config.radius.tooltip": "Example: 5 -> 0.5 Blocks",
 
     "kinetic-minecart.config.damage": "Damage",
     "kinetic-minecart.config.damage_mode": "Damage Mode",
@@ -50,5 +50,5 @@
 
     "kinetic-minecart.config.enable_exclusion_list": "Enable Exclusion List",
     "kinetic-minecart.config.exclusion_list": "Exclusion List",
-    "kinetic-minecart.config.exclusion_list.tooltip": "It needs to include the §eNamespace§r and §eEntityID§r.\nIf no namespace is specified, it defaults to §eminecraft§r.\nExample: §aminecraft:creeper"
+    "kinetic-minecart.config.exclusion_list.tooltip": "It needs to include the §eNamespace§r and §eEntity ID§r.\nIf no namespace is specified, it defaults to §eminecraft§r.\nExample: §aminecraft:creeper"
 }
