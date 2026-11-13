@@ -32,24 +32,24 @@ public class ConfigGuiBuilder {
 
         ConfigEntryBuilder entryBuilder = builder.entryBuilder();
 
-        BooleanListEntry enabledListEntry;
+        BooleanListEntry enableToggle;
 
         {
             ConfigCategory generalCategory = builder.getOrCreateCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_GENERAL));
 
-            enabledListEntry = entryBuilder
+            enableToggle = entryBuilder
                 .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_ENABLE), config.enable)
                 .setDefaultValue(true)
                 .setSaveConsumer(v -> config.enable = v)
                 .build();
 
-            generalCategory.addEntry(enabledListEntry);
+            generalCategory.addEntry(enableToggle);
 
             {
                 SubCategoryBuilder overrideSubCategory = entryBuilder
                     .startSubCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_OVERRIDE))
                     .setExpanded(true)
-                    .setRequirement(Requirement.isTrue(enabledListEntry));
+                    .setRequirement(Requirement.isTrue(enableToggle));
 
                 overrideSubCategory.add(
                     entryBuilder
@@ -70,19 +70,19 @@ public class ConfigGuiBuilder {
             }
 
             {
-                SubCategoryBuilder modeSubCategory = entryBuilder
+                SubCategoryBuilder applicationModeSubCategory = entryBuilder
                     .startSubCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_APPLICATION_MODE))
                     .setExpanded(true)
-                    .setRequirement(Requirement.isTrue(enabledListEntry));
+                    .setRequirement(Requirement.isTrue(enableToggle));
 
-                EnumListEntry<ConfigData.Enum.@NonNull ApplicationMode> modeListEntry = entryBuilder
+                EnumListEntry<ConfigData.Enum.@NonNull ApplicationMode> applicationModeSelector = entryBuilder
                     .startEnumSelector(Component.translatable(Constant.I18n.CONFIG_APPLICATION_MODE), ConfigData.Enum.ApplicationMode.class, ClientConfigManager.getApplicationMode())
                     .setDefaultValue(ConfigData.Enum.ApplicationMode.COLLIDE)
                     .setSaveConsumer(v -> config.applicationMode = v)
                     .build();
 
-                modeSubCategory.add(modeListEntry);
-                modeSubCategory.add(
+                applicationModeSubCategory.add(applicationModeSelector);
+                applicationModeSubCategory.add(
                     entryBuilder
                         .startIntSlider(Component.translatable(Constant.I18n.CONFIG_RADIUS), config.radius, 3, 10)
                         .setDefaultValue(5)
@@ -90,32 +90,32 @@ public class ConfigGuiBuilder {
                             Component.translatable(Constant.I18n.CONFIG_RADIUS_TOOLTIP)
                         })
                         .setSaveConsumer(v -> config.radius = v)
-                        .setRequirement(() -> modeListEntry.getValue() == ConfigData.Enum.ApplicationMode.RADIUS)
+                        .setRequirement(() -> applicationModeSelector.getValue() == ConfigData.Enum.ApplicationMode.RADIUS)
                         .build()
                 );
 
-                generalCategory.addEntry(modeSubCategory.build());
+                generalCategory.addEntry(applicationModeSubCategory.build());
             }
 
             {
                 SubCategoryBuilder damageSubCategory = entryBuilder
                     .startSubCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_DAMAGE))
                     .setExpanded(true)
-                    .setRequirement(Requirement.isTrue(enabledListEntry));
+                    .setRequirement(Requirement.isTrue(enableToggle));
 
-                BooleanListEntry enabledDamageListEntry = entryBuilder
+                BooleanListEntry enableDamageToggle = entryBuilder
                     .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_DAMAGE), config.enableDamage)
                     .setDefaultValue(true)
                     .setSaveConsumer(v -> config.enableDamage = v)
                     .build();
 
-                damageSubCategory.add(enabledDamageListEntry);
+                damageSubCategory.add(enableDamageToggle);
                 damageSubCategory.add(
                     entryBuilder
                         .startEnumSelector(Component.translatable(Constant.I18n.CONFIG_DAMAGE_MODE), ConfigData.Enum.DamageMode.class, ClientConfigManager.getDamageMode())
                         .setDefaultValue(ConfigData.Enum.DamageMode.TIERED)
                         .setSaveConsumer(v -> config.damageMode = v)
-                        .setRequirement(Requirement.isTrue(enabledDamageListEntry))
+                        .setRequirement(Requirement.isTrue(enableDamageToggle))
                         .build()
                 );
 
@@ -123,28 +123,27 @@ public class ConfigGuiBuilder {
             }
 
             {
-                SubCategoryBuilder knockSubCategory = entryBuilder
+                SubCategoryBuilder knockbackSubCategory = entryBuilder
                     .startSubCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_KNOCKBACK))
                     .setExpanded(true)
-                    .setRequirement(Requirement.isTrue(enabledListEntry));
+                    .setRequirement(Requirement.isTrue(enableToggle));
 
-                knockSubCategory.add(
+                knockbackSubCategory.add(
                     entryBuilder
                         .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_KNOCKBACK), config.enableKnockback)
                         .setDefaultValue(true)
                         .setSaveConsumer(v -> config.enableKnockback = v)
-                        .setRequirement(Requirement.isTrue(enabledListEntry))
                         .build()
                 );
 
-                generalCategory.addEntry(knockSubCategory.build());
+                generalCategory.addEntry(knockbackSubCategory.build());
             }
 
             {
                 SubCategoryBuilder typeSubCategory = entryBuilder
                     .startSubCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_TYPE))
                     .setExpanded(true)
-                    .setRequirement(Requirement.isTrue(enabledListEntry));
+                    .setRequirement(Requirement.isTrue(enableToggle));
 
                 typeSubCategory.add(
                     entryBuilder
@@ -192,15 +191,15 @@ public class ConfigGuiBuilder {
         {
             ConfigCategory advancedCategory = builder.getOrCreateCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_ADVANCED));
 
-            BooleanListEntry enabledExclusionListListEntry = entryBuilder
+            BooleanListEntry enableExclusionListToggle = entryBuilder
                 .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_ENABLE_EXCLUSION_LIST), config.enableExclusionList)
                 .setDefaultValue(false)
                 .setSaveConsumer(v -> config.enableExclusionList = v)
-                .setRequirement(Requirement.isTrue(enabledListEntry))
+                .setRequirement(Requirement.isTrue(enableToggle))
                 .build();
 
             // TODO: They need to be put into SubCategory after solving https://github.com/shedaniel/cloth-config/issues/365
-            advancedCategory.addEntry(enabledExclusionListListEntry);
+            advancedCategory.addEntry(enableExclusionListToggle);
             advancedCategory.addEntry(
                 entryBuilder
                     .startStrList(Component.translatable(Constant.I18n.CONFIG_EXCLUSION_LIST), ClientConfigManager.getExclusionList())
@@ -210,8 +209,8 @@ public class ConfigGuiBuilder {
                     })
                     .setSaveConsumer(v -> config.exclusionList = v)
                     .setRequirement(Requirement.all(
-                        Requirement.isTrue(enabledListEntry),
-                        Requirement.isTrue(enabledExclusionListListEntry))
+                        Requirement.isTrue(enableToggle),
+                        Requirement.isTrue(enableExclusionListToggle))
                     )
                     .build()
             );
