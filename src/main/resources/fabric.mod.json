@@ -7,6 +7,9 @@
 	"authors": [
 		"FuseLeaf Studio"
 	],
+	"contributors": [
+		"Community Contributors"
+	],
 	"contact": {
 		"homepage": "https://github.com/FuseLeaf/kinetic-minecart",
 		"issues": "https://github.com/FuseLeaf/kinetic-minecart/issues",
