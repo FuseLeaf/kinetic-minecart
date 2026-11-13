@@ -43,7 +43,7 @@
 
     "kinetic-minecart.config.exclude_player": "Exclude Player",
     "kinetic-minecart.config.exclude_pet": "Exclude Pet",
-    "kinetic-minecart.config.exclude_pet.tooltip": "§eSome special organisms cannot be excluded!",
+    "kinetic-minecart.config.exclude_pet.tooltip": "§eCertain special entities cannot be excluded!§r",
     "kinetic-minecart.config.exclude_passenger": "Exclude Passenger",
     "kinetic-minecart.config.exclude_named_entity": "Exclude Named Entity",
     "kinetic-minecart.config.exclude_item_entity": "Exclude Item Entity",

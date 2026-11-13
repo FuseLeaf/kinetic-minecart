@@ -43,7 +43,7 @@
 
     "kinetic-minecart.config.exclude_player": "排除玩家",
     "kinetic-minecart.config.exclude_pet": "排除宠物",
-    "kinetic-minecart.config.exclude_pet.tooltip": "§e一些特殊生物不能被排除！",
+    "kinetic-minecart.config.exclude_pet.tooltip": "§e一些特殊生物不能被排除！§r",
     "kinetic-minecart.config.exclude_passenger": "排除乘客",
     "kinetic-minecart.config.exclude_named_entity": "排除被命名实体",
     "kinetic-minecart.config.exclude_item_entity": "排除物品实体",
