@@ -23,32 +23,18 @@ This mod increases damage to moving minecarts; the faster they move, the higher 
 
 ## Compatibility
 
-| Symbol    | Relation      |
-| :-: | :-: |
-| v         | Required      |
-| o         | Optional      |
-| x         | Incompatible  |
-
 ### Fabric
 
-| Server Side       | Relation  | Description |
-| :-- | :-: | :-- |
-| Cloth Config API  | o         | Custom Configuration |
-
-| Client Side       | Relation  | Description |
-| :-- | :-: | :-- |
-| Cloth Config API  | o         | Custom Configuration |
-| Mod Menu          | o         | Client Configuration Entry |
+| Mod | Side | Relation | Description |
+| --- | --- | --- | --- |
+| **Cloth Config API** | Server & Client | Optional (Recommended) | Custom Configuration |
+| **Mod Menu** | Client | Optional (Recommended) | In-game Configuration Entry |
 
 ### NeoForge / Forge
 
-| Server Side       | Relation  | Description |
-| :-- | :-: | :-- |
-| Cloth Config API  | o         | Custom Configuration |
-
-| Client Side       | Relation  | Description |
-| :-- | :-: | :-- |
-| Cloth Config API  | o         | Custom Configuration |
+| Mod | Side | Relation | Description |
+| --- | --- | --- | --- |
+| **Cloth Config API** | Server & Client | Optional (Recommended) | Custom Configuration |
 
 ## Progress
 
