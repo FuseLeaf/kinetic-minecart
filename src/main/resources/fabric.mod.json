@@ -7,6 +7,9 @@
 	"authors": [
 		"FuseLeaf Studio"
 	],
+	"contributors": [
+		"Community Contributors"
+	],
 	"contact": {
 		"homepage": "https://github.com/FuseLeaf/kinetic-minecart",
 		"issues": "https://github.com/FuseLeaf/kinetic-minecart/issues",
@@ -20,7 +23,7 @@
 			}
 		}
 	},
-	"license": "GPL-3.0",
+	"license": "GPL-3.0-or-later",
 	"icon": "assets/kinetic-minecart/logo/icon.png",
 	"environment": "*",
 	"entrypoints": {

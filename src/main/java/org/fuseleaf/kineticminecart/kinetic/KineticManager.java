@@ -27,9 +27,8 @@ public class KineticManager {
             return;
         }
 
-        switch (ConfigManager.getSelectedApplicationMode()) {
-            case null:
-            case ConfigData.Enum.ApplicationMode.Collide:
+        switch (ConfigManager.getApplicationMode()) {
+            case ConfigData.Enum.ApplicationMode.COLLIDE:
                 List<Entity> list1 = world.getEntities(
                     cart,
                     cart.getBoundingBox(),
@@ -43,16 +42,16 @@ public class KineticManager {
 
                 for (Entity target : list1) {
 
-                    if (ConfigManager.isEnabledKnock()) {
-                        CartKnock.knock(cart, target, mv, speed);
+                    if (ConfigManager.isKnockbackEnabled()) {
+                        CartKnockback.knock(cart, target, mv, speed);
                     }
-                    if (ConfigManager.isEnabledDamage()) {
-                        Delay.schedule(1, () -> CartImpact.damage(target, speed));
+                    if (ConfigManager.isDamageEnabled()) {
+                        Delay.schedule(1, () -> CartDamage.damage(target, speed));
                     }
                 }
                 break;
 
-            case ConfigData.Enum.ApplicationMode.Radius:
+            case ConfigData.Enum.ApplicationMode.RADIUS:
                 List<Entity> list2 = world.getEntities(
                     cart,
                     cart.getBoundingBox().inflate(ConfigManager.getRadius()),
@@ -66,11 +65,11 @@ public class KineticManager {
 
                 for (Entity target : list2) {
 
-                    if (ConfigManager.isEnabledKnock()) {
-                        CartKnock.knock(cart, target, mv, speed);
+                    if (ConfigManager.isKnockbackEnabled()) {
+                        CartKnockback.knock(cart, target, mv, speed);
                     }
-                    if (ConfigManager.isEnabledDamage()) {
-                        Delay.schedule(1, () -> CartImpact.damage(target, speed));
+                    if (ConfigManager.isDamageEnabled()) {
+                        Delay.schedule(1, () -> CartDamage.damage(target, speed));
                     }
                 }
                 break;

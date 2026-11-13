@@ -1,74 +1,54 @@
 {
-    "text.autoconfig.kinetic-minecart.title": "Kinetic Minecart 配置",
+    "kinetic-minecart.option.confirm": "好的",
 
-    "text.autoconfig.kinetic-minecart.category.general": "通用设置",
-    "text.autoconfig.kinetic-minecart.category.types": "类型设置",
-    "text.autoconfig.kinetic-minecart.category.display": "显示设置",
-    "text.autoconfig.kinetic-minecart.category.advanced": "高级设置",
-
-    "text.autoconfig.kinetic-minecart.option.enabled.@PrefixText": "主开关",
-    "text.autoconfig.kinetic-minecart.option.enabled": "    启用模组",
-
-    "text.autoconfig.kinetic-minecart.option.overrideCollision.@PrefixText": "覆盖",
-    "text.autoconfig.kinetic-minecart.option.overrideCollision": "    覆盖碰撞",
-    "text.autoconfig.kinetic-minecart.option.overrideRiding": "    覆盖骑乘",
-
-    "text.autoconfig.kinetic-minecart.option.selectedApplicationMode.@PrefixText": "应用",
-    "text.autoconfig.kinetic-minecart.option.selectedApplicationMode": "    应用模式",
     "kinetic-minecart.option.radius": "半径",
     "kinetic-minecart.option.collide": "碰撞",
-    "text.autoconfig.kinetic-minecart.option.intRadius": "    半径",
-    "text.autoconfig.kinetic-minecart.option.intRadius.@Tooltip[0]": "仅在应用模式设置为半径时生效",
-    "text.autoconfig.kinetic-minecart.option.intRadius.@Tooltip[1]": "\n",
-    "text.autoconfig.kinetic-minecart.option.intRadius.@Tooltip[2]": "注：数值会被转换为小数",
-    "text.autoconfig.kinetic-minecart.option.intRadius.@Tooltip[3]": "例：5 -> 0.5 方块",
-    "text.autoconfig.kinetic-minecart.option.intRadius.@Tooltip[4]": "",
 
-    "text.autoconfig.kinetic-minecart.option.enabledDamage.@PrefixText": "伤害",
-    "text.autoconfig.kinetic-minecart.option.enabledDamage": "    启用伤害",
-    "text.autoconfig.kinetic-minecart.option.selectedDamageMode": "    伤害模式",
-    "kinetic-minecart.option.tiered_damage": "分级伤害",
-    "kinetic-minecart.option.directly_kill": "直接击杀",
+    "kinetic-minecart.option.tiered": "分级",
+    "kinetic-minecart.option.kill": "击杀",
 
-    "text.autoconfig.kinetic-minecart.option.enabledKnock.@PrefixText": "击退",
-    "text.autoconfig.kinetic-minecart.option.enabledKnock": "    启用击退",
-
-    "text.autoconfig.kinetic-minecart.option.excludePlayer": "排除玩家",
-
-    "text.autoconfig.kinetic-minecart.option.excludePet": "排除宠物",
-    "text.autoconfig.kinetic-minecart.option.excludePet.@Tooltip[0]": "排除被驯服或有主人的",
-    "text.autoconfig.kinetic-minecart.option.excludePet.@Tooltip[1]": "狗，马，等等。",
-    "text.autoconfig.kinetic-minecart.option.excludePet.@Tooltip[2]": "\n",
-    "text.autoconfig.kinetic-minecart.option.excludePet.@Tooltip[3]": "§6注: §f一些特殊的生物",
-    "text.autoconfig.kinetic-minecart.option.excludePet.@Tooltip[4]": "不能被排除！",
-
-    "text.autoconfig.kinetic-minecart.option.excludePassenger": "排除乘客",
-    "text.autoconfig.kinetic-minecart.option.excludeNamedEntity": "排除被命名的实体",
-    "text.autoconfig.kinetic-minecart.option.excludeItemEntity": "排除掉落物实体",
-
-    "text.autoconfig.kinetic-minecart.option.enabledExclusionList": "启用排除列表",
-    "text.autoconfig.kinetic-minecart.option.enabledExclusionList.@Tooltip[0]": "启用后，您可以自定义要排除哪些的实体",
-    "text.autoconfig.kinetic-minecart.option.enabledExclusionList.@Tooltip[1]": "",
-
-    "text.autoconfig.kinetic-minecart.option.exclusionList": "排除列表",
-    "text.autoconfig.kinetic-minecart.option.exclusionList.@Tooltip[0]": "§6注: §f您需要自行查阅实体的ID，",
-    "text.autoconfig.kinetic-minecart.option.exclusionList.@Tooltip[1]": "包含§6命名空间。",
-    "text.autoconfig.kinetic-minecart.option.exclusionList.@Tooltip[2]": "模组有自动补全命名空间的函数，",
-    "text.autoconfig.kinetic-minecart.option.exclusionList.@Tooltip[3]": "但是有可能会出错。",
-    "text.autoconfig.kinetic-minecart.option.exclusionList.@Tooltip[4]": "\n",
-    "text.autoconfig.kinetic-minecart.option.exclusionList.@Tooltip[5]": "例如：§aminecraft:creeper",
-    "text.autoconfig.kinetic-minecart.option.exclusionList.@Tooltip[6]": "",
-
-    "kinetic-minecart.screen.illegal_operation.title": "§c不允许的操作",
-    "kinetic-minecart.screen.illegal_operation.desc": ":( 不要灰心，这不是Bug。\n\n看起来您正在进行多人游戏。\n您不能通过该设置更改服务器的配置。\n\n如需更改，请联系服务器管理员来更改配置文件。\n§6... > config > kinetic-minecart.json",
-    "kinetic-minecart.option.confirm": "好的",
-    "kinetic-minecart.screen.illegal_operation.no": "好的",
-
-    "kinetic-minecart.toast.api_not_found.title": "Cloth Config API 未被找到",
-    "kinetic-minecart.toast.api_not_found.desc": "您需要安装 §6Cloth Config API。",
+    "kinetic-minecart.toast.api_not_found.title": "未找到 Cloth Config API",
+    "kinetic-minecart.toast.api_not_found.desc": "您需要安装 §eCloth Config API§r。",
 
     "kinetic-minecart.toast.exclusion_list.title": "排除列表",
     "kinetic-minecart.toast.exclusion_list.desc.empty": "排除列表为空。",
-    "kinetic-minecart.toast.exclusion_list.desc.detected": "检测到排除列表的内容。 ",
-    "kinetic-minecart.toast.exclusion_list.desc.unknown": "§c错误: §f未知的 ID "
+    "kinetic-minecart.toast.exclusion_list.desc.detected": "检测到排除列表的内容。",
+    "kinetic-minecart.toast.exclusion_list.desc.unknown": "§c错误：§r未知的 ID %s",
+
+    "kinetic-minecart.screen.illegal_operation.title": "§c不允许的操作",
+    "kinetic-minecart.screen.illegal_operation.desc": ":( 别担心，这不是 Bug。\n\n看起来您正在多人游戏中，您不能通过此菜单更改服务器的配置。\n\n如需更改，请联系服务器管理员更改配置文件：\n§e... > config > kinetic-minecart.json",
+
+    "kinetic-minecart.config.title": "Kinetic Minecart 配置",
+    "kinetic-minecart.config.category.general": "通用",
+    "kinetic-minecart.config.category.advanced": "高级",
+    "kinetic-minecart.config.category.override": "复写",
+    "kinetic-minecart.config.category.application_mode": "作用模式",
+    "kinetic-minecart.config.category.damage": "伤害",
+    "kinetic-minecart.config.category.knockback": "击退",
+    "kinetic-minecart.config.category.type": "类型",
+
+    "kinetic-minecart.config.enable": "启用",
+
+    "kinetic-minecart.config.override_collision": "复写碰撞",
+    "kinetic-minecart.config.override_riding": "复写骑乘",
+
+    "kinetic-minecart.config.application_mode": "作用模式",
+    "kinetic-minecart.config.radius": "半径",
+    "kinetic-minecart.config.radius.tooltip": "例如：5 -> 0.5 方块",
+
+    "kinetic-minecart.config.damage": "伤害",
+    "kinetic-minecart.config.damage_mode": "伤害模式",
+
+    "kinetic-minecart.config.knockback": "击退",
+
+    "kinetic-minecart.config.exclude_player": "排除玩家",
+    "kinetic-minecart.config.exclude_pet": "排除宠物",
+    "kinetic-minecart.config.exclude_pet.tooltip": "§e一些特殊生物不能被排除！§r",
+    "kinetic-minecart.config.exclude_passenger": "排除乘客",
+    "kinetic-minecart.config.exclude_named_entity": "排除被命名实体",
+    "kinetic-minecart.config.exclude_item_entity": "排除物品实体",
+
+    "kinetic-minecart.config.enable_exclusion_list": "启用排除列表",
+    "kinetic-minecart.config.exclusion_list": "排除列表",
+    "kinetic-minecart.config.exclusion_list.tooltip": "需要包括§e命名空间§r和§e实体 ID§r。\n如果没有声明命名空间，则默认为 §eminecraft§r。\n例如：§aminecraft:creeper"
 }

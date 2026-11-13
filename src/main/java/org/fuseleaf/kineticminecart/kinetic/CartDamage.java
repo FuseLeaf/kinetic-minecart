@@ -11,9 +11,9 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
 
-public class CartImpact {
+public class CartDamage {
 
-    private CartImpact() {}
+    private CartDamage() {}
 
     private static final Map<Integer, Long> LAST_HIT_TICKS = new ConcurrentHashMap<>();
 
@@ -22,13 +22,12 @@ public class CartImpact {
             return;
         }
 
-        switch (ConfigManager.getSelectedDamageMode()) {
-            case null:
-            case ConfigData.Enum.DamageMode.TieredDamage:
+        switch (ConfigManager.getDamageMode()) {
+            case ConfigData.Enum.DamageMode.TIERED:
                 tieredDamage(target, speed);
                 break;
 
-            case ConfigData.Enum.DamageMode.DirectlyKill:
+            case ConfigData.Enum.DamageMode.KILL:
                 kill(target, speed);
                 break;
 

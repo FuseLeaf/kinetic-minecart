@@ -14,18 +14,18 @@ import net.minecraft.network.chat.Component;
 @Config(name = Constant.Core.MOD_ID)
 public class ConfigData implements me.shedaniel.autoconfig.ConfigData {
 
-    public boolean enabled = true;
+    public boolean enable = true;
 
     public boolean overrideCollision = true;
     public boolean overrideRiding = true;
 
-    public Enum.@NonNull ApplicationMode selectedApplicationMode = Enum.ApplicationMode.Collide;
-    public int intRadius = 5;
+    public Enum.ApplicationMode applicationMode = Enum.ApplicationMode.COLLIDE;
+    public int radius = 5;
 
-    public boolean enabledDamage = true;
-    public Enum.@NonNull DamageMode selectedDamageMode = Enum.DamageMode.TieredDamage;
+    public boolean enableDamage = true;
+    public Enum.DamageMode damageMode = Enum.DamageMode.TIERED;
 
-    public boolean enabledKnock = true;
+    public boolean enableKnockback = true;
 
     public boolean excludePlayer = false;
     public boolean excludePet = false;
@@ -33,14 +33,14 @@ public class ConfigData implements me.shedaniel.autoconfig.ConfigData {
     public boolean excludeNamedEntity = false;
     public boolean excludeItemEntity = false;
 
-    public boolean enabledExclusionList = false;
+    public boolean enableExclusionList = false;
     public List<String> exclusionList = new ArrayList<>();
 
     public class Enum {
 
         public enum ApplicationMode {
-            Radius(Constant.I18n.OPTION_RADIUS),
-            Collide(Constant.I18n.OPTION_COLLIDE);
+            RADIUS(Constant.I18n.OPTION_RADIUS),
+            COLLIDE(Constant.I18n.OPTION_COLLIDE);
 
             private final @NonNull String key;
 
@@ -55,8 +55,8 @@ public class ConfigData implements me.shedaniel.autoconfig.ConfigData {
         }
 
         public enum DamageMode {
-            TieredDamage(Constant.I18n.OPTION_TIERED_DAMAGE),
-            DirectlyKill(Constant.I18n.OPTION_TIERED_DIRECTLY_KILL);
+            TIERED(Constant.I18n.OPTION_TIERED),
+            KILL(Constant.I18n.OPTION_KILL);
 
             private final @NonNull String key;
 
@@ -68,6 +68,25 @@ public class ConfigData implements me.shedaniel.autoconfig.ConfigData {
             public String toString() {
                 return Component.translatable(key).getString();
             }
+        }
+    }
+
+    @Override
+    public void validatePostLoad() {
+        if (applicationMode == null) {
+            applicationMode = Enum.ApplicationMode.COLLIDE;
+        }
+
+        if (radius < 3 || radius > 10) {
+            radius = 5;
+        }
+
+        if (damageMode == null) {
+            damageMode = Enum.DamageMode.TIERED;
+        }
+
+        if (exclusionList == null) {
+            exclusionList = new ArrayList<>();
         }
     }
 }

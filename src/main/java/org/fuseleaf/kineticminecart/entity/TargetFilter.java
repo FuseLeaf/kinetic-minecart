@@ -24,12 +24,12 @@ public class TargetFilter {
 
     private static boolean isInCustomExclusion(Entity entity) {
         return (
-            ConfigManager.isExcludePlayer() && entity instanceof Player
-            || ConfigManager.isExcluePet() && isPet(entity)
-            || ConfigManager.isExcludePassenger() && entity.isPassenger()
-            || ConfigManager.isExcludeNamedEntity() && entity.hasCustomName()
-            || ConfigManager.isExcludItemEntity() && entity instanceof ItemEntity
-            || ConfigManager.isEnabledExclusionList() && isInExclusionList(entity)
+            ConfigManager.isPlayerExcluded() && entity instanceof Player
+            || ConfigManager.isPetExcluded() && isPet(entity)
+            || ConfigManager.isPassengerExcluded() && entity.isPassenger()
+            || ConfigManager.isNamedEntityExcluded() && entity.hasCustomName()
+            || ConfigManager.isItemEntityExcluded() && entity instanceof ItemEntity
+            || ConfigManager.isExclusionListEnabled() && isInExclusionList(entity)
         );
     }
 

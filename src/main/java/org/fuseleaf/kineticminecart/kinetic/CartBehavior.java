@@ -11,7 +11,7 @@ public class CartBehavior {
     public static boolean isCollisionDisabledWith(AbstractMinecart cart, Entity target) {
         return (
             ConfigManager.isEnabled()
-            && ConfigManager.isOverrideCollision()
+            && ConfigManager.isCollisionOverrideEnabled()
             && CartSpeed.hasReachedSpeedThreshold(cart)
             && !(target instanceof AbstractMinecart)
         );
@@ -20,7 +20,7 @@ public class CartBehavior {
     public static boolean isRidingDisabled(Minecart cart) {
         return (
             ConfigManager.isEnabled()
-            && ConfigManager.isOverrideRiding()
+            && ConfigManager.isRidingOverrideEnabled()
             && CartSpeed.hasReachedSpeedThreshold(cart)
         );
     }

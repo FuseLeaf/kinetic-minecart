@@ -23,32 +23,18 @@ This mod increases damage to moving minecarts; the faster they move, the higher 
 
 ## Compatibility
 
-| Symbol    | Relation      |
-| :-: | :-: |
-| v         | Required      |
-| o         | Optional      |
-| x         | Incompatible  |
-
 ### Fabric
 
-| Server Side       | Relation  | Description |
-| :-- | :-: | :-- |
-| Cloth Config API  | o         | Custom Configuration |
-
-| Client Side       | Relation  | Description |
-| :-- | :-: | :-- |
-| Cloth Config API  | o         | Custom Configuration |
-| Mod Menu          | o         | Client Configuration Entry |
+| Mod | Side | Relation | Description |
+| --- | --- | --- | --- |
+| **Cloth Config API** | Server & Client | Optional (Recommended) | Custom Configuration |
+| **Mod Menu** | Client | Optional (Recommended) | In-game Configuration Entry |
 
 ### NeoForge / Forge
 
-| Server Side       | Relation  | Description |
-| :-- | :-: | :-- |
-| Cloth Config API  | o         | Custom Configuration |
-
-| Client Side       | Relation  | Description |
-| :-- | :-: | :-- |
-| Cloth Config API  | o         | Custom Configuration |
+| Mod | Side | Relation | Description |
+| --- | --- | --- | --- |
+| **Cloth Config API** | Server & Client | Optional (Recommended) | Custom Configuration |
 
 ## Progress
 
@@ -62,15 +48,12 @@ Check out the latest development progress here: [Development Progress](https://f
 
 - The damage dealt by minecarts is related to their **Speed**:
 
-```
-Speed >= 6			-> Damage = Speed cubed;
-
-Speed > 2 and < 6 	-> Damage = Speed squared;
-
-Target has Vehicle  -> Damage = Speed;
-
-Speed <= 2			-> Damage = 0;
-```
+| Condition | Damage |
+| --- | --- |
+| Speed >= 6 | Damage = Speed cubed |
+| Speed > 2 and < 6 | Damage = Speed squared |
+| Target has Vehicle | Damage = Speed |
+| Speed <= 2 | Damage = 0 |
 
 - After being hit by a minecart, the entity is propelled approximately the same distance as its speed.
 
@@ -98,42 +81,88 @@ Configuration files that will be generated after installing `Cloth Config API`:
 
 - In **Multiplayer Mode**, you **Cannot** change the configuration via the menu; instead, the server administrator needs to modify the 'kinetic-minecart.json' file. Below is an example:
 
+<details>
+  <summary>Example Configuration (Click to expand)</summary>
+
 ```
-kinetic-minecart.json
-  [enabled] Value: true/false, Default: true
+> kinetic-minecart.json
 
-  [overrideCollision] Value: true/false, Default: true
-  [overrideRiding] Value: true/false, Default: true
-
-  [selectedApplicationMode] Value: "Collide"/"Radius", Default: "Collide"
-  [intRadius] Range: 3 - 10, Default: 5
-
-  [enabledDamage] Value: true/false, Default: true
-  [selectedDamageMode] Value: "TieredDamage"/"DirectlyKill", Default: "TieredDamage"
-
-  [enabledKnock] Value: true/false, Default: true
-
-  [excludePlayer] Value: true/false, Default: false
-  [excludePet] Value: true/false, Default: false
-  [excludePassenger] Value: true/false, Default: true
-  [excludeNamedEntity] Value: true/false, Default: false
-  [excludeItemEntity] Value: true/false, Default: false
-
-  [enabledExclusionList] Value: true/false, Default: false
-  [exclusionList]
-    Value: [
-      "<Namespace>:<Path>",
-      "<Namespace>:<Path>",
-      ...
-      "<Namespace>:<Path>"
-    ]
-    Example: [
-      "minecraft:creeper",
-      "minecraft:cat",
-      "minecraft:fox",
-      "minecraft:pig",
-      "minecraft:wolf",
-      "minecraft:zombie"
-    ]
-    Default: []
+{
+  "enable": true,
+  "overrideCollision": true,
+  "overrideRiding": true,
+  "applicationMode": "COLLIDE",
+  "radius": 5,
+  "enableDamage": true,
+  "damageMode": "TIERED",
+  "enableKnockback": true,
+  "excludePlayer": false,
+  "excludePet": false,
+  "excludePassenger": true,
+  "excludeNamedEntity": false,
+  "excludeItemEntity": false,
+  "enableExclusionList": false,
+  "exclusionList": []
+}
 ```
+
+</details>
+
+<details>
+  <summary>Configuration Details (Click to expand)</summary>
+
+#### General
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| enable | `true`/`false` | `true` | - |
+
+##### Override
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| overrideCollision | `true`/`false` | `true` | - |
+| overrideRiding | `true`/`false` | `true` | - |
+
+##### Application Mode
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| applicationMode| `"COLLIDE"`/`"RADIUS"` | `"COLLIDE"` | - |
+| radius | `<integer>` | `5` | Range: 3 to 10<br>Example: 5 -> 0.5 Blocks |
+
+##### Damage
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| enableDamage | `true`/`false` | `true` | - |
+| damageMode | `"TIERED"`/`"KILL"` | `"TIERED"` | - |
+
+##### Knockback
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| enableKnockback | `true`/`false` | `true` | - |
+
+##### Type
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| excludePlayer | `true`/`false` | `false` | - |
+| excludePet | `true`/`false` | `false` | Certain special entities cannot be excluded. |
+| excludePassenger | `true`/`false` | `true` | - |
+| excludeNamedEntity | `true`/`false` | `false` | - |
+| excludeItemEntity | `true`/`false` | `false` | - |
+
+#### Advanced
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| enableExclusionList | `true`/`false` | `false` | - |
+| exclusionList | `["<namespace>:<id>"]` | `[]` | Example 1: `["minecraft:creeper"]`<br>Example 2: `["minecraft:creeper", "minecraft:cat", "minecraft:fox"]` |
+
+</details>
+
+## License
+
+GPL-3.0-or-later (GNU General Public License v3.0 or later)

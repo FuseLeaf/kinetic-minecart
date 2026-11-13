@@ -4,9 +4,9 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
 import net.minecraft.world.phys.Vec3;
 
-public class CartKnock {
+public class CartKnockback {
 
-    private CartKnock() {}
+    private CartKnockback() {}
 
     public static void knock(AbstractMinecart minecart, Entity target, Vec3 mv, double speed) {
         Vec3 dir = target.position().subtract(minecart.position());
