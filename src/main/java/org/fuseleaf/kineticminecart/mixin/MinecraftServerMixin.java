@@ -16,6 +16,6 @@ public class MinecraftServerMixin {
 
     @Inject(method = "tickServer", at = @At("TAIL"))
     private void injectTickServer(BooleanSupplier haveTime, CallbackInfo ci) {
-        Initializer.onServerTick();
+        Initializer.endServerTick();
     }
 }

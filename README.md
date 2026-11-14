@@ -89,8 +89,6 @@ Configuration files that will be generated after installing `Cloth Config API`:
 
 {
   "enable": true,
-  "overrideCollision": true,
-  "overrideRiding": true,
   "applicationMode": "COLLIDE",
   "radius": 5,
   "enableDamage": true,
@@ -101,6 +99,7 @@ Configuration files that will be generated after installing `Cloth Config API`:
   "excludePassenger": true,
   "excludeNamedEntity": false,
   "excludeItemEntity": false,
+  "overrideRiding": true,
   "enableExclusionList": false,
   "exclusionList": []
 }
@@ -116,13 +115,6 @@ Configuration files that will be generated after installing `Cloth Config API`:
 | Key | Value | Default Value | Note |
 | --- | --- | --- | --- |
 | enable | `true`/`false` | `true` | - |
-
-##### Override
-
-| Key | Value | Default Value | Note |
-| --- | --- | --- | --- |
-| overrideCollision | `true`/`false` | `true` | - |
-| overrideRiding | `true`/`false` | `true` | - |
 
 ##### Application Mode
 
@@ -156,10 +148,18 @@ Configuration files that will be generated after installing `Cloth Config API`:
 
 #### Advanced
 
+##### Exclusion List
+
 | Key | Value | Default Value | Note |
 | --- | --- | --- | --- |
 | enableExclusionList | `true`/`false` | `false` | - |
 | exclusionList | `["<namespace>:<id>"]` | `[]` | Example 1: `["minecraft:creeper"]`<br>Example 2: `["minecraft:creeper", "minecraft:cat", "minecraft:fox"]` |
+
+##### Override
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| overrideRiding | `true`/`false` | `true` | - |
 
 </details>
 

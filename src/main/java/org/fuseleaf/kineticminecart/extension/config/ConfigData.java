@@ -16,9 +16,6 @@ public class ConfigData implements me.shedaniel.autoconfig.ConfigData {
 
     public boolean enable = true;
 
-    public boolean overrideCollision = true;
-    public boolean overrideRiding = true;
-
     public Enum.ApplicationMode applicationMode = Enum.ApplicationMode.COLLIDE;
     public int radius = 5;
 
@@ -32,6 +29,8 @@ public class ConfigData implements me.shedaniel.autoconfig.ConfigData {
     public boolean excludePassenger = true;
     public boolean excludeNamedEntity = false;
     public boolean excludeItemEntity = false;
+
+    public boolean overrideRiding = true;
 
     public boolean enableExclusionList = false;
     public List<String> exclusionList = new ArrayList<>();

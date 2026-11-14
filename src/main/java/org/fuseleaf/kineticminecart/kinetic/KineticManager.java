@@ -35,7 +35,7 @@ public class KineticManager {
                     e -> (
                         e != cart
                         && e.isAlive()
-                        && !TargetFilter.isExclued(cart, e)
+                        && !TargetFilter.isExcluded(cart, e)
                         && cart.getBoundingBox().intersects(e.getBoundingBox())
                     )
                 );
@@ -58,7 +58,7 @@ public class KineticManager {
                     e -> (
                         e != cart
                         && e.isAlive()
-                        && !TargetFilter.isExclued(cart, e)
+                        && !TargetFilter.isExcluded(cart, e)
                         && e.getVehicle() != cart   // Exclude the passenger of this vehicle.
                     )
                 );

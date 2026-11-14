@@ -1,5 +1,7 @@
 package org.fuseleaf.kineticminecart.kinetic;
 
+import net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
 import net.minecraft.world.phys.Vec3;
@@ -25,5 +27,10 @@ public class CartKnockback {
         Vec3 next = current.add(add);
 
         target.setDeltaMovement(next);
+
+        // Ensure it applies to player entities in creative mode.
+        if (target instanceof ServerPlayer player) {
+            player.connection.send(new ClientboundSetEntityMotionPacket(player));
+        }
     }
 }

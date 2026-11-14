@@ -21,16 +21,13 @@
     "kinetic-minecart.config.title": "Kinetic Minecart 配置",
     "kinetic-minecart.config.category.general": "通用",
     "kinetic-minecart.config.category.advanced": "高级",
-    "kinetic-minecart.config.category.override": "复写",
     "kinetic-minecart.config.category.application_mode": "作用模式",
     "kinetic-minecart.config.category.damage": "伤害",
     "kinetic-minecart.config.category.knockback": "击退",
     "kinetic-minecart.config.category.type": "类型",
+    "kinetic-minecart.config.category.override": "覆写",
 
     "kinetic-minecart.config.enable": "启用",
-
-    "kinetic-minecart.config.override_collision": "复写碰撞",
-    "kinetic-minecart.config.override_riding": "复写骑乘",
 
     "kinetic-minecart.config.application_mode": "作用模式",
     "kinetic-minecart.config.radius": "半径",
@@ -47,6 +44,8 @@
     "kinetic-minecart.config.exclude_passenger": "排除乘客",
     "kinetic-minecart.config.exclude_named_entity": "排除被命名实体",
     "kinetic-minecart.config.exclude_item_entity": "排除物品实体",
+
+    "kinetic-minecart.config.override_riding": "覆写骑乘",
 
     "kinetic-minecart.config.enable_exclusion_list": "启用排除列表",
     "kinetic-minecart.config.exclusion_list": "排除列表",
