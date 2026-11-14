@@ -1,0 +1,53 @@
+{
+    "kinetic_minecart.option.confirm": "OK",
+
+    "kinetic_minecart.option.radius": "Radius",
+    "kinetic_minecart.option.collide": "Collide",
+
+    "kinetic_minecart.option.tiered": "Tiered",
+    "kinetic_minecart.option.kill": "Kill",
+
+    "kinetic_minecart.toast.api_not_found.title": "Cloth Config API not found",
+    "kinetic_minecart.toast.api_not_found.desc": "You need to install §eCloth Config API§r.",
+
+    "kinetic_minecart.toast.exclusion_list.title": "Exclusion List",
+    "kinetic_minecart.toast.exclusion_list.desc.empty": "Exclusion List is empty.",
+    "kinetic_minecart.toast.exclusion_list.desc.detected": "Exclusion List content detected. ",
+    "kinetic_minecart.toast.exclusion_list.desc.unknown": "§cError:§r Unknown ID in %s",
+
+    "kinetic_minecart.screen.illegal_operation.title": "§cIllegal Operation",
+    "kinetic_minecart.screen.illegal_operation.desc": ":( Don't worry, this is not a bug.\n\nIt looks like you're playing in multiplayer.\nYou cannot change the server configuration from this menu.\n\nIf you need to make changes, please contact the server administrator\nto modify the configuration file.\n§e... > config > kinetic_minecart.json",
+
+    "kinetic_minecart.config.title": "Kinetic Minecart Configuration",
+    "kinetic_minecart.config.category.general": "General",
+    "kinetic_minecart.config.category.advanced": "Advanced",
+    "kinetic_minecart.config.category.application_mode": "Application Mode",
+    "kinetic_minecart.config.category.damage": "Damage",
+    "kinetic_minecart.config.category.knockback": "Knockback",
+    "kinetic_minecart.config.category.type": "Type",
+    "kinetic_minecart.config.category.override": "Override",
+
+    "kinetic_minecart.config.enable": "Enable",
+
+    "kinetic_minecart.config.application_mode": "Application Mode",
+    "kinetic_minecart.config.radius": "Radius",
+    "kinetic_minecart.config.radius.tooltip": "Example: 5 -> 0.5 Blocks",
+
+    "kinetic_minecart.config.damage": "Damage",
+    "kinetic_minecart.config.damage_mode": "Damage Mode",
+
+    "kinetic_minecart.config.knockback": "Knockback",
+
+    "kinetic_minecart.config.exclude_player": "Exclude Player",
+    "kinetic_minecart.config.exclude_pet": "Exclude Pet",
+    "kinetic_minecart.config.exclude_pet.tooltip": "§eCertain special entities cannot be excluded!§r",
+    "kinetic_minecart.config.exclude_passenger": "Exclude Passenger",
+    "kinetic_minecart.config.exclude_named_entity": "Exclude Named Entity",
+    "kinetic_minecart.config.exclude_item_entity": "Exclude Item Entity",
+
+    "kinetic_minecart.config.override_riding": "Override Riding",
+
+    "kinetic_minecart.config.enable_exclusion_list": "Enable Exclusion List",
+    "kinetic_minecart.config.exclusion_list": "Exclusion List",
+    "kinetic_minecart.config.exclusion_list.tooltip": "It needs to include the §eNamespace§r and §eEntity ID§r.\nIf no namespace is specified, it defaults to §eminecraft§r.\nExample: §aminecraft:creeper"
+}

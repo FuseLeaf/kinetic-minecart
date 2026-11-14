@@ -3,6 +3,7 @@ package org.fuseleaf.kineticminecart.client.initializer;
 import java.util.stream.Collectors;
 
 import org.fuseleaf.kineticminecart.client.config.ClientConfigManager;
+import org.fuseleaf.kineticminecart.client.extension.config.ConfigEntry;
 import org.fuseleaf.kineticminecart.client.util.Toast;
 import org.fuseleaf.kineticminecart.entity.ExclusionList;
 import org.fuseleaf.kineticminecart.util.Constant;
@@ -10,6 +11,9 @@ import org.fuseleaf.kineticminecart.util.Log;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
+
+import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 public class ClientInitializer {
 
@@ -42,5 +46,12 @@ public class ClientInitializer {
         } catch (ClassNotFoundException e) {
             Log.LOGGER.debug("AutoConfig not found on the client; config entry will be disabled.");
         }
+
+        ModLoadingContext.get().registerExtensionPoint(
+            IConfigScreenFactory.class,
+            () -> (mod, parent) -> {
+                return ConfigEntry.get(parent);
+            }
+        );
     }
 }

@@ -1,13 +1,15 @@
 package org.fuseleaf.kineticminecart.client;
 
 import org.fuseleaf.kineticminecart.client.initializer.ClientInitializer;
+import org.fuseleaf.kineticminecart.util.Constant;
 
-import net.fabricmc.api.ClientModInitializer;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.fml.common.Mod;
 
-public class KineticMinecartClient implements ClientModInitializer {
+@Mod(value = Constant.Core.MOD_ID, dist = Dist.CLIENT)
+public class KineticMinecartClient {
 
-    @Override
-    public void onInitializeClient() {
+    public KineticMinecartClient() {
         ClientInitializer.init();
     }
 }
