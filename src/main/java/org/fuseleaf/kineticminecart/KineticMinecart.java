@@ -1,13 +1,14 @@
 package org.fuseleaf.kineticminecart;
 
 import org.fuseleaf.kineticminecart.initializer.Initializer;
+import org.fuseleaf.kineticminecart.util.Constant;
 
-import net.fabricmc.api.ModInitializer;
+import net.neoforged.fml.common.Mod;
 
-public class KineticMinecart implements ModInitializer {
+@Mod(Constant.Core.MOD_ID)
+public class KineticMinecart {
 
-    @Override
-    public void onInitialize() {
+    public KineticMinecart() {
         Initializer.init();
     }
 }
