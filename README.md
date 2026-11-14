@@ -148,7 +148,7 @@ Configuration files that will be generated after installing `Cloth Config API`:
 
 #### Advanced
 
-##### | Exclusion List
+##### Exclusion List
 
 | Key | Value | Default Value | Note |
 | --- | --- | --- | --- |
