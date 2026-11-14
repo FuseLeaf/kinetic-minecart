@@ -148,18 +148,18 @@ Configuration files that will be generated after installing `Cloth Config API`:
 
 #### Advanced
 
+##### Override
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| overrideRiding | `true`/`false` | `true` | - |
+
 ##### Exclusion List
 
 | Key | Value | Default Value | Note |
 | --- | --- | --- | --- |
 | enableExclusionList | `true`/`false` | `false` | - |
 | exclusionList | `["<namespace>:<id>"]` | `[]` | Example 1: `["minecraft:creeper"]`<br>Example 2: `["minecraft:creeper", "minecraft:cat", "minecraft:fox"]` |
-
-##### Override
-
-| Key | Value | Default Value | Note |
-| --- | --- | --- | --- |
-| overrideRiding | `true`/`false` | `true` | - |
 
 </details>
 
