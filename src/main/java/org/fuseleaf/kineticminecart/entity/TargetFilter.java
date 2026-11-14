@@ -14,7 +14,7 @@ public class TargetFilter {
 
     private TargetFilter() {}
 
-    public static boolean isExclued(AbstractMinecart minecart, Entity entity) {
+    public static boolean isExcluded(AbstractMinecart minecart, Entity entity) {
         return isInDefaultExclusion(minecart, entity) || isInCustomExclusion(entity);
     }
 
