@@ -1,6 +1,8 @@
 # Kinetic Minecart
 
-This mod increases damage to moving minecarts; the faster they move, the higher the damage, with virtually no damage limit!
+Impact damage from high-speed minecarts!
+
+This mod increases damage to moving minecarts; the faster they move, the higher the damage!
 
 ## Loaders
 
@@ -15,7 +17,7 @@ This mod increases damage to moving minecarts; the faster they move, the higher 
 
 ## Releases
 
-[![Github](https://img.shields.io/badge/Published%20on-GitHub-808284?logo=github&logoColor=white)](https://github.com/KSSJW/kinetic-minecart/releases)
+[![Github](https://img.shields.io/badge/Published%20on-GitHub-808284?logo=github&logoColor=white)](https://github.com/FuseLeaf/kinetic-minecart/releases)
 [![Modrinth](https://img.shields.io/badge/Published%20on-Modrinth-1bd96a?logo=modrinth&logoColor=white)](https://modrinth.com/mod/kinetic-minecart)
 [![CurseForge](https://img.shields.io/badge/Published%20on-CurseForge-f16436?logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/kinetic-minecart)
 
@@ -23,56 +25,35 @@ This mod increases damage to moving minecarts; the faster they move, the higher 
 
 ### Fabric
 
-[Fabric API](https://github.com/FabricMC/fabric-api)
-
-[Cloth Config API](https://github.com/shedaniel/cloth-config)
-
-[Mod Menu](https://github.com/TerraformersMC/ModMenu)
-
-| Server Mod        | Relation      | Description |
-| :---------------- | :------------ | :--- |
-| Fabric API        | **Required**  | - |
-| Cloth Config API  | Optional      | Custom Configuration Features |
-
-| Client Mod        | Relation      | Description |
-| :---------------- | :------------ | :--- |
-| Fabric API        | **Required**  | - |
-| Cloth Config API  | Optional      | Configuration Controller |
-| Mod Menu          | Optional      | Configuration Entry |
+| Mod | Side | Relation | Description |
+| --- | --- | --- | --- |
+| **Cloth Config API** | Server & Client | Optional (Recommended) | Custom Configuration |
+| **Mod Menu** | Client | Optional (Recommended) | In-game Configuration Entry |
 
 ### NeoForge / Forge
 
-[Cloth Config API](https://github.com/shedaniel/cloth-config)
-
-| Server Mod        | Relation      | Description |
-| :---------------- | :------------ | :--- |
-| Cloth Config API  | Optional      | Custom Configuration Features |
-
-| Client Mod        | Relation      | Description |
-| :---------------- | :------------ | :--- |
-| Cloth Config API  | Optional      | Configuration Controller |
+| Mod | Side | Relation | Description |
+| --- | --- | --- | --- |
+| **Cloth Config API** | Server & Client | Optional (Recommended) | Custom Configuration |
 
 ## Progress
 
-Check out the latest development progress here. [Development Progress](https://www.windysky.top/docs/minecraft-java-edition/kinetic-minecart/version)
+Check out the latest development progress here: [Development Progress](https://fuseleaf.org/windysky/docs/minecraft-java-edition/kinetic-minecart/version)
 
 ## Gallery
 
-![A Creeper that was hit](/images/Big.png)
+![A Creeper that was hit](/assets/Big.png)
 
 ## Features
 
 - The damage dealt by minecarts is related to their **Speed**:
 
-```
-Speed >= 6			-> Damage = Speed cubed;
-
-Speed > 2 and < 6 	-> Damage = Speed squared;
-
-Target has Vehicle  -> Damage = Speed;
-
-Speed <= 2			-> Damage = 0;
-```
+| Condition | Damage |
+| --- | --- |
+| Speed >= 6 | Damage = Speed cubed |
+| Speed > 2 and < 6 | Damage = Speed squared |
+| Target has Vehicle | Damage = Speed |
+| Speed <= 2 | Damage = 0 |
 
 - After being hit by a minecart, the entity is propelled approximately the same distance as its speed.
 
@@ -86,53 +67,102 @@ Configuration files that will be generated after installing `Cloth Config API`:
 
 ### Singleplayer Mode
 
-![Configuration1](/images/Configuration1.png)
+![Configuration1](/assets/Configuration1.png)
 
-![Configuration2](/images/Configuration2.png)
+![Configuration2](/assets/Configuration2.png)
 
-![Configuration3](/images/Configuration3.png)
+![Configuration3](/assets/Configuration3.png)
 
 - You can edit the exclusion list, click on an item to name or delete it, and the inspection tool will attempt to proofread your input. (Sometimes, when you create a new item, the new text box may not appear; you may see an empty one, but this does not affect selection or input.)
 
-![Exclusion List](/images/ExclusionList.png)
+![Exclusion List](/assets/ExclusionList.png)
 
 ### Multiplayer Mode
 
 - In **Multiplayer Mode**, you **Cannot** change the configuration via the menu; instead, the server administrator needs to modify the 'kinetic-minecart.json' file. Below is an example:
 
+<details>
+  <summary>Example Configuration (Click to expand)</summary>
+
 ```
-kinetic-minecart.json
-  [enabled] Value: true/false, Default: true
+> kinetic-minecart.json
 
-  [selectedApplicaionMode] Value: "Collide"/"Radius", Default: "Collide"
-  [intRadius] Range: 3 - 10, Default: 5
-
-  [enabledDamage] Value: true/false, Default: true
-  [selectedDamageMode] Value: "TieredDamage"/"DirectlyKill", Default: "TieredDamage"
-
-  [enabledKnock] Value: true/false, Default: true
-
-  [excludePlayer] Value: true/false, Default: false
-  [excludePet] Value: true/false, Default: false
-  [excludePassenger] Value: true/false, Default: true
-  [excludeNamedEntity] Value: true/false, Default: false
-  [excludeItemEntity] Value: true/false, Default: false
-
-  [enabledExclusionList] Value: true/false, Default: false
-  [exclusionList]
-    Value: [
-      "<Namespace>:<Path>",
-      "<Namespace>:<Path>",
-      ...
-      "<Namespace>:<Path>"
-    ]
-    Example: [
-      "minecraft:creeper",
-      "minecraft:cat",
-      "minecraft:fox",
-      "minecraft:pig",
-      "minecraft:wolf",
-      "minecraft:zombie"
-    ]
-    Default: []
+{
+  "enable": true,
+  "applicationMode": "COLLIDE",
+  "radius": 5,
+  "enableDamage": true,
+  "damageMode": "TIERED",
+  "enableKnockback": true,
+  "excludePlayer": false,
+  "excludePet": false,
+  "excludePassenger": true,
+  "excludeNamedEntity": false,
+  "excludeItemEntity": false,
+  "overrideRiding": true,
+  "enableExclusionList": false,
+  "exclusionList": []
+}
 ```
+
+</details>
+
+<details>
+  <summary>Configuration Details (Click to expand)</summary>
+
+#### General
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| enable | `true`/`false` | `true` | - |
+
+##### Application Mode
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| applicationMode| `"COLLIDE"`/`"RADIUS"` | `"COLLIDE"` | - |
+| radius | `<integer>` | `5` | Range: 3 to 10<br>Example: 5 -> 0.5 Blocks |
+
+##### Damage
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| enableDamage | `true`/`false` | `true` | - |
+| damageMode | `"TIERED"`/`"KILL"` | `"TIERED"` | - |
+
+##### Knockback
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| enableKnockback | `true`/`false` | `true` | - |
+
+##### Type
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| excludePlayer | `true`/`false` | `false` | - |
+| excludePet | `true`/`false` | `false` | Certain special entities cannot be excluded. |
+| excludePassenger | `true`/`false` | `true` | - |
+| excludeNamedEntity | `true`/`false` | `false` | - |
+| excludeItemEntity | `true`/`false` | `false` | - |
+
+#### Advanced
+
+##### Override
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| overrideRiding | `true`/`false` | `true` | - |
+
+##### Exclusion List
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| enableExclusionList | `true`/`false` | `false` | - |
+| exclusionList | `["<namespace>:<id>"]` | `[]` | Example 1: `["minecraft:creeper"]`<br>Example 2: `["minecraft:creeper", "minecraft:cat", "minecraft:fox"]` |
+
+</details>
+
+## License
+
+GPL-3.0-or-later (GNU General Public License v3.0 or later)
