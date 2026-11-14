@@ -21,16 +21,13 @@
     "kinetic-minecart.config.title": "Kinetic Minecart Configuration",
     "kinetic-minecart.config.category.general": "General",
     "kinetic-minecart.config.category.advanced": "Advanced",
-    "kinetic-minecart.config.category.override": "Override",
     "kinetic-minecart.config.category.application_mode": "Application Mode",
     "kinetic-minecart.config.category.damage": "Damage",
     "kinetic-minecart.config.category.knockback": "Knockback",
     "kinetic-minecart.config.category.type": "Type",
+    "kinetic-minecart.config.category.override": "Override",
 
     "kinetic-minecart.config.enable": "Enable",
-
-    "kinetic-minecart.config.override_collision": "Override Collision",
-    "kinetic-minecart.config.override_riding": "Override Riding",
 
     "kinetic-minecart.config.application_mode": "Application Mode",
     "kinetic-minecart.config.radius": "Radius",
@@ -47,6 +44,9 @@
     "kinetic-minecart.config.exclude_passenger": "Exclude Passenger",
     "kinetic-minecart.config.exclude_named_entity": "Exclude Named Entity",
     "kinetic-minecart.config.exclude_item_entity": "Exclude Item Entity",
+
+    "kinetic-minecart.config.override_collision": "Override Collision",
+    "kinetic-minecart.config.override_riding": "Override Riding",
 
     "kinetic-minecart.config.enable_exclusion_list": "Enable Exclusion List",
     "kinetic-minecart.config.exclusion_list": "Exclusion List",

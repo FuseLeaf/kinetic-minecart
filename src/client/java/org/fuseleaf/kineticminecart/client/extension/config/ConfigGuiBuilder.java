@@ -46,30 +46,6 @@ public class ConfigGuiBuilder {
             generalCategory.addEntry(enableToggle);
 
             {
-                SubCategoryBuilder overrideSubCategory = entryBuilder
-                    .startSubCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_OVERRIDE))
-                    .setExpanded(true)
-                    .setRequirement(Requirement.isTrue(enableToggle));
-
-                overrideSubCategory.add(
-                    entryBuilder
-                        .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_OVERRIDE_COLLISION), config.overrideCollision)
-                        .setDefaultValue(true)
-                        .setSaveConsumer(v -> config.overrideCollision = v)
-                        .build()
-                );
-                overrideSubCategory.add(
-                    entryBuilder
-                        .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_OVERRIDE_RIDING), config.overrideRiding)
-                        .setDefaultValue(true)
-                        .setSaveConsumer(v -> config.overrideRiding = v)
-                        .build()
-                );
-
-                generalCategory.addEntry(overrideSubCategory.build());
-            }
-
-            {
                 SubCategoryBuilder applicationModeSubCategory = entryBuilder
                     .startSubCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_APPLICATION_MODE))
                     .setExpanded(true)
@@ -190,6 +166,29 @@ public class ConfigGuiBuilder {
 
         {
             ConfigCategory advancedCategory = builder.getOrCreateCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_ADVANCED));
+
+            {
+                SubCategoryBuilder overrideSubCategory = entryBuilder
+                    .startSubCategory(Component.translatable(Constant.I18n.CONFIG_CATEGORY_OVERRIDE))
+                    .setRequirement(Requirement.isTrue(enableToggle));
+
+                overrideSubCategory.add(
+                    entryBuilder
+                        .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_OVERRIDE_COLLISION), config.overrideCollision)
+                        .setDefaultValue(true)
+                        .setSaveConsumer(v -> config.overrideCollision = v)
+                        .build()
+                );
+                overrideSubCategory.add(
+                    entryBuilder
+                        .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_OVERRIDE_RIDING), config.overrideRiding)
+                        .setDefaultValue(true)
+                        .setSaveConsumer(v -> config.overrideRiding = v)
+                        .build()
+                );
+
+                advancedCategory.addEntry(overrideSubCategory.build());
+            }
 
             BooleanListEntry enableExclusionListToggle = entryBuilder
                 .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_ENABLE_EXCLUSION_LIST), config.enableExclusionList)

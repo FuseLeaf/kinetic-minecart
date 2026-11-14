@@ -38,16 +38,13 @@ public class Constant {
         public static final String CONFIG_TITLE = "kinetic-minecart.config.title";
         public static final String CONFIG_CATEGORY_GENERAL = "kinetic-minecart.config.category.general";
         public static final String CONFIG_CATEGORY_ADVANCED = "kinetic-minecart.config.category.advanced";
-        public static final String CONFIG_CATEGORY_OVERRIDE = "kinetic-minecart.config.category.override";
         public static final String CONFIG_CATEGORY_APPLICATION_MODE = "kinetic-minecart.config.category.application_mode";
         public static final String CONFIG_CATEGORY_DAMAGE = "kinetic-minecart.config.category.damage";
         public static final String CONFIG_CATEGORY_KNOCKBACK = "kinetic-minecart.config.category.knockback";
         public static final String CONFIG_CATEGORY_TYPE = "kinetic-minecart.config.category.type";
+        public static final String CONFIG_CATEGORY_OVERRIDE = "kinetic-minecart.config.category.override";
 
         public static final String CONFIG_ENABLE = "kinetic-minecart.config.enable";
-
-        public static final String CONFIG_OVERRIDE_COLLISION = "kinetic-minecart.config.override_collision";
-        public static final String CONFIG_OVERRIDE_RIDING = "kinetic-minecart.config.override_riding";
 
         public static final String CONFIG_APPLICATION_MODE = "kinetic-minecart.config.application_mode";
         public static final String CONFIG_RADIUS = "kinetic-minecart.config.radius";
@@ -64,6 +61,9 @@ public class Constant {
         public static final String CONFIG_EXCLUDE_PASSENGER = "kinetic-minecart.config.exclude_passenger";
         public static final String CONFIG_EXCLUDE_NAMED_ENTITY = "kinetic-minecart.config.exclude_named_entity";
         public static final String CONFIG_EXCLUDE_ITEM_ENTITY = "kinetic-minecart.config.exclude_item_entity";
+
+        public static final String CONFIG_OVERRIDE_COLLISION = "kinetic-minecart.config.override_collision";
+        public static final String CONFIG_OVERRIDE_RIDING = "kinetic-minecart.config.override_riding";
 
         public static final String CONFIG_ENABLE_EXCLUSION_LIST = "kinetic-minecart.config.enable_exclusion_list";
         public static final String CONFIG_EXCLUSION_LIST = "kinetic-minecart.config.exclusion_list";
