@@ -174,13 +174,6 @@ public class ConfigGuiBuilder {
 
                 overrideSubCategory.add(
                     entryBuilder
-                        .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_OVERRIDE_COLLISION), config.overrideCollision)
-                        .setDefaultValue(true)
-                        .setSaveConsumer(v -> config.overrideCollision = v)
-                        .build()
-                );
-                overrideSubCategory.add(
-                    entryBuilder
                         .startBooleanToggle(Component.translatable(Constant.I18n.CONFIG_OVERRIDE_RIDING), config.overrideRiding)
                         .setDefaultValue(true)
                         .setSaveConsumer(v -> config.overrideRiding = v)

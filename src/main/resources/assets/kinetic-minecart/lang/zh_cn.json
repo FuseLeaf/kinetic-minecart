@@ -45,7 +45,6 @@
     "kinetic-minecart.config.exclude_named_entity": "排除被命名实体",
     "kinetic-minecart.config.exclude_item_entity": "排除物品实体",
 
-    "kinetic-minecart.config.override_collision": "复写碰撞",
     "kinetic-minecart.config.override_riding": "复写骑乘",
 
     "kinetic-minecart.config.enable_exclusion_list": "启用排除列表",

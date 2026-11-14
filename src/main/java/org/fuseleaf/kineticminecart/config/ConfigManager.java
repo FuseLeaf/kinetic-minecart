@@ -85,10 +85,6 @@ public class ConfigManager {
         return isConfigAvailable() ? config.excludeItemEntity : false;
     }
 
-    public static boolean isCollisionOverrideEnabled() {
-        return isConfigAvailable() ? config.overrideCollision : true;
-    }
-
     public static boolean isRidingOverrideEnabled() {
         return isConfigAvailable() ? config.overrideRiding : true;
     }

@@ -45,7 +45,6 @@
     "kinetic-minecart.config.exclude_named_entity": "Exclude Named Entity",
     "kinetic-minecart.config.exclude_item_entity": "Exclude Item Entity",
 
-    "kinetic-minecart.config.override_collision": "Override Collision",
     "kinetic-minecart.config.override_riding": "Override Riding",
 
     "kinetic-minecart.config.enable_exclusion_list": "Enable Exclusion List",

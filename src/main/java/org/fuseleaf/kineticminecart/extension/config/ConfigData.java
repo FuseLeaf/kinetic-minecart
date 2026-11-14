@@ -30,7 +30,6 @@ public class ConfigData implements me.shedaniel.autoconfig.ConfigData {
     public boolean excludeNamedEntity = false;
     public boolean excludeItemEntity = false;
 
-    public boolean overrideCollision = true;
     public boolean overrideRiding = true;
 
     public boolean enableExclusionList = false;

@@ -62,7 +62,6 @@ public class Constant {
         public static final String CONFIG_EXCLUDE_NAMED_ENTITY = "kinetic-minecart.config.exclude_named_entity";
         public static final String CONFIG_EXCLUDE_ITEM_ENTITY = "kinetic-minecart.config.exclude_item_entity";
 
-        public static final String CONFIG_OVERRIDE_COLLISION = "kinetic-minecart.config.override_collision";
         public static final String CONFIG_OVERRIDE_RIDING = "kinetic-minecart.config.override_riding";
 
         public static final String CONFIG_ENABLE_EXCLUSION_LIST = "kinetic-minecart.config.enable_exclusion_list";

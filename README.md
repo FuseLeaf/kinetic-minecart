@@ -99,7 +99,6 @@ Configuration files that will be generated after installing `Cloth Config API`:
   "excludePassenger": true,
   "excludeNamedEntity": false,
   "excludeItemEntity": false,
-  "overrideCollision": true,
   "overrideRiding": true,
   "enableExclusionList": false,
   "exclusionList": []
@@ -160,7 +159,6 @@ Configuration files that will be generated after installing `Cloth Config API`:
 
 | Key | Value | Default Value | Note |
 | --- | --- | --- | --- |
-| overrideCollision | `true`/`false` | `true` | - |
 | overrideRiding | `true`/`false` | `true` | - |
 
 </details>
