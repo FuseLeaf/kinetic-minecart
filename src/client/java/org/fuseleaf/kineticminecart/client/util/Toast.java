@@ -14,7 +14,7 @@ public class Toast {
             return;
         }
 
-        ToastManager toastManager = Minecraft.getInstance().gui.toastManager();
+        ToastManager toastManager = Minecraft.getInstance().getToastManager();
         SystemToast.addOrUpdate(
             toastManager,
             SystemToast.SystemToastId.NARRATOR_TOGGLE,

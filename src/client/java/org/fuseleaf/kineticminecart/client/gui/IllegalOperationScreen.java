@@ -11,7 +11,7 @@ public class IllegalOperationScreen {
 
     public static ConfirmScreen get(Screen parent) {
         return new ConfirmScreen(
-            result -> Minecraft.getInstance().gui.setScreen(parent),  // Return to the previous menu.
+            result -> Minecraft.getInstance().setScreen(parent),  // Return to the previous menu.
             Component.translatable(Constant.I18n.SCREEN_ILLEGAL_OPERATION_TITLE),
             Component.translatable(Constant.I18n.SCREEN_ILLEGAL_OPERATION_DESC),
             Component.translatable(Constant.I18n.OPTION_CONFIRM),
