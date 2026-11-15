@@ -2,7 +2,7 @@ package org.fuseleaf.kineticminecart.client.util;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.toasts.SystemToast;
-import net.minecraft.client.gui.components.toasts.ToastManager;
+import net.minecraft.client.gui.components.toasts.ToastComponent;
 import net.minecraft.network.chat.Component;
 
 public class Toast {
@@ -14,9 +14,9 @@ public class Toast {
             return;
         }
 
-        ToastManager toastManager = Minecraft.getInstance().getToastManager();
+        ToastComponent toastComponent = Minecraft.getInstance().getToasts();
         SystemToast.addOrUpdate(
-            toastManager,
+            toastComponent,
             SystemToast.SystemToastId.NARRATOR_TOGGLE,
             title,
             description

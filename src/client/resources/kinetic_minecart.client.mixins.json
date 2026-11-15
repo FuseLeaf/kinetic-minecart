@@ -1,7 +1,7 @@
 {
 	"required": false,
 	"package": "org.fuseleaf.kineticminecart.client.mixin",
-	"compatibilityLevel": "JAVA_25",
+	"compatibilityLevel": "JAVA_21",
 	"client": [
 	],
 	"injectors": {

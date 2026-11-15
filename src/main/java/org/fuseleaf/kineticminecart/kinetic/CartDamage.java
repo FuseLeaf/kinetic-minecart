@@ -61,7 +61,7 @@ public class CartDamage {
             return;
         }
 
-        target.hurtServer((ServerLevel)world, world.damageSources().flyIntoWall(), damage);
+        target.hurt(world.damageSources().flyIntoWall(), damage);
     }
 
     private static void kill(Entity target, double speed) {
@@ -72,9 +72,9 @@ public class CartDamage {
         ServerLevel level = (ServerLevel) target.level();
 
         if (target instanceof LivingEntity livingEntity) {
-            livingEntity.hurtServer(level, level.damageSources().flyIntoWall(), Float.MAX_VALUE);
+            livingEntity.hurt(level.damageSources().flyIntoWall(), Float.MAX_VALUE);
         } else {
-            target.kill(level);
+            target.kill();
         }
     }
 }

@@ -7,15 +7,16 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import net.minecraft.world.entity.vehicle.minecart.Minecart;
+import net.minecraft.world.entity.vehicle.AbstractMinecart;
+import net.minecraft.world.entity.vehicle.Minecart;
 
 @Mixin(Minecart.class)
 public class MinecartMixin {
 
-    @Inject(method = "isRideable", at = @At("TAIL"), cancellable = true)
-    private void injectIsRideable(CallbackInfoReturnable<Boolean> cir) {
+    @Inject(method = "getMinecartType", at = @At("TAIL"), cancellable = true)
+    private void injectGetMinecartType(CallbackInfoReturnable<AbstractMinecart.Type> cir) {
         if (CartBehavior.isRidingDisabled((Minecart)(Object)this)) {
-            cir.setReturnValue(false);
+            cir.setReturnValue(AbstractMinecart.Type.COMMAND_BLOCK);    // This type cannot be ridden.
         }
     }
 }

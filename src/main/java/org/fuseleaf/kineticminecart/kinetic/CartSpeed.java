@@ -1,6 +1,6 @@
 package org.fuseleaf.kineticminecart.kinetic;
 
-import net.minecraft.world.entity.vehicle.minecart.AbstractMinecart;
+import net.minecraft.world.entity.vehicle.AbstractMinecart;
 
 public class CartSpeed {
 

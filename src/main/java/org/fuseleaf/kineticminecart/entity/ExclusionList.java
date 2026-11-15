@@ -8,8 +8,8 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 
 public class ExclusionList {
@@ -21,14 +21,14 @@ public class ExclusionList {
             return id;
         }
 
-        Identifier rl = Identifier.tryParse(id);
+        ResourceLocation rl = ResourceLocation.tryParse(id);
 
         if (rl == null) {
             return id;
         }
 
         if (rl.getNamespace().isEmpty()) {
-            rl = Identifier.fromNamespaceAndPath("minecraft", rl.getPath());
+            rl = ResourceLocation.fromNamespaceAndPath("minecraft", rl.getPath());
         }
 
         return rl.toString();   // minecraft:xxx
@@ -48,13 +48,13 @@ public class ExclusionList {
                 return Component.empty();
             }
 
-            Identifier rl = Identifier.tryParse(id);
+            ResourceLocation rl = ResourceLocation.tryParse(id);
 
             if (rl == null) {
                 return Component.empty();
             }
 
-            EntityType<?> type = BuiltInRegistries.ENTITY_TYPE.getValue(ResourceKey.create(Registries.ENTITY_TYPE, rl));
+            EntityType<?> type = BuiltInRegistries.ENTITY_TYPE.get(ResourceKey.create(Registries.ENTITY_TYPE, rl));
 
             if (type != null) {
                 if (!detected) {

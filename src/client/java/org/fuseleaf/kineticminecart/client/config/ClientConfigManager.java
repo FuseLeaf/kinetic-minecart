@@ -6,8 +6,6 @@ import org.fuseleaf.kineticminecart.config.ConfigManager;
 import org.fuseleaf.kineticminecart.extension.config.ConfigData;
 import org.fuseleaf.kineticminecart.util.Constant;
 
-import org.jspecify.annotations.NonNull;
-
 import me.shedaniel.autoconfig.ConfigHolder;
 
 public class ClientConfigManager {
@@ -26,15 +24,15 @@ public class ClientConfigManager {
         return ConfigManager.getConfig();
     }
 
-    public static ConfigHolder<@NonNull ConfigData> getConfigHolder() {
+    public static ConfigHolder<ConfigData> getConfigHolder() {
         return ConfigManager.getConfigHolder();
     }
 
-    public static ConfigData.Enum.@NonNull ApplicationMode getApplicationMode() {
+    public static ConfigData.Enum.ApplicationMode getApplicationMode() {
         return ConfigManager.getApplicationMode();
     }
 
-    public static ConfigData.Enum.@NonNull DamageMode getDamageMode() {
+    public static ConfigData.Enum.DamageMode getDamageMode() {
         return ConfigManager.getDamageMode();
     }
 

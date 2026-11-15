@@ -4,17 +4,15 @@ import java.util.List;
 
 import org.fuseleaf.kineticminecart.extension.config.ConfigData;
 
-import org.jspecify.annotations.NonNull;
-
 import me.shedaniel.autoconfig.ConfigHolder;
 
 public class ConfigManager {
 
     private static ConfigData config;
 
-    private static ConfigHolder<@NonNull ConfigData> holder;
+    private static ConfigHolder<ConfigData> holder;
 
-    public static void setConfig(ConfigHolder<@NonNull ConfigData> configHolder) {
+    public static void setConfig(ConfigHolder<ConfigData> configHolder) {
         if (configHolder != null) {
             config = configHolder.getConfig();
             holder = configHolder;
@@ -29,7 +27,7 @@ public class ConfigManager {
         return config != null;
     }
 
-    public static ConfigHolder<@NonNull ConfigData> getConfigHolder() {
+    public static ConfigHolder<ConfigData> getConfigHolder() {
         return holder;
     }
 
@@ -37,7 +35,7 @@ public class ConfigManager {
         return isConfigAvailable() ? config.enable : true;
     }
 
-    public static ConfigData.Enum.@NonNull ApplicationMode getApplicationMode() {
+    public static ConfigData.Enum.ApplicationMode getApplicationMode() {
         return isConfigAvailable() && config.applicationMode != null
             ? config.applicationMode
             : ConfigData.Enum.ApplicationMode.COLLIDE;
@@ -55,7 +53,7 @@ public class ConfigManager {
         return isConfigAvailable() ? config.enableDamage : true;
     }
 
-    public static ConfigData.Enum.@NonNull DamageMode getDamageMode() {
+    public static ConfigData.Enum.DamageMode getDamageMode() {
         return isConfigAvailable() && config.damageMode != null
             ? config.damageMode
             : ConfigData.Enum.DamageMode.TIERED;

@@ -6,8 +6,6 @@ import org.fuseleaf.kineticminecart.client.config.ClientConfigManager;
 import org.fuseleaf.kineticminecart.extension.config.ConfigData;
 import org.fuseleaf.kineticminecart.util.Constant;
 
-import org.jspecify.annotations.NonNull;
-
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
@@ -51,7 +49,7 @@ public class ConfigGuiBuilder {
                     .setExpanded(true)
                     .setRequirement(Requirement.isTrue(enableToggle));
 
-                EnumListEntry<ConfigData.Enum.@NonNull ApplicationMode> applicationModeSelector = entryBuilder
+                EnumListEntry<ConfigData.Enum.ApplicationMode> applicationModeSelector = entryBuilder
                     .startEnumSelector(Component.translatable(Constant.I18n.CONFIG_APPLICATION_MODE), ConfigData.Enum.ApplicationMode.class, ClientConfigManager.getApplicationMode())
                     .setDefaultValue(ConfigData.Enum.ApplicationMode.COLLIDE)
                     .setSaveConsumer(v -> config.applicationMode = v)

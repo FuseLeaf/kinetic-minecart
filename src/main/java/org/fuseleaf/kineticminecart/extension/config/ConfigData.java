@@ -5,8 +5,6 @@ import java.util.List;
 
 import org.fuseleaf.kineticminecart.util.Constant;
 
-import org.jspecify.annotations.NonNull;
-
 import me.shedaniel.autoconfig.annotation.Config;
 
 import net.minecraft.network.chat.Component;
@@ -41,9 +39,9 @@ public class ConfigData implements me.shedaniel.autoconfig.ConfigData {
             RADIUS(Constant.I18n.OPTION_RADIUS),
             COLLIDE(Constant.I18n.OPTION_COLLIDE);
 
-            private final @NonNull String key;
+            private final String key;
 
-            ApplicationMode(@NonNull String key) {
+            ApplicationMode(String key) {
                 this.key = key;
             }
 
@@ -57,9 +55,9 @@ public class ConfigData implements me.shedaniel.autoconfig.ConfigData {
             TIERED(Constant.I18n.OPTION_TIERED),
             KILL(Constant.I18n.OPTION_KILL);
 
-            private final @NonNull String key;
+            private final String key;
 
-            DamageMode(@NonNull String key) {
+            DamageMode(String key) {
                 this.key = key;
             }
 
