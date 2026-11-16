@@ -1,58 +1,168 @@
 # Kinetic Minecart
-This mod increases damage to moving minecarts; the faster they move, the higher the damage, with virtually no damage limit!
 
-## Loader
-[![Fabric](https://img.shields.io/badge/Available%20for-Fabric-dbd0b4?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAUCAYAAACAl21KAAAACXBIWXMAAA7EAAAOxAGVKw4bAAADpklEQVQ4jZXSW2hbdRwH8O//XHJO0+aetGmytLm0umbrvZ3OytauWBl0KA7RPcgeBB/0QScIQ/RJRGHCHuoFtQpT9EEQb4yN4fVlsC4ba7uMriatrWvanDT3y8nJOSd/X1S2dXXz+/zlw+/H7wfcQ4Z6w/0PDO+Mh8Oupu067N2QwcHeh9u8rlOPPzbesRTbCLY2u35fW5eSt/eYu0GE1CdbWuw7D+wbITt89qdFkTu+u8MX+t8QQzSHpirIZUp4/dVXMH7goSNGU+NZAJabe9uuNur3i94O34mnDk8e9niam06f+RH+dg/cLU4EQkFrIrE23upwn99IpVLbQn19fVbOzB+8vzPw1r6RAYvdbkE8vgwCwGa3wt3qIpmM5C0Ui4LTal1Zl9LJO0IBj/Wo0ch/cuzF53lXsw0tTgdGHhzEyamPwBADgu0+TEzsx/z81YHERqZL2sx8tgXaM7Tr7UcnRl949ugRm8NugqLIUGsqeIOAgeFBrK6u4peff0UwdB9mIpdRLJd9Po/7mX+hnp6exoDb8sTY2N7j3btC3s5gGwgLUFoHBaDrFAaBQ7lUglxRIUlZlMoyKMBUq7Kd+wfitVI/28B+fvCR/byn1QkAIABEUYSi1FAslEABBAN+NIgWvPf+NIaGh0FYnqYz+SwDAHsGwy9393d9/+n0FO9tcaJalpHezIJSAgIC0WCAy+lATdahahrA6KCU4kLkIubn5j6+EIk6uL1D3Se7wh1P9u4O2QjRAKqD4zk0MEaUShUQQsCzLATBAAC4vhBHdHF5U9PxGsNwcUZQFwCAo1R7aUerG6FgEIpSg8hz4HgWDMciV5Gh64DGs2BYDplsHouxP/OXr1x7d2Z24cObj8RRAr1UqTLJVIbUFAWdIT9EgQchddjtVkipNPKFMnKFMj6YPlWXsoUTc1fjb95+bdbjdf6myKo/n8sHml3N0OsUBECDUQBAIMtVLC2v4bvT53A9tvYG4RqnJEmqboESic0Vh9laKJTKo2azqUkQeHA8B47lUNcp4ksrmI3G6MVLc2dVmj8WjS4X7vTELADcWE8usKCFpLR+yNfmBSEEslyDqmr49oczmInM/hS5sjiZSlW2THILBAA2ho9JufxSJl8c1XRVEAURX3z5FTakLCj48zcSya+3Q26BstWqUpZr8xazyUZpvV2t1cxLy6soFKt/sODfSSSTi/cE/Z16Ukqfs5iExo2kNEbBgDDkucjstW/+CwGAvwAUxX1hlnD3nAAAAABJRU5ErkJggg==)](https://fabricmc.net)
+Impact damage from high-speed minecarts!
 
-## Environment
-![Client only](https://img.shields.io/badge/Side-Server%20and%20Client-3c8527)
+This mod increases damage to moving minecarts; the faster they move, the higher the damage!
+
+## Loaders
+
+[![Fabric](https://img.shields.io/badge/Available%20for-Fabric-dbd0b4)](https://fabricmc.net)
+[![NeoForge](https://img.shields.io/badge/Available%20for-NeoForge-e68c37)](https://neoforged.net)
+[![Forge](https://img.shields.io/badge/Available%20for-Forge-2e435f)](https://files.minecraftforge.net/)
+
+## Environments
+
+![Server Required](https://img.shields.io/badge/Side-Server%20Required-258585)
+![Client Optional](https://img.shields.io/badge/Side-Client%20Optional-3c8527)
 
 ## Releases
-[![Github](https://img.shields.io/badge/Published%20in-GitHub-808284?logo=github&logoColor=white)](https://github.com/KSSJW/kinetic-minecart/releases) [![Modrinth](https://img.shields.io/badge/Published%20in-Modrinth-1bd96a?logo=modrinth&logoColor=white)](https://modrinth.com/mod/kinetic-minecart) [![CurseForge](https://img.shields.io/badge/Published%20in-CurseForge-f16436?logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/kinetic-minecart)
+
+[![Github](https://img.shields.io/badge/Published%20on-GitHub-808284?logo=github&logoColor=white)](https://github.com/FuseLeaf/kinetic-minecart/releases)
+[![Modrinth](https://img.shields.io/badge/Published%20on-Modrinth-1bd96a?logo=modrinth&logoColor=white)](https://modrinth.com/mod/kinetic-minecart)
+[![CurseForge](https://img.shields.io/badge/Published%20on-CurseForge-f16436?logo=curseforge&logoColor=white)](https://www.curseforge.com/minecraft/mc-mods/kinetic-minecart)
 
 ## Compatibility
-- Fabric API (Required)
-- Cloth Config API (Required)
-- Mod Menu (Recommended)
+
+### Fabric
+
+| Mod | Side | Relation | Description |
+| --- | --- | --- | --- |
+| **Cloth Config API** | Server & Client | Optional (Recommended) | Custom Configuration |
+| **Mod Menu** | Client | Optional (Recommended) | In-game Configuration Entry |
+
+### NeoForge / Forge
+
+| Mod | Side | Relation | Description |
+| --- | --- | --- | --- |
+| **Cloth Config API** | Server & Client | Optional (Recommended) | Custom Configuration |
 
 ## Progress
-Check out the latest development progress here. [Development Progress](https://windysky.gitbook.io/main/minecraft/kinetic-minecart/version)
 
-## Main Gallery
-![A Creeper that was hit](https://raw.githubusercontent.com/KSSJW/kinetic-minecart/refs/heads/dev/images/Big.png)
+Check out the latest development progress here: [Development Progress](https://fuseleaf.org/windysky/docs/minecraft-java-edition/kinetic-minecart/version)
+
+## Gallery
+
+![A Creeper that was hit](/assets/Big.png)
 
 ## Features
-- The damage dealt by minecarts is related to their speed:
-```
-Speed >= 6			-> Damage = Speed cubed;
 
-Speed > 2 and < 6 	-> Damage = Speed squared;
+- The damage dealt by minecarts is related to their **Speed**:
 
-Target has Vehicle  -> Damage = Speed;
-
-Speed <= 2			-> Damage = 0;
-```
-> [!NOTE]
-> Theoretically, there is **No Damage Limit**.
+| Condition | Damage |
+| --- | --- |
+| Speed >= 6 | Damage = Speed cubed |
+| Speed > 2 and < 6 | Damage = Speed squared |
+| Target has Vehicle | Damage = Speed |
+| Speed <= 2 | Damage = 0 |
 
 - After being hit by a minecart, the entity is propelled approximately the same distance as its speed.
-
-- Minecarts do not stop after hitting an entity.
 
 - It offers custom configuration options, including customizing the collision effects of the minecart.
 
 ## Configuration
-![Configuration1](https://raw.githubusercontent.com/KSSJW/kinetic-minecart/refs/heads/dev/images/Configuration1.png)
-![Configuration2](https://raw.githubusercontent.com/KSSJW/kinetic-minecart/refs/heads/dev/images/Configuration2.png)
-![Configuration3](https://raw.githubusercontent.com/KSSJW/kinetic-minecart/refs/heads/dev/images/Configuration3.png)
+
+Configuration files that will be generated after installing `Cloth Config API`:
+
+- `.../config/kinetic-minecart.json`
+
+### Singleplayer Mode
+
+![Configuration1](/assets/Configuration1.png)
+
+![Configuration2](/assets/Configuration2.png)
+
+![Configuration3](/assets/Configuration3.png)
 
 - You can edit the exclusion list, click on an item to name or delete it, and the inspection tool will attempt to proofread your input. (Sometimes, when you create a new item, the new text box may not appear; you may see an empty one, but this does not affect selection or input.)
 
-![Exclusion List](https://raw.githubusercontent.com/KSSJW/kinetic-minecart/refs/heads/dev/images/ExclusionList.png)
+![Exclusion List](/assets/ExclusionList.png)
 
-- In multiplayer mode, you cannot change the configuration via the menu; instead, the server administrator needs to modify the 'kinetic-minecart.json' file. Below is an example:
+### Multiplayer Mode
 
-![Config File](https://raw.githubusercontent.com/KSSJW/kinetic-minecart/refs/heads/dev/images/ConfigFile.png)
+- In **Multiplayer Mode**, you **Cannot** change the configuration via the menu; instead, the server administrator needs to modify the 'kinetic-minecart.json' file. Below is an example:
 
-- selectedApplicaionMode -> Radius / Collide
-- intRadius -> 3 ~ 10 (5 -> 0.5 block)
+<details>
+  <summary>Example Configuration (Click to expand)</summary>
+
+```
+> kinetic-minecart.json
+
+{
+  "enable": true,
+  "applicationMode": "COLLIDE",
+  "radius": 5,
+  "enableDamage": true,
+  "damageMode": "TIERED",
+  "enableKnockback": true,
+  "excludePlayer": false,
+  "excludePet": false,
+  "excludePassenger": true,
+  "excludeNamedEntity": false,
+  "excludeItemEntity": false,
+  "overrideRiding": true,
+  "enableExclusionList": false,
+  "exclusionList": []
+}
+```
+
+</details>
+
+<details>
+  <summary>Configuration Details (Click to expand)</summary>
+
+#### General
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| enable | `true`/`false` | `true` | - |
+
+##### Application Mode
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| applicationMode| `"COLLIDE"`/`"RADIUS"` | `"COLLIDE"` | - |
+| radius | `<integer>` | `5` | Range: 3 to 10<br>Example: 5 -> 0.5 Blocks |
+
+##### Damage
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| enableDamage | `true`/`false` | `true` | - |
+| damageMode | `"TIERED"`/`"KILL"` | `"TIERED"` | - |
+
+##### Knockback
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| enableKnockback | `true`/`false` | `true` | - |
+
+##### Type
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| excludePlayer | `true`/`false` | `false` | - |
+| excludePet | `true`/`false` | `false` | Certain special entities cannot be excluded. |
+| excludePassenger | `true`/`false` | `true` | - |
+| excludeNamedEntity | `true`/`false` | `false` | - |
+| excludeItemEntity | `true`/`false` | `false` | - |
+
+#### Advanced
+
+##### Override
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| overrideRiding | `true`/`false` | `true` | - |
+
+##### Exclusion List
+
+| Key | Value | Default Value | Note |
+| --- | --- | --- | --- |
+| enableExclusionList | `true`/`false` | `false` | - |
+| exclusionList | `["<namespace>:<id>"]` | `[]` | Example 1: `["minecraft:creeper"]`<br>Example 2: `["minecraft:creeper", "minecraft:cat", "minecraft:fox"]` |
+
+</details>
+
+## License
+
+GPL-3.0-or-later (GNU General Public License v3.0 or later)
