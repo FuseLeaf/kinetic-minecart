@@ -1,0 +1,11 @@
+{
+	"required": false,
+	"package": "org.fuseleaf.kineticminecart.client.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"refmap": "kinetic_minecart.refmap.json",
+	"client": [
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
